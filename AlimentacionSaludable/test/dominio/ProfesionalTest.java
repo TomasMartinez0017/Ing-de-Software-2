@@ -65,6 +65,14 @@ public class ProfesionalTest {
         assertEquals(nombreTituloProf,instance.getNombreTituloProf());
     }
     
+    @Test
+    public void testSetNombreTituloProf2() {
+        System.out.println("setNombreTituloProf");
+        String nombreTituloProf = "";
+        Profesional instance = new Profesional();
+        instance.setNombreTituloProf(nombreTituloProf);
+    }
+    
     
     @Test
     public void testGetPaisObtuvoTituloIndia() {
@@ -368,5 +376,12 @@ public class ProfesionalTest {
         obj.setNombreUsuario("nombre");
         boolean test = obj.equals("soy string");
         assertFalse(test);
+    }
+    
+    @Test
+    public void testSetFechaDeGraduacion() {
+        System.out.println("equalsDistintoTipo");
+        Profesional instance = new Profesional();
+        instance.setFechaGraduacion("");
     } 
 }

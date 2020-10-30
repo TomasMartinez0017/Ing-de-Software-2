@@ -120,7 +120,13 @@ public class Alimento implements Serializable {
     public int hashCode() {
         int hash = 7;
         return hash;
-    } 
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        Alimento a = (Alimento) obj;
+        return a.nombre.equals(this.nombre);
+    }
     
 
 }

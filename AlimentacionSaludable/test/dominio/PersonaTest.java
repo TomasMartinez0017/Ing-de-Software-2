@@ -65,6 +65,22 @@ public class PersonaTest {
         boolean test = instance.equals("soy string");
         assertFalse(test);
     }
+    
+    @Test
+    public void testGetFechaNacimiento() {
+        Persona instance = new Usuario();
+        instance.setFechaNacimiento("unaFecha");
+        
+        assertEquals(instance.getFechaNacimiento(), "unaFecha");
+    }
+    
+    @Test
+    public void testGetApellido() {
+        Persona instance = new Usuario();
+        instance.setApellidos("Sacchi");
+        
+        assertEquals(instance.getApellidos(), "Sacchi");
+    }
 
     public class PersonaImpl extends Persona {
 

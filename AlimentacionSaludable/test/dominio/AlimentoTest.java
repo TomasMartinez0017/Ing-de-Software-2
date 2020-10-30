@@ -70,5 +70,34 @@ public class AlimentoTest {
         assertEquals(expResult, result);
     }
     
+    @Test
+    public void testToString(){
+        Alimento a = new Alimento();
+        a.setNombre("Aguacate");
+        
+        String expValue = "Aguacate";
+        
+        assertEquals(a.toString(), expValue);
+    }
+    
+    @Test
+    public void testGetNombre(){
+        Alimento a = new Alimento();
+        a.setNombre("Aguacate");
+        
+        String expValue = "Aguacate";
+        
+        assertEquals(a.getNombre(), expValue);
+    }
+    
+    @Test
+    public void testHashCode(){
+        Alimento a = new Alimento();
+        int result = a.hashCode();
+        int expValue = 7;
+        
+        assertEquals(result, expValue);
+    }
+    
     
 }

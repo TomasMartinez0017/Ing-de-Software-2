@@ -56,6 +56,28 @@ public class UsuarioTest {
         assertEquals(expResult, result);
 
     }
+    
+    @Test
+    public void testSetAlturaIncorrecta(){
+        Usuario instance = new Usuario();
+        instance.setAlturaCm(140);
+        instance.setAlturaCm(-40);
+        instance.setAlturaCm(300);
+        
+        int expValue = 140;
+        assertEquals((int)instance.getAlturaCm(), expValue);
+    }
+    
+    @Test
+    public void testSetPesoIncorrecto(){
+        Usuario instance = new Usuario();
+        instance.setPesoKg(70);
+        instance.setPesoKg(-40);
+        instance.setPesoKg(800);
+        
+        int expValue = 70;
+        assertEquals((int)instance.getPesoKg(), expValue);
+    }
 
     @Test
     public void testSetHistorialDelDia() {
@@ -64,6 +86,17 @@ public class UsuarioTest {
         Usuario instance = new Usuario();
         instance.setHistorialDelDia(historialDelDia);
         assertEquals(historialDelDia, instance.getHistorialDelDia());
+    }
+    
+    @Test
+    public void testSetSexo(){
+        Usuario instance = new Usuario();
+        instance.setSexo("Tren");
+        instance.setSexo("Masculino");
+        
+        String expValue = "Masculino";
+        
+        assertEquals(expValue, instance.getSexo());
     }
 
 
@@ -624,6 +657,45 @@ public class UsuarioTest {
         ImageIcon fotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
         Usuario nuevo = new Usuario(nacionalidad,peso,altura,preferencias,restricciones,plan,sexo,nombre,apellido,usuario,fNacimiento,fotoPerfil);
        
+    }
+    
+    @Test
+    public void testListaNacionalidades() {
+        System.out.println("ListaNacionalidades");
+        Usuario instance = new Usuario();
+        String[] expResult = {"Alemana", "Australiana", "Austriaca",
+                              "Brasileña","Canadiense", "Chilena", "China", "Colombiana",
+                              "Surcoreana", "Cubana", "Ecuatoriana", "Egipcia",
+                              "Española", "EstadoUnidense", "Francesa", "Griega",
+                              "Holandesa", "India", "Inglesa", "Israeli", "Italiana",
+                              "Japonesa", "Méxicana", "Paraguaya", "Peruana",
+                              "Portuguesa", "Rusa", "Sudáfricana", "Uruguaya",
+                              "Venezolana"};
+        String[] result = instance.inicializoListaNacionalidades();
+        assertArrayEquals(expResult, result);
+    }
+    
+    @Test
+    public void testSetProfesionalAsignado(){
+        System.out.println("SetProfesionalAsignado");
+        Usuario instance = new Usuario();
+        Profesional p = new Profesional();
+        p.setNombre("Roberto");
+        p.setApellidos("Paganini");
+        p.setFechaGraduacion("fechaGraduacion");
+        p.setFechaNacimiento("fechaNacimiento");
+        p.setNombreTituloProf("Doctor");
+        
+        instance.setProfesionalAsignado(p);
+        
+        Profesional expResult = new Profesional();
+        expResult.setNombre("Roberto");
+        expResult.setApellidos("Paganini");
+        expResult.setFechaGraduacion("fechaGraduacion");
+        expResult.setFechaNacimiento("fechaNacimiento");
+        expResult.setNombreTituloProf("Doctor");
+        
+        assertEquals(expResult, instance.getProfesionalAsignado());
     }
     
     @Test

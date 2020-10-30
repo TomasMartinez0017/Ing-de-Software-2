@@ -13,7 +13,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+
 public class SistemaTest {
+    
     
     public SistemaTest() {
     }
@@ -199,6 +201,45 @@ public class SistemaTest {
         ArrayList<Alimento> listaA = new ArrayList<Alimento>();
         Sistema.tipoUsuario usuarioActivo = Sistema.tipoUsuario.NoSeleccionado;
         Sistema s = new Sistema(listaA,listaU,listaP,usuarioActivo);
+    }
+    
+    @Test
+    public void testSetListaTiposDeUsuario(){
+        Sistema instance = new Sistema();
+        instance.setListaTiposDeUsuario(instance.listaTiposDeUsuario);
+    }
+    
+    @Test
+    public void testSetListaProfesionales(){
+        Sistema instance = new Sistema();
+        ArrayList<Profesional> listaProf = new ArrayList<Profesional>();
+        Profesional p = new Profesional();
+        p.setNombre("Juan");
+        listaProf.add(p);
+        instance.setListaProfesionales(listaProf);
+        assertEquals(instance.getListaProfesionales(), listaProf);
+    }
+    
+    @Test
+    public void testSetListaUsuarios(){
+        Sistema instance = new Sistema();
+        ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
+        Usuario u = new Usuario();
+        u.setNombre("Kamilo");
+        listaUsuarios.add(u);
+        instance.setListaUsuarios(listaUsuarios);
+        assertEquals(instance.getListaUsuarios(), listaUsuarios);
+    }
+    
+    @Test
+    public void testSetListaAlimentos(){
+        Sistema instance = new Sistema();
+        ArrayList<Alimento> listaAlimentos = new ArrayList<Alimento>();
+        Alimento a = new Alimento();
+        a.setNombre("Manzana");
+        listaAlimentos.add(a);
+        instance.setListaAlimentos(listaAlimentos);
+        assertEquals(instance.getListaAlimentos(), listaAlimentos);
     }
     
 }

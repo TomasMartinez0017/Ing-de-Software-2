@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({dominio.SistemaTest.class, dominio.PersonaTest.class, dominio.UsuarioTest.class,dominio.AlimentoTest.class, dominio.ComidaPorDiaTest.class, dominio.ProfesionalTest.class})
+@Suite.SuiteClasses({dominio.SistemaTest.class, dominio.PersonaTest.class, dominio.MensajeTest.class, dominio.PlanDeAlimentacionTest.class, dominio.UsuarioTest.class,dominio.AlimentoTest.class, dominio.ComidaPorDiaTest.class, dominio.ProfesionalTest.class})
 public class DominioSuite {
 
     @BeforeClass

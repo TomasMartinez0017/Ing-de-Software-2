@@ -49,22 +49,14 @@ public class ComidaPorDia implements Serializable{
 
     @Override
     public boolean equals(Object obj) {
-        boolean retorno=true;
         if (obj == null) {
-            retorno= false;
+            return false;
         }
         if (getClass() != obj.getClass()) {
-            retorno= false;
+            return false;
         }
-        if (retorno == true) {
-            ComidaPorDia other = (ComidaPorDia) obj;
-            retorno=other.getComidasIngeridas()
-                    .equals(this.getComidasIngeridas()) && 
-                    other.getFecha().equalsIgnoreCase(this.getFecha());
-        }
-        return retorno;
+        ComidaPorDia other = (ComidaPorDia) obj;
+        return other.getComidasIngeridas().equals(this.getComidasIngeridas()) && other.getFecha().equalsIgnoreCase(this.getFecha());
     }
-    
-    
-    
 }
+   
