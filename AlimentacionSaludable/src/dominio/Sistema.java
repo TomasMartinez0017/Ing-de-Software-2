@@ -1,6 +1,5 @@
 package dominio;
 
-import com.toedter.calendar.JDateChooser;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.FileInputStream;
@@ -9,11 +8,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Optional;
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 
 public class Sistema implements Serializable {
 
@@ -22,7 +19,7 @@ public class Sistema implements Serializable {
     ArrayList<Alimento> listaAlimentos;
     ArrayList<Usuario> listaUsuarios;
     ArrayList<Profesional> listaProfesionales;
-    tipoUsuario[] listaTiposDeUsuario;
+    tipoUsuario[] listaTiposDeUsuario = {tipoUsuario.PROFESIONAL, tipoUsuario.USUARIO};
     tipoUsuario usuarioActivo;
 
     //Cosntructor
@@ -34,21 +31,18 @@ public class Sistema implements Serializable {
         this.listaUsuarios = listaUsuarios;
         this.listaProfesionales = listaProfesionales;
         this.usuarioActivo = usuarioActivo;
-        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
     }
 
     public Sistema() {
-        this.listaAlimentos = new ArrayList();
-        this.listaUsuarios = new ArrayList();
-        this.listaProfesionales = new ArrayList();
-        this.usuarioActivo = tipoUsuario.NoSeleccionado;
-        this.listaTiposDeUsuario = inicializoListaTiposDeUsuario();
+        this.listaAlimentos = new ArrayList<>();
+        this.listaUsuarios = new ArrayList<>();
+        this.listaProfesionales = new ArrayList<>();
+        this.usuarioActivo = tipoUsuario.NO_SELECCIONADO;
     }
     //Metodos de la clase sistema
 
     public tipoUsuario[] getListaTiposDeUsuario() {
-        tipoUsuario[] lista = listaTiposDeUsuario;
-        return lista;
+        return listaTiposDeUsuario;
     }
 
     public void setListaTiposDeUsuario(tipoUsuario[] listaTiposDeUsuario) {
@@ -91,49 +85,61 @@ public class Sistema implements Serializable {
     }
 
     public enum tipoUsuario {
-        Profesional, Usuario, NoSeleccionado
-    }
-
-    //Metodo para inicializar lista de enums de tipo de usuario
-    tipoUsuario[] inicializoListaTiposDeUsuario() {
-        tipoUsuario[] listaPivot = {tipoUsuario.Profesional,
-            tipoUsuario.Usuario};
-        return listaPivot;
+        PROFESIONAL, USUARIO, NO_SELECCIONADO
     }
 
     //CARGAR Y GUARDAR SISTEMA
     public void cargarSistema() {
+        ObjectInputStream in = null;
         try {
-            ObjectInputStream in = new ObjectInputStream
-                                   (new FileInputStream("sis.ser"));
-            ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>)
-                                                in.readObject();
+            in = new ObjectInputStream (new FileInputStream("sis.ser"));
+            ArrayList<Alimento> listAlimentos = (ArrayList<Alimento>) in.readObject();
             listaAlimentos = listAlimentos;
-            ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>)
-                                              in.readObject();
+            ArrayList<Usuario> listUsuarios = (ArrayList<Usuario>) in.readObject();
             listaUsuarios = listUsuarios;
-            ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>)
-                                                        in.readObject();
+            ArrayList<Profesional> listProfesionales = (ArrayList<Profesional>) in.readObject();
             listaProfesionales = listProfesionales;
-            in.close();
-        } catch (Exception ex) {
-            listaAlimentos = new ArrayList<Alimento>();
-            listaUsuarios = new ArrayList<Usuario>();
-            listaProfesionales = new ArrayList<Profesional>();
+            
+ 
+        } catch (Exception e) {
+            listaAlimentos = new ArrayList<>();
+            listaUsuarios = new ArrayList<>();
+            listaProfesionales = new ArrayList<>();
+        } finally {
+            if(in!=null){
+                try{
+                    in.close();
+                }
+                catch(IOException ex){
+                    
+                }
+            }
         }
+        
     }
 
     public void guardarSistema() {
+        ObjectOutputStream out = null;
         try {
-            ObjectOutputStream out = new ObjectOutputStream
-                                         (new FileOutputStream("sis.ser"));
+            out = new ObjectOutputStream(new FileOutputStream("sis.ser"));
             out.writeObject(listaAlimentos);
             out.writeObject(listaUsuarios);
             out.writeObject(listaProfesionales);
             out.flush();
             out.close();
         } catch (IOException ex) {
+        } finally {
+            if(out!=null){
+                try{
+                    out.close();
+                }
+                catch(IOException ex){
+                    
+                }
+            }
+            
         }
+        
     }
 
     //Metodo para validarque el dato sea numericoF
@@ -187,7 +193,6 @@ public class Sistema implements Serializable {
     public void registroProfesional(String unNombre, String unApellido,
                                     String unNombreUsuario,
                                     String unNombreTitulo,
-                                    Profesional.Pais unPais,
                                     ImageIcon unaFotoPerfil,
                                     String unaFechaNacimiento,
                                     String unaFechaGraduacion,
@@ -218,5 +223,4 @@ public class Sistema implements Serializable {
             this.getListaAlimentos().add(alimento);
         }
     }
-
 }

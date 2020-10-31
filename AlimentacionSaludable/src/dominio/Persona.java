@@ -67,18 +67,18 @@ public abstract class Persona implements Serializable {
     //Redefino el equals
     @Override
     public boolean equals(Object obj) {
-        boolean retorno = true;
         if (obj == null) {
-            retorno = false;
+            return false;
         }
         if (obj.getClass() != this.getClass()) {
-            retorno = false;
+            return false;
         }
-        if(retorno == true){
-            Persona p = (Persona) obj;
-            retorno = this.getNombreUsuario()
-                      .equalsIgnoreCase(p.getNombreUsuario());
-        }
-        return retorno;
+        Persona p = (Persona) obj;
+        return this.getNombreUsuario().equalsIgnoreCase(p.getNombreUsuario());
+    }
+    
+    @Override
+    public int hashCode(){
+        return 1;
     }
 }

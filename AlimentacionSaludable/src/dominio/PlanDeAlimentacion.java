@@ -1,7 +1,6 @@
 package dominio;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class PlanDeAlimentacion implements Serializable{
@@ -21,13 +20,13 @@ public class PlanDeAlimentacion implements Serializable{
     //Constructor
     public PlanDeAlimentacion(Usuario usuario) {
         this.usuario = usuario;
-        listaLunes = new ArrayList<Alimento>();
-        listaMartes = new ArrayList<Alimento>();
-        listaMiercoles = new ArrayList<Alimento>();
-        listaJueves = new ArrayList<Alimento>();
-        listaViernes = new ArrayList<Alimento>();
-        listaSabado = new ArrayList<Alimento>();
-        listaDomingo = new ArrayList<Alimento>();
+        listaLunes = new ArrayList<>();
+        listaMartes = new ArrayList<>();
+        listaMiercoles = new ArrayList<>();
+        listaJueves = new ArrayList<>();
+        listaViernes = new ArrayList<>();
+        listaSabado = new ArrayList<>();
+        listaDomingo = new ArrayList<>();
     }
     
     //Metodos de la clase PlanDeAliemntacion

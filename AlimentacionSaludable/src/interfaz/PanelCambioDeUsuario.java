@@ -141,13 +141,13 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
             this.limpioInterfaces();
-            if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Profesional) {
+            if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.PROFESIONAL) {
                 Profesional profSeleccionado = (Profesional) listaUsuarios.getSelectedValue();
                 ventana.remove(this);
                 InterfazBotonesProfesional nuevaBotonera = new InterfazBotonesProfesional(sistema, ventana, profSeleccionado);
                 ventana.pack();
             }
-            if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Usuario) {
+            if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.USUARIO) {
                 Usuario usuarioSeleccionado = (Usuario) listaUsuarios.getSelectedValue();
                 ventana.remove(this);
                 InterfazBotonesUsuario nuevaBotonera = new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);
@@ -182,19 +182,19 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         actualizarLista();
     }//GEN-LAST:event_listaTiposDeUsuariosActionPerformed
     void actualizarLista() {
-        if (sistema.getListaUsuarios().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Usuario) {
+        if (sistema.getListaUsuarios().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.USUARIO) {
             btnCambiarUsuario.setEnabled(false);
         } else {
-            if (sistema.getListaProfesionales().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Profesional) {
+            if (sistema.getListaProfesionales().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.PROFESIONAL) {
                 btnCambiarUsuario.setEnabled(false);
             } else {
                 btnCambiarUsuario.setEnabled(true);
             }
         }
-        if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Profesional) {
+        if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.PROFESIONAL) {
             listaUsuarios.setListData(sistema.getListaProfesionales().toArray());
         }
-        if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.Usuario) {
+        if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.USUARIO) {
             listaUsuarios.setListData(sistema.getListaUsuarios().toArray());
         }
     }

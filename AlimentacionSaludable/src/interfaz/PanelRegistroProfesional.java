@@ -26,9 +26,20 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         sistema = unSistema;
         ventana = unaVentana;
         prof = new Profesional();
-        Profesional.Pais[] listaPaises = prof.inicializoListaEnumPaises();
+        Profesional.Pais[] listaPaises = {
+            Profesional.Pais.ALEMANIA, Profesional.Pais.ARGENTINA, Profesional.Pais.AUSTRALIA,
+            Profesional.Pais.AUSTRIA, Profesional.Pais.BRASIL, Profesional.Pais.CANADA,
+            Profesional.Pais.CHILE, Profesional.Pais.CHINA, Profesional.Pais.COLOMBIA,
+            Profesional.Pais.COREA_DEL_SUR, Profesional.Pais.CUBA, Profesional.Pais.ECUADOR,
+            Profesional.Pais.EGIPTO, Profesional.Pais.ESPANA, Profesional.Pais.ESTADOS_UNIDOS,
+            Profesional.Pais.FRANCIA, Profesional.Pais.GRECIA, Profesional.Pais.HOLANDA,
+            Profesional.Pais.INDIA, Profesional.Pais.INGLATERRA, Profesional.Pais.ISRAEL,
+            Profesional.Pais.ITALIA, Profesional.Pais.JAPON, Profesional.Pais.MEXICO, Profesional.Pais.PARAGUAY,
+            Profesional.Pais.PERU, Profesional.Pais.PORTUGAL, Profesional.Pais.RUSIA, Profesional.Pais.SUDAFRICA,
+            Profesional.Pais.URUGUAY, Profesional.Pais.VENEZUELA
+            };
         listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));
-        listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.Uruguay.ordinal());
+        listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.URUGUAY.ordinal());
     }
     
     @SuppressWarnings("unchecked")

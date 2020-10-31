@@ -34,8 +34,8 @@ public class AlimentoTest {
     public void testGetTipoBebidas() {
         System.out.println("getTipo");
         Alimento instance = new Alimento();
-        instance.setTipo(Alimento.TipoAlimento.Bebidas);
-        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.Bebidas;
+        instance.setTipo(Alimento.TipoAlimento.BEBIDAS);
+        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.BEBIDAS;
         Alimento.TipoAlimento result = instance.getTipo();
         assertEquals(expResult, result);
     }
@@ -44,8 +44,8 @@ public class AlimentoTest {
     public void testGetTipoCarnesBlancas() {
         System.out.println("getTipo");
         Alimento instance = new Alimento();
-        instance.setTipo(Alimento.TipoAlimento.CarnesBlancas);
-        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.CarnesBlancas;
+        instance.setTipo(Alimento.TipoAlimento.CARNES_BLANCAS);
+        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.CARNES_BLANCAS;
         Alimento.TipoAlimento result = instance.getTipo();
         assertEquals(expResult, result);
     }
@@ -54,8 +54,8 @@ public class AlimentoTest {
     public void testGetTipoCarnesRojas() {
         System.out.println("getTipo");
         Alimento instance = new Alimento();
-        instance.setTipo(Alimento.TipoAlimento.CarnesRojas);
-        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.CarnesRojas;
+        instance.setTipo(Alimento.TipoAlimento.CARNES_ROJAS);
+        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.CARNES_ROJAS;
         Alimento.TipoAlimento result = instance.getTipo();
         assertEquals(expResult, result);
     }
@@ -64,8 +64,8 @@ public class AlimentoTest {
     public void testGetTipoCereal() {
         System.out.println("getTipo");
         Alimento instance = new Alimento();
-        instance.setTipo(Alimento.TipoAlimento.Cereal);
-        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.Cereal;
+        instance.setTipo(Alimento.TipoAlimento.CEREAL);
+        Alimento.TipoAlimento expResult = Alimento.TipoAlimento.CEREAL;
         Alimento.TipoAlimento result = instance.getTipo();
         assertEquals(expResult, result);
     }

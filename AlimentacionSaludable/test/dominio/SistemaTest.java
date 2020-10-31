@@ -40,7 +40,7 @@ public class SistemaTest {
     public void testGetListaTiposDeUsuario() {
         System.out.println("getListaTiposDeUsuario");
         Sistema instance = new Sistema();
-        Sistema.tipoUsuario[] expResult = {Sistema.tipoUsuario.Profesional, Sistema.tipoUsuario.Usuario};
+        Sistema.tipoUsuario[] expResult = {Sistema.tipoUsuario.PROFESIONAL, Sistema.tipoUsuario.USUARIO};
         Sistema.tipoUsuario[] result = instance.getListaTiposDeUsuario();
         assertArrayEquals(expResult, result);
     }
@@ -136,14 +136,14 @@ public class SistemaTest {
         String unApellido = "apellido";
         String unNombreUsuario = "usuario";
         String unNombreTitulo = "titulo";
-        Profesional.Pais unPais = Profesional.Pais.Uruguay;
+        Profesional.Pais unPais = Profesional.Pais.URUGUAY;
         ImageIcon unaFotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaProfesional.png"));
         String unaFechaNacimiento = "19/11/2004";
         String unaFechaGraduacion = "19/11/2004";
-        Profesional.Pais unPaisTitulo = Profesional.Pais.Uruguay;
+        Profesional.Pais unPaisTitulo = Profesional.Pais.URUGUAY;
         Sistema instance = new Sistema();
-        instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
-        instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
+        instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
+        instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
         assertFalse(instance.getListaProfesionales().size()>1);
     }
     
@@ -154,13 +154,12 @@ public class SistemaTest {
         String unApellido = "apellido";
         String unNombreUsuario = "usuario";
         String unNombreTitulo = "titulo";
-        Profesional.Pais unPais = Profesional.Pais.Uruguay;
         ImageIcon unaFotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaProfesional.png"));
         String unaFechaNacimiento = "19/11/2004";
         String unaFechaGraduacion = "19/11/2004";
-        Profesional.Pais unPaisTitulo = Profesional.Pais.Uruguay;
+        Profesional.Pais unPaisTitulo = Profesional.Pais.URUGUAY;
         Sistema instance = new Sistema();
-        instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unPais, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
+        instance.registroProfesional(unNombre, unApellido, unNombreUsuario, unNombreTitulo, unaFotoPerfil, unaFechaNacimiento, unaFechaGraduacion, unPaisTitulo);
         assertTrue(instance.getListaProfesionales().size()>0);
     }
 
@@ -168,7 +167,7 @@ public class SistemaTest {
     public void testRegistroAlimento() {
         System.out.println("registroAlimento");
         String nombreAlim = "";
-        Alimento.TipoAlimento unTipo = Alimento.TipoAlimento.Otro;
+        Alimento.TipoAlimento unTipo = Alimento.TipoAlimento.OTROS;
         Alimento a = new Alimento();
         boolean[] unaListaNutrientes = new boolean[a.getListaNutrientesSeleccionados().length];
         Sistema instance = new Sistema();
@@ -180,7 +179,7 @@ public class SistemaTest {
     public void testRegistroAlimentoInvalido() {
         System.out.println("registroAlimentoInvalido");
         String nombreAlim = "";
-        Alimento.TipoAlimento unTipo = Alimento.TipoAlimento.Otro;
+        Alimento.TipoAlimento unTipo = Alimento.TipoAlimento.OTROS;
         Alimento a = new Alimento();
         boolean[] unaListaNutrientes = new boolean[a.getListaNutrientesSeleccionados().length];
         Sistema instance = new Sistema();
@@ -199,7 +198,7 @@ public class SistemaTest {
         ArrayList<Usuario> listaU = new ArrayList<Usuario>();
         ArrayList<Profesional> listaP = new ArrayList<Profesional>();
         ArrayList<Alimento> listaA = new ArrayList<Alimento>();
-        Sistema.tipoUsuario usuarioActivo = Sistema.tipoUsuario.NoSeleccionado;
+        Sistema.tipoUsuario usuarioActivo = Sistema.tipoUsuario.NO_SELECCIONADO;
         Sistema s = new Sistema(listaA,listaU,listaP,usuarioActivo);
     }
     

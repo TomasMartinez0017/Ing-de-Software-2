@@ -1,7 +1,6 @@
 package dominio;
 
 import java.io.Serializable;
-import java.util.Objects;
 import java.util.Optional;
 
 public class Alimento implements Serializable {
@@ -10,14 +9,27 @@ public class Alimento implements Serializable {
     private static final long serialVersionUID = 6106269076155338045L;
     private String nombre;
     private TipoAlimento tipo;
-    private TipoAlimento[] listaEnumTipoAlimento = inicializoEnumTipoAlimento();
-    private Nutrientes[] listaEnumNutrientes = inicializoEnumNutrientes();
+    private TipoAlimento[] listaEnumTipoAlimento = {
+            TipoAlimento.BEBIDAS, TipoAlimento.CARNES_BLANCAS,
+            TipoAlimento.CARNES_ROJAS, TipoAlimento.CEREAL,
+            TipoAlimento.EMBUTIDOS, TipoAlimento.FRUTA,
+            TipoAlimento.LACTEOS, TipoAlimento.LEGUMBRE,
+            TipoAlimento.MARISCOS, TipoAlimento.OTROS,
+            TipoAlimento.POSTRES, TipoAlimento.PROVENIENTE_DE_ANIMALES,
+            TipoAlimento.VEGETALES
+            };
+    private Nutrientes[] listaEnumNutrientes = {
+            Nutrientes.AGUA, Nutrientes.FIBRA,
+            Nutrientes.HIDRATOS_DE_CARBONO,
+            Nutrientes.LIPIDOS, Nutrientes.MINERALES,
+            Nutrientes.PROTEINAS, Nutrientes.VITAMINAS
+            };
     private boolean[] listaNutrientesSeleccionados;
 
     //Constructor
     public Alimento() {
         this.nombre = "sin nombre";
-        this.tipo = TipoAlimento.Otro;
+        this.tipo = TipoAlimento.OTROS;
         this.listaNutrientesSeleccionados = new boolean[listaEnumNutrientes
                                                         .length];
     }
@@ -42,8 +54,7 @@ public class Alimento implements Serializable {
     }
 
     public Nutrientes[] getListaEnumNutrientes() {
-        Nutrientes[] lista = listaEnumNutrientes;
-        return lista;
+        return listaEnumNutrientes;
     }
 
     public void setListaEnumNutrientes(Nutrientes[] listaEnumNutrientes) {
@@ -53,8 +64,7 @@ public class Alimento implements Serializable {
     }
 
     public TipoAlimento[] getListaEnumTipoAlimento() {
-        TipoAlimento[] lista = listaEnumTipoAlimento;
-        return lista;
+        return listaEnumTipoAlimento;   
     }
 
     public void setListaEnumTipoAlimento(TipoAlimento[]
@@ -65,8 +75,8 @@ public class Alimento implements Serializable {
     }
 
     public boolean[] getListaNutrientesSeleccionados() {
-        boolean[] lista = listaNutrientesSeleccionados;
-        return lista;
+        return listaNutrientesSeleccionados;
+       
     }
 
     public void setListaNutrientesSeleccionados(boolean[]
@@ -77,37 +87,14 @@ public class Alimento implements Serializable {
     }
 
     public enum TipoAlimento {
-        Fruta, Cereal, Legumbre, CarnesBlancas, CarnesRojas, Vegetales,
-        Embutidos, Lacteos, Bebidas, Mariscos, Postres, Otro,
-        ProvenienteDeAnimales
-    }
-
-    public TipoAlimento[] inicializoEnumTipoAlimento() {
-        TipoAlimento[] listaEnumPivot = {
-            TipoAlimento.Bebidas, TipoAlimento.CarnesBlancas,
-            TipoAlimento.CarnesRojas, TipoAlimento.Cereal,
-            TipoAlimento.Embutidos, TipoAlimento.Fruta,
-            TipoAlimento.Lacteos, TipoAlimento.Legumbre,
-            TipoAlimento.Mariscos, TipoAlimento.Otro,
-            TipoAlimento.Postres, TipoAlimento.ProvenienteDeAnimales,
-            TipoAlimento.Vegetales
-        };
-        return listaEnumPivot;
+        FRUTA, CEREAL, LEGUMBRE, CARNES_BLANCAS, CARNES_ROJAS, VEGETALES,
+        EMBUTIDOS, LACTEOS, BEBIDAS, MARISCOS, POSTRES, OTROS,
+        PROVENIENTE_DE_ANIMALES
     }
 
     public enum Nutrientes {
-        Proteinas, Lipidos, HidratosDeCarbono, Vitaminas, Minerales, Agua,
-        Fibra, Ninguna
-    }
-
-    public Nutrientes[] inicializoEnumNutrientes() {
-        Nutrientes[] listaEnumPivot = {
-            Nutrientes.Agua, Nutrientes.Fibra,
-            Nutrientes.HidratosDeCarbono,
-            Nutrientes.Lipidos, Nutrientes.Minerales,
-            Nutrientes.Proteinas, Nutrientes.Vitaminas
-        };
-        return listaEnumPivot;
+        PROTEINAS, LIPIDOS, HIDRATOS_DE_CARBONO, VITAMINAS, MINERALES, AGUA,
+        FIBRA, NINGUNA
     }
 
     //redefino toString
@@ -118,12 +105,17 @@ public class Alimento implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        return hash;
+        return 1;
     }
     
     @Override
     public boolean equals(Object obj) {
+        if(obj == null){
+            return false;
+        }
+        if(this.getClass()!=obj.getClass()){
+            return false;
+        }
         Alimento a = (Alimento) obj;
         return a.nombre.equals(this.nombre);
     }
