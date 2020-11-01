@@ -32,6 +32,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         listaAModificar = unaLista;
         plan = unPlan;
         listaComidas.setListData(sistema.getListaAlimentos().toArray());
+        jLabelComidaAgregada.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -43,6 +44,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         listaComidas = new javax.swing.JList();
         btnAgregarComida = new javax.swing.JButton();
         btnVolver = new javax.swing.JButton();
+        jLabelComidaAgregada = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -66,6 +68,11 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         btnAgregarComida.setText("Agregar Comida");
         btnAgregarComida.setContentAreaFilled(false);
         btnAgregarComida.setOpaque(true);
+        btnAgregarComida.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                btnAgregarComidaFocusLost(evt);
+            }
+        });
         btnAgregarComida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarComidaActionPerformed(evt);
@@ -84,6 +91,11 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         });
         add(btnVolver);
         btnVolver.setBounds(10, 10, 100, 60);
+
+        jLabelComidaAgregada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelComidaAgregada.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        add(jLabelComidaAgregada);
+        jLabelComidaAgregada.setBounds(170, 540, 460, 30);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
@@ -97,13 +109,20 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();
         listaAModificar.add(alimentoAAgregar);
+        jLabelComidaAgregada.setText("Comida agregada correctamente");
+        jLabelComidaAgregada.setVisible(true);
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
+
+    private void btnAgregarComidaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAgregarComidaFocusLost
+        jLabelComidaAgregada.setVisible(false);
+    }//GEN-LAST:event_btnAgregarComidaFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregarComida;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabelComidaAgregada;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList listaComidas;
     // End of variables declaration//GEN-END:variables

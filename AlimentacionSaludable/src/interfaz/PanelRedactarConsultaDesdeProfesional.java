@@ -22,6 +22,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         interfazProf = interfazActual;
         ventana = unaVentana;
         listaUsrConsultas.setModel(new DefaultComboBoxModel(sistema.getListaUsuarios().toArray()));
+        jLabelMensajeEnviado.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -39,6 +40,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         etiquetaAsunto = new javax.swing.JLabel();
         cajaAsunto = new javax.swing.JTextField();
         etiquetaTitulo = new javax.swing.JLabel();
+        jLabelMensajeEnviado = new javax.swing.JLabel();
 
         panelRedactarConsulta.setBackground(new java.awt.Color(255, 255, 255));
         panelRedactarConsulta.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -106,15 +108,26 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         panelRedactarConsulta.add(etiquetaTitulo);
         etiquetaTitulo.setBounds(410, 10, 310, 44);
 
+        jLabelMensajeEnviado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabelMensajeEnviado.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        panelRedactarConsulta.add(jLabelMensajeEnviado);
+        jLabelMensajeEnviado.setBounds(370, 610, 430, 20);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelRedactarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelRedactarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelRedactarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelRedactarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -134,6 +147,8 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         mensajeAEnviar.setAsunto(cajaAsunto.getText());
         mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
         destino.getCasillaDeEntrada().add(mensajeAEnviar);
+        jLabelMensajeEnviado.setText("Mensaje enviado correctamente");
+        jLabelMensajeEnviado.setVisible(true);
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
 
 
@@ -145,6 +160,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
     private javax.swing.JLabel etiquetaDestinatarioConsulta;
     private javax.swing.JLabel etiquetaMensaje;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabelMensajeEnviado;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JComboBox<String> listaUsrConsultas;
     private javax.swing.JPanel panelRedactarConsulta;
