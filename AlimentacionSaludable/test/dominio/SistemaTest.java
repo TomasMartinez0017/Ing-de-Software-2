@@ -105,7 +105,7 @@ public class SistemaTest {
         double unaAltura = 1.0;
         ImageIcon unaFotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
         double unPeso = 1.0;
-        Usuario.Nacionalidades unaNacionalidad = Usuario.Nacionalidades.Uruguaya;
+        Usuario.Nacionalidades unaNacionalidad = Usuario.Nacionalidades.URUGUAYA;
         Sistema instance = new Sistema();
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
         assertTrue(instance.getListaUsuarios().size()>0);
@@ -122,7 +122,7 @@ public class SistemaTest {
         double unaAltura = 1.0;
         ImageIcon unaFotoPerfil = new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"));
         double unPeso = 1.0;
-        Usuario.Nacionalidades unaNacionalidad = Usuario.Nacionalidades.Uruguaya;
+        Usuario.Nacionalidades unaNacionalidad = Usuario.Nacionalidades.URUGUAYA;
         Sistema instance = new Sistema();
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);
         instance.registroUsuario(unNombre, unApellido, unUsuario, unSexo, unaFechaNacimiento, unaAltura, unaFotoPerfil, unPeso, unaNacionalidad);

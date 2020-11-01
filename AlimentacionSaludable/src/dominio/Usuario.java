@@ -57,7 +57,7 @@ public class Usuario extends Persona implements Serializable {
                            .swing.ImageIcon(getClass()
                            .getResource
                            ("/imagenes/predeterminadaUsuario.jpg")));
-        this.nacionalidad = Nacionalidades.Uruguaya;
+        this.nacionalidad = Nacionalidades.URUGUAYA;
         this.pesoKg = 0;
         this.alturaCm = 0;
         this.preferenciasAlimentarias = Preferencias.Ninguna;
@@ -210,11 +210,11 @@ public class Usuario extends Persona implements Serializable {
     }
 
     public enum Nacionalidades {
-        Alemana, Argentina, Australiana, Austriaca, Brasileña, Canadiense,
-        Chilena, China, Colombiana, Cubana, Ecuatoriana, Egipcia,
-        Española, EstadoUnidense, Francesa, Griega, Holandesa, India, Inglesa,
-        Israeli, Italiana, Japonesa, Méxicana, Paraguaya, Peruana, Portuguesa,
-        Rusa, Sudáfricana, Surcoreana, Uruguaya, Venezolana
+        ALEMANA, ARGENTINA, AUSTRALIANA, AUSTRIACA, BRASILEÑA, CANADIENSE,
+        CHILENA, CHINA, COLOMBIANA, CUBANA, ECUATORIANA, EGIPCIA,
+        ESPAÑOLA, ESTADO_UNIDENSE, FRANCESA, GRIEGA, HOLANDESA, INDIA, INGLESA,
+        ISRAELI, ITALIANA, JAPONESA, MEXICANA, PARAGUAYA, PERUANA, PORTUGUESA,
+        RUSA, SUDAFRICANA, SURCOREANA, URUGUAYA, VENEZOLANA
     }
 
     String[] inicializoListaNacionalidades() {
@@ -231,22 +231,22 @@ public class Usuario extends Persona implements Serializable {
 
     public Nacionalidades[] inicializoListaEnum() {
         Nacionalidades[] listaEnumPivot = {
-            Nacionalidades.Alemana, Nacionalidades.Argentina,
-            Nacionalidades.Australiana, Nacionalidades.Austriaca,
-            Nacionalidades.Brasileña, Nacionalidades.Canadiense,
-            Nacionalidades.Chilena, Nacionalidades.China,
-            Nacionalidades.Colombiana, Nacionalidades.Surcoreana,
-            Nacionalidades.Cubana, Nacionalidades.Ecuatoriana, 
-            Nacionalidades.Egipcia, Nacionalidades.Española, 
-            Nacionalidades.EstadoUnidense, Nacionalidades.Francesa,
-            Nacionalidades.Griega, Nacionalidades.Holandesa,
-            Nacionalidades.India, Nacionalidades.Inglesa,
-            Nacionalidades.Israeli, Nacionalidades.Italiana,
-            Nacionalidades.Japonesa, Nacionalidades.Méxicana,
-            Nacionalidades.Paraguaya, Nacionalidades.Peruana,
-            Nacionalidades.Portuguesa, Nacionalidades.Rusa,
-            Nacionalidades.Sudáfricana, Nacionalidades.Uruguaya,
-            Nacionalidades.Venezolana
+            Nacionalidades.ALEMANA, Nacionalidades.ARGENTINA,
+            Nacionalidades.AUSTRALIANA, Nacionalidades.AUSTRIACA,
+            Nacionalidades.BRASILEÑA, Nacionalidades.CANADIENSE,
+            Nacionalidades.CHILENA, Nacionalidades.CHINA,
+            Nacionalidades.COLOMBIANA, Nacionalidades.SURCOREANA,
+            Nacionalidades.CUBANA, Nacionalidades.ECUATORIANA, 
+            Nacionalidades.EGIPCIA, Nacionalidades.ESPAÑOLA, 
+            Nacionalidades.ESTADO_UNIDENSE, Nacionalidades.FRANCESA,
+            Nacionalidades.GRIEGA, Nacionalidades.HOLANDESA,
+            Nacionalidades.INDIA, Nacionalidades.INGLESA,
+            Nacionalidades.ISRAELI, Nacionalidades.ITALIANA,
+            Nacionalidades.JAPONESA, Nacionalidades.MEXICANA,
+            Nacionalidades.PARAGUAYA, Nacionalidades.PERUANA,
+            Nacionalidades.PORTUGUESA, Nacionalidades.RUSA,
+            Nacionalidades.SUDAFRICANA, Nacionalidades.URUGUAYA,
+            Nacionalidades.VENEZOLANA
         };
         return listaEnumPivot;
     }

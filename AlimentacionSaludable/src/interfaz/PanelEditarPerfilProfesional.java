@@ -6,6 +6,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -21,8 +22,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
     private InterfazBotonesProfesional interfaz;
 
     //Constructor
-    public PanelEditarPerfilProfesional(Sistema unSistema, JFrame unaVentana,
-            InterfazBotonesProfesional interfazActual) {
+    public PanelEditarPerfilProfesional(Sistema unSistema, JFrame unaVentana,InterfazBotonesProfesional interfazActual) throws Exception{
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
@@ -31,6 +31,21 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         Profesional.Pais[] listaPaises = profesional.getListaEnumPais();
         listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));
         listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.URUGUAY.ordinal());
+        
+        cajaNombreProf.setText(profesional.getNombre());
+        cajaApellidosProf.setText(profesional.getApellidos());
+        Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(profesional.getFechaNacimiento());
+        fechaNacimiento.setDate(date1);
+        cajaNombreTituloProf.setText(profesional.getFechaGraduacion());
+        Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(profesional.getFechaGraduacion());
+        fechaGraduacion.setDate(date2);
+        int pos = 0;
+        for(int i = 0; i < listaPaises.length; i++){
+            if(listaPaises[i].equals(profesional.getPaisObtuvoTitulo())){
+                pos = i;
+            }
+        }
+        listaPaisDeGraduacion.setSelectedIndex(pos);
     }
 
     @SuppressWarnings("unchecked")

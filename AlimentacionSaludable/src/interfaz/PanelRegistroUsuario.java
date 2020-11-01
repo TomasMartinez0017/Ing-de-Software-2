@@ -38,7 +38,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         grupoBotonesPreferencias.add(rBOrganico);
         Usuario.Nacionalidades[] listaNac = usuario.getListaEnumNac();
         listaNacionalidadesUsuario.setModel(new DefaultComboBoxModel(listaNac));
-        listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.Uruguaya.ordinal());
+        listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.URUGUAYA.ordinal());
         fotoPerfil.setSize(210, 240);
     }
     
@@ -392,7 +392,6 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAceptarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarUsuarioActionPerformed
-        Usuario usuario = new Usuario();
         Profesional comparoProf = new Profesional();
         comparoProf.setNombreUsuario(cajaNombUsuario.getText());
         Usuario comparoUsr = new Usuario();

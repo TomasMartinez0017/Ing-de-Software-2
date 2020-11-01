@@ -13,6 +13,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
 
@@ -23,8 +25,7 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
     private InterfazBotonesUsuario interfaz;
 
     //Constructor
-    public PanelEditarPerfilUsuario(Sistema unSistema, JFrame unaVentana,
-            InterfazBotonesUsuario interfazActual) {
+    public PanelEditarPerfilUsuario(Sistema unSistema, JFrame unaVentana, InterfazBotonesUsuario interfazActual) throws Exception {
         initComponents();
         sistema = unSistema;
         ventana = unaVentana;
@@ -39,10 +40,26 @@ public class PanelEditarPerfilUsuario extends javax.swing.JPanel {
         grupoBotonesPreferencias.add(rBOrganico);
         Usuario.Nacionalidades[] listaNac = usuario.getListaEnumNac();
         listaNacionalidadesUsuario.setModel(new DefaultComboBoxModel(listaNac));
-        listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.Uruguaya.ordinal());
+        listaNacionalidadesUsuario.setSelectedIndex(Usuario.Nacionalidades.URUGUAYA.ordinal());
         usuario.setListaRestricciones(new boolean[usuario.getListaRestricciones().length]);
         usuario.setPreferenciasAlimentarias(Usuario.Preferencias.Ninguna);
         fotoPerfil.setSize(210, 240);
+        cajaNombre.setText(usuario.getNombre());
+        cajaApellidos.setText(usuario.getApellidos());
+        int pos = 0;
+        for(int i = 0; i < listaNac.length; i++){
+            if(listaNac[i].equals(usuario.getNacionalidad())){
+                pos = i;
+            }
+        }
+        listaNacionalidadesUsuario.setSelectedIndex(pos);
+        Date date = new SimpleDateFormat("dd/MM/yyyy").parse(usuario.getFechaNacimiento());
+        fechaNacimiento.setDate(date);
+        String peso = String.valueOf(usuario.getPesoKg());
+        cajaPeso.setText(peso);
+        String altura = String.valueOf(usuario.getAlturaCm());
+        cajaAltura.setText(altura);
+        
     }
 
     @SuppressWarnings("unchecked")
