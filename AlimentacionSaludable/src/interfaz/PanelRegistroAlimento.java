@@ -2,6 +2,7 @@ package interfaz;
 
 import dominio.Sistema;
 import dominio.Alimento;
+import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -86,7 +87,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(listaTiposAlimentos);
-        listaTiposAlimentos.setBounds(420, 180, 230, 35);
+        listaTiposAlimentos.setBounds(420, 180, 230, 39);
 
         btnAceptarRegAlim.setBackground(new java.awt.Color(255, 0, 102));
         btnAceptarRegAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -100,7 +101,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(btnAceptarRegAlim);
-        btnAceptarRegAlim.setBounds(835, 660, 130, 37);
+        btnAceptarRegAlim.setBounds(835, 660, 130, 45);
 
         checkBoxProteinas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxProteinas.setText("Proteínas");
@@ -133,7 +134,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxHidratosDeCarbono);
-        checkBoxHidratosDeCarbono.setBounds(410, 270, 257, 37);
+        checkBoxHidratosDeCarbono.setBounds(410, 270, 246, 33);
 
         checkBoxVitaminas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxVitaminas.setText("Vitaminas");
@@ -144,7 +145,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxVitaminas);
-        checkBoxVitaminas.setBounds(670, 270, 150, 37);
+        checkBoxVitaminas.setBounds(670, 270, 150, 33);
 
         checkBoxMinerales.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxMinerales.setText("Minerales");
@@ -177,15 +178,16 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(checkBoxFibra);
-        checkBoxFibra.setBounds(410, 310, 120, 37);
+        checkBoxFibra.setBounds(410, 310, 120, 33);
 
         etiquetaErrorNombreAlimento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegAlimento.add(etiquetaErrorNombreAlimento);
         etiquetaErrorNombreAlimento.setBounds(710, 130, 410, 26);
 
         etiquetaMensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaMensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panelRegAlimento.add(etiquetaMensajeAlAceptar);
-        etiquetaMensajeAlAceptar.setBounds(700, 610, 400, 29);
+        etiquetaMensajeAlAceptar.setBounds(10, 670, 820, 29);
 
         etiquetaTituloPpalesNutrientes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         etiquetaTituloPpalesNutrientes.setText("Principales Nutrientes:");
@@ -233,15 +235,22 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
     private void btnAceptarRegAlimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarRegAlimActionPerformed
         Alimento comparo = new Alimento();
         comparo.setNombre(cajaNombreAlim.getText());
-        boolean nombre = !cajaNombreAlim.getText().trim().isEmpty()
-                && !sistema.getListaAlimentos().contains(comparo);
-        if (nombre) {
+        boolean nombre = !cajaNombreAlim.getText().trim().isEmpty() && !sistema.getListaAlimentos().contains(comparo);
+        boolean principalesNutrientes = (checkBoxFibra.isSelected() || checkBoxAgua.isSelected() 
+                                        || checkBoxHidratosDeCarbono.isSelected() || checkBoxLipidos.isSelected()
+                                        || checkBoxMinerales.isSelected() || checkBoxProteinas.isSelected()
+                                        || checkBoxVitaminas.isSelected());
+        if (nombre && principalesNutrientes) {
             alimento.setNombre(cajaNombreAlim.getText());
             alimento.setTipo(alimento.getListaEnumTipoAlimento()[listaTiposAlimentos.getSelectedIndex()]);
             etiquetaMensajeAlAceptar.setText("Alimento registrado correctamente");
             sistema.getListaAlimentos().add(alimento);
-        } else {
-            etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento");
+        } else if(!nombre){
+            etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento: ingrese un nombre válido");
+            etiquetaMensajeAlAceptar.setForeground(Color.red);
+        } else if(!principalesNutrientes) {
+            etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento: seleccione algun nutriente");
+            etiquetaMensajeAlAceptar.setForeground(Color.red);
         }
         alimento = new Alimento();
     }//GEN-LAST:event_btnAceptarRegAlimActionPerformed
