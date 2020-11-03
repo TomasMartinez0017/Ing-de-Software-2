@@ -7,6 +7,7 @@ package alimentacionsaludable;
 import dominio.Sistema;
 import interfaz.PanelCambioDeUsuario;
 import interfaz.PanelPrincipal;
+import interfaz.PanelIdentificacion;
 /**
  *
  * @author ale
@@ -20,7 +21,7 @@ public class AlimentacionSaludable {
         Sistema s = new Sistema();
         s.cargarSistema();
         PanelPrincipal p = new PanelPrincipal(s);
-        PanelCambioDeUsuario comienzo = new PanelCambioDeUsuario(p,p.getSistema());
+        PanelIdentificacion comienzo = new PanelIdentificacion(p.getSistema(),p);
         p.add(comienzo);
         p.pack();
         p.setLocationRelativeTo(null);

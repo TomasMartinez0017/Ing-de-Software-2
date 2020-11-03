@@ -100,7 +100,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarUsuario.setText("Cambiar Usuario");
+        btnCambiarUsuario.setText("Inicio");
         btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCambiarUsuario.setContentAreaFilled(false);
         btnCambiarUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -144,8 +144,9 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRegistrarAlimentoActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
+        ventana.remove(this);
         ventana.remove(actual);
-        actual = new PanelCambioDeUsuario(ventana, sistema, this);
+        actual = new PanelIdentificacion(sistema, ventana);
         ventana.add(actual);
         ventana.pack();
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed

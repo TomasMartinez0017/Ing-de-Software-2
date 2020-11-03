@@ -126,7 +126,8 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         btnPruebaAdministrador.setBackground(new java.awt.Color(255, 0, 102));
         btnPruebaAdministrador.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnPruebaAdministrador.setForeground(new java.awt.Color(255, 255, 255));
-        btnPruebaAdministrador.setText("Modo Administrador");
+        btnPruebaAdministrador.setText("Inicio");
+        btnPruebaAdministrador.setActionCommand("Inicio");
         btnPruebaAdministrador.setContentAreaFilled(false);
         btnPruebaAdministrador.setOpaque(true);
         btnPruebaAdministrador.addActionListener(new java.awt.event.ActionListener() {
@@ -170,7 +171,9 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             ventana.remove(interfazUsr);
         }
         ventana.remove(this);
-        InterfazBotonesAdministrador nuevaBotonera = new InterfazBotonesAdministrador(sistema, ventana);
+        //InterfazBotonesAdministrador nuevaBotonera = new InterfazBotonesAdministrador(sistema, ventana);
+        PanelIdentificacion vent=new PanelIdentificacion(sistema, ventana);
+        ventana.add(vent);
         ventana.pack();
     }//GEN-LAST:event_btnPruebaAdministradorActionPerformed
 
