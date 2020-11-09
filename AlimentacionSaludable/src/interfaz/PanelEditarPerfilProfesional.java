@@ -36,9 +36,10 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         cajaApellidosProf.setText(profesional.getApellidos());
         Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(profesional.getFechaNacimiento());
         fechaNacimiento.setDate(date1);
-        cajaNombreTituloProf.setText(profesional.getFechaGraduacion());
+        cajaNombreTituloProf.setText(profesional.getNombreTituloProf());
         Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(profesional.getFechaGraduacion());
         fechaGraduacion.setDate(date2);
+        fotoPerfil.setIcon(profesional.getFotoPerfil());
         int pos = 0;
         for(int i = 0; i < listaPaises.length; i++){
             if(listaPaises[i].equals(profesional.getPaisObtuvoTitulo())){
@@ -252,7 +253,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
             etiquetaMensajeAlAceptar.setText("Error al editar el profesional: ingrese un apellido válido");
             etiquetaMensajeAlAceptar.setForeground(Color.red);
         } else if(!fNacimientoValido){
-            etiquetaMensajeAlAceptar.setText("Error al editar el profesional: ingrese una fecha de nacimiento válido");
+            etiquetaMensajeAlAceptar.setText("Error al editar el profesional: ingrese una fecha de nacimiento válida");
             etiquetaMensajeAlAceptar.setForeground(Color.red);
         } else if(!nombreTituloValido){
             etiquetaMensajeAlAceptar.setText("Error al editar el profesional: ingrese un título válido");

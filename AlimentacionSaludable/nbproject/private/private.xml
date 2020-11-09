@@ -3,11 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/alimentacionsaludable/AlimentacionSaludable.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/interfaz/PanelAgregarComidasAPlan.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/interfaz/InterfazBotonesAdministrador.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/interfaz/PanelRedactarConsultaDesdeProfesional.java</file>
-            <file>file:/C:/Users/Usuario/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/interfaz/PanelIdentificacion.java</file>
+            <file>file:/C:/Users/AdminPC/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/dominio/Persona.java</file>
+            <file>file:/C:/Users/AdminPC/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/interfaz/PanelEditarPerfilProfesional.java</file>
+            <file>file:/C:/Users/AdminPC/Documents/GitHub/Ing-de-Software-2/AlimentacionSaludable/src/dominio/Profesional.java</file>
         </group>
     </open-files>
 </project-private>
