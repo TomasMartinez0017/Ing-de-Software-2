@@ -66,13 +66,8 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
 
         cajaNombreAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         cajaNombreAlim.setPreferredSize(new java.awt.Dimension(8, 32));
-        cajaNombreAlim.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                cajaNombreAlimFocusLost(evt);
-            }
-        });
         panelRegAlimento.add(cajaNombreAlim);
-        cajaNombreAlim.setBounds(420, 130, 230, 32);
+        cajaNombreAlim.setBounds(420, 130, 320, 32);
 
         etiquetaTipoAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaTipoAlim.setText("Tipo de alimento:");
@@ -87,7 +82,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             }
         });
         panelRegAlimento.add(listaTiposAlimentos);
-        listaTiposAlimentos.setBounds(420, 180, 230, 39);
+        listaTiposAlimentos.setBounds(420, 180, 320, 39);
 
         btnAceptarRegAlim.setBackground(new java.awt.Color(255, 0, 102));
         btnAceptarRegAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -95,6 +90,11 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         btnAceptarRegAlim.setText("Aceptar");
         btnAceptarRegAlim.setContentAreaFilled(false);
         btnAceptarRegAlim.setOpaque(true);
+        btnAceptarRegAlim.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                btnAceptarRegAlimFocusLost(evt);
+            }
+        });
         btnAceptarRegAlim.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarRegAlimActionPerformed(evt);
@@ -182,7 +182,7 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
 
         etiquetaErrorNombreAlimento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegAlimento.add(etiquetaErrorNombreAlimento);
-        etiquetaErrorNombreAlimento.setBounds(710, 130, 410, 26);
+        etiquetaErrorNombreAlimento.setBounds(760, 130, 370, 40);
 
         etiquetaMensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaMensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -217,20 +217,6 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
         boolean estadoActual = alimento.getListaNutrientesSeleccionados()[Alimento.Nutrientes.FIBRA.ordinal()];
         estadoActual = !estadoActual;
     }//GEN-LAST:event_checkBoxFibraActionPerformed
-
-    private void cajaNombreAlimFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombreAlimFocusLost
-        String nombre = cajaNombreAlim.getText();
-        if (nombre.trim().isEmpty()) {
-            etiquetaErrorNombreAlimento.setText("El nombre no puede ser vacío");
-        } else {
-            alimento.setNombre(nombre);
-            if (sistema.getListaAlimentos().contains(alimento)) {
-                etiquetaErrorNombreAlimento.setText("Esa comida ya se encuentra en el sistema");
-            } else {
-                etiquetaErrorNombreAlimento.setText(" ");
-            }
-        }
-    }//GEN-LAST:event_cajaNombreAlimFocusLost
 
     private void btnAceptarRegAlimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarRegAlimActionPerformed
         Alimento comparo = new Alimento();
@@ -283,6 +269,11 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
     private void listaTiposAlimentosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaTiposAlimentosActionPerformed
 
     }//GEN-LAST:event_listaTiposAlimentosActionPerformed
+
+    private void btnAceptarRegAlimFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAceptarRegAlimFocusLost
+        // TODO add your handling code here:
+        etiquetaMensajeAlAceptar.setText("");
+    }//GEN-LAST:event_btnAceptarRegAlimFocusLost
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

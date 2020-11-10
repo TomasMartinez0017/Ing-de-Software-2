@@ -108,9 +108,16 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
 
     private void btnAgregarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarComidaActionPerformed
         Alimento alimentoAAgregar = (Alimento) listaComidas.getSelectedValue();
-        listaAModificar.add(alimentoAAgregar);
-        jLabelComidaAgregada.setText("Comida agregada correctamente");
-        jLabelComidaAgregada.setVisible(true);
+        if(alimentoAAgregar!=null){
+            listaAModificar.add(alimentoAAgregar);
+            jLabelComidaAgregada.setText("Comida agregada correctamente");
+            jLabelComidaAgregada.setVisible(true);
+        }
+        else{
+            jLabelComidaAgregada.setText("Error: seleccione un alimento");
+            jLabelComidaAgregada.setVisible(true);
+        }
+        
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnAgregarComidaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_btnAgregarComidaFocusLost

@@ -59,7 +59,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
             }
         });
         panelConsultaProf.add(btnRedactar);
-        btnRedactar.setBounds(670, 530, 140, 37);
+        btnRedactar.setBounds(670, 530, 140, 45);
 
         textoLeerMensaje.setColumns(20);
         textoLeerMensaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -92,13 +92,14 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
             }
         });
         panelConsultaProf.add(btnBorrarCons);
-        btnBorrarCons.setBounds(830, 530, 150, 37);
+        btnBorrarCons.setBounds(830, 530, 150, 45);
 
         etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));
-        etiquetaTituloConsultas.setText("Consultas a Profesionales");
+        etiquetaTituloConsultas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaTituloConsultas.setText("Consulta Directa");
         panelConsultaProf.add(etiquetaTituloConsultas);
-        etiquetaTituloConsultas.setBounds(330, 10, 420, 44);
+        etiquetaTituloConsultas.setBounds(0, 20, 1150, 44);
 
         etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaBandejaDeEntrada.setText("Bandeja de entrada");

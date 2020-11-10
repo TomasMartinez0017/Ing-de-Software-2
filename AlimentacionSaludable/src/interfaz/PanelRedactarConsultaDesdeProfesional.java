@@ -60,7 +60,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         listaUsrConsultas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaUsrConsultas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         panelRedactarConsulta.add(listaUsrConsultas);
-        listaUsrConsultas.setBounds(330, 90, 190, 35);
+        listaUsrConsultas.setBounds(330, 90, 590, 39);
 
         etiquetaDestinatarioConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaDestinatarioConsulta.setText("Destinatario:");
@@ -68,6 +68,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         etiquetaDestinatarioConsulta.setBounds(180, 90, 150, 30);
 
         textoConsultaAEnviar.setColumns(20);
+        textoConsultaAEnviar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         textoConsultaAEnviar.setRows(5);
         jScrollPane3.setViewportView(textoConsultaAEnviar);
 
