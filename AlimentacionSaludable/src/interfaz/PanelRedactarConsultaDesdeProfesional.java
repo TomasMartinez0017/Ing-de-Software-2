@@ -140,15 +140,23 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
     }//GEN-LAST:event_btnVolverConsultasActionPerformed
 
     private void btnEnviarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarConsultaActionPerformed
-        Mensaje mensajeAEnviar = new Mensaje();
-        Usuario destino = (Usuario) listaUsrConsultas.getSelectedItem();
-        mensajeAEnviar.setOrigen(interfazProf.getUsuarioActivo());
-        mensajeAEnviar.setDestino(destino);
-        mensajeAEnviar.setAsunto(cajaAsunto.getText());
-        mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
-        destino.getCasillaDeEntrada().add(mensajeAEnviar);
-        jLabelMensajeEnviado.setText("Mensaje enviado correctamente");
-        jLabelMensajeEnviado.setVisible(true);
+        if(!textoConsultaAEnviar.getText().isEmpty()){
+            Mensaje mensajeAEnviar = new Mensaje();
+            Usuario destino = (Usuario) listaUsrConsultas.getSelectedItem();
+            mensajeAEnviar.setOrigen(interfazProf.getUsuarioActivo());
+            mensajeAEnviar.setDestino(destino);
+            mensajeAEnviar.setAsunto(cajaAsunto.getText());
+            mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
+            destino.getCasillaDeEntrada().add(mensajeAEnviar);
+            jLabelMensajeEnviado.setText("Mensaje enviado correctamente");
+            jLabelMensajeEnviado.setVisible(true);
+        }
+        else{
+            jLabelMensajeEnviado.setText("Error: el mensaje no puede ser vacío");
+            jLabelMensajeEnviado.setVisible(true);
+        }
+        
+        
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
 
 

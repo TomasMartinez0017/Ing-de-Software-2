@@ -68,7 +68,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(listaProfConsulta);
-        listaProfConsulta.setBounds(230, 110, 190, 35);
+        listaProfConsulta.setBounds(230, 110, 190, 39);
 
         textoConsultaAEnviar.setColumns(20);
         textoConsultaAEnviar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -90,7 +90,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(btnEnviarConsulta);
-        btnEnviarConsulta.setBounds(730, 580, 140, 37);
+        btnEnviarConsulta.setBounds(730, 580, 140, 45);
 
         cajaAsunto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         cajaAsunto.addActionListener(new java.awt.event.ActionListener() {
@@ -99,7 +99,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(cajaAsunto);
-        cajaAsunto.setBounds(230, 170, 530, 35);
+        cajaAsunto.setBounds(230, 170, 530, 37);
 
         etiquetaAsunto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaAsunto.setText("Asunto:");
@@ -118,8 +118,9 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         etiquetaTitulo.setBounds(360, 10, 320, 30);
 
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        mensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         add(mensajeAlAceptar);
-        mensajeAlAceptar.setBounds(710, 640, 370, 50);
+        mensajeAlAceptar.setBounds(190, 580, 530, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listaProfConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaProfConsultaActionPerformed
@@ -127,14 +128,20 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
     }//GEN-LAST:event_listaProfConsultaActionPerformed
 
     private void btnEnviarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarConsultaActionPerformed
-        Mensaje mensajeAEnviar = new Mensaje();
-        Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();
-        mensajeAEnviar.setOrigen(interfazUsuario.getUsuarioActual());
-        mensajeAEnviar.setDestino(destino);
-        mensajeAEnviar.setAsunto(cajaAsunto.getText());
-        mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
-        destino.getCasillaDeEntrada().add(mensajeAEnviar);
-        mensajeAlAceptar.setText("Se ha enviado la consulta");
+        if(!textoConsultaAEnviar.getText().isEmpty()){
+            Mensaje mensajeAEnviar = new Mensaje();
+            Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();
+            mensajeAEnviar.setOrigen(interfazUsuario.getUsuarioActual());
+            mensajeAEnviar.setDestino(destino);
+            mensajeAEnviar.setAsunto(cajaAsunto.getText());
+            mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());
+            destino.getCasillaDeEntrada().add(mensajeAEnviar);
+            mensajeAlAceptar.setText("Se ha enviado la consulta");
+        }
+        else{
+            mensajeAlAceptar.setText("Error: el mensaje no puede ser vacío");
+        }
+        
     }//GEN-LAST:event_btnEnviarConsultaActionPerformed
 
     private void btnVolverConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverConsultasActionPerformed
