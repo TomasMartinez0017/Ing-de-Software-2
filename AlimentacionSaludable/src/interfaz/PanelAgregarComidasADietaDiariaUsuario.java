@@ -1,6 +1,7 @@
 package interfaz;
 
 import dominio.Alimento;
+import dominio.ComidaPorDia;
 import dominio.Sistema;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -83,6 +84,20 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        LocalDate diaActual = LocalDate.now();
+        ComidaPorDia comida = new ComidaPorDia(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas(), diaActual.toString());
+        if(interfaz.getUsuarioActual().getHistorialComidas().isEmpty()){
+            interfaz.getUsuarioActual().getHistorialComidas().add(comida);
+        }
+        else{
+            for(int i = 0; i < interfaz.getUsuarioActual().getHistorialComidas().size(); i++){
+                ComidaPorDia aux = interfaz.getUsuarioActual().getHistorialComidas().get(i);
+                if (!aux.getFecha().equals(diaActual.toString())){
+                    interfaz.getUsuarioActual().getHistorialComidas().add(comida);
+                }
+            }
+        }
+        
         ventana.remove(this);
         PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);
         interfaz.setActual(nuevo);

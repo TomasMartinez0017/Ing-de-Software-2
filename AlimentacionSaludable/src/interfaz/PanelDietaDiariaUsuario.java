@@ -114,6 +114,12 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
             interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);
             listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());
         }
+        for(int i = 0; i < interfaz.getUsuarioActual().getHistorialComidas().size(); i++){
+                ComidaPorDia aux = interfaz.getUsuarioActual().getHistorialComidas().get(i);
+                if (aux.getComidasIngeridas().isEmpty()){
+                    interfaz.getUsuarioActual().getHistorialComidas().remove(i);
+                }
+            }
     }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
