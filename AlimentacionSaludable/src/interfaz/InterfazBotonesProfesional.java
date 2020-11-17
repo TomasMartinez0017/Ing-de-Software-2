@@ -23,6 +23,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         actual = new PanelHomeProfesional(unSistema, this, unaVentana);
         ventana.add(this);
         ventana.add(actual);
+        jLabelProf.setText(usuarioActivo.getNombre());
     }
 
     public JPanel getActual() {
@@ -50,8 +51,10 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         btnConsultaDirecta = new javax.swing.JButton();
         btnCambiarUsuario = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
+        jLabelIcon = new javax.swing.JLabel();
+        jLabelProf = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(204, 255, 153));
+        setBackground(new java.awt.Color(255, 0, 102));
         setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setPreferredSize(new java.awt.Dimension(250, 784));
         setLayout(null);
@@ -69,7 +72,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
             }
         });
         add(btnHome);
-        btnHome.setBounds(2, 32, 258, 41);
+        btnHome.setBounds(0, 100, 258, 41);
 
         btnRealizarPlan.setBackground(new java.awt.Color(255, 0, 102));
         btnRealizarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -84,7 +87,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
             }
         });
         add(btnRealizarPlan);
-        btnRealizarPlan.setBounds(2, 91, 258, 44);
+        btnRealizarPlan.setBounds(0, 160, 258, 44);
 
         btnConsultaDirecta.setBackground(new java.awt.Color(255, 0, 102));
         btnConsultaDirecta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -99,7 +102,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
             }
         });
         add(btnConsultaDirecta);
-        btnConsultaDirecta.setBounds(2, 156, 258, 43);
+        btnConsultaDirecta.setBounds(0, 230, 258, 43);
 
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -114,11 +117,23 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
             }
         });
         add(btnCambiarUsuario);
-        btnCambiarUsuario.setBounds(2, 220, 258, 44);
+        btnCambiarUsuario.setBounds(0, 280, 258, 44);
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo2.png"))); // NOI18N
         add(fondo);
-        fondo.setBounds(0, 0, 260, 784);
+        fondo.setBounds(0, 74, 260, 710);
+
+        jLabelIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/baseline_account_box_white_48dp.png"))); // NOI18N
+        add(jLabelIcon);
+        jLabelIcon.setBounds(0, 0, 60, 70);
+
+        jLabelProf.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabelProf.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelProf.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelProf.setText("Prueba 2");
+        add(jLabelProf);
+        jLabelProf.setBounds(70, 4, 190, 70);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -156,5 +171,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnRealizarPlan;
     private javax.swing.JLabel fondo;
+    private javax.swing.JLabel jLabelIcon;
+    private javax.swing.JLabel jLabelProf;
     // End of variables declaration//GEN-END:variables
 }
