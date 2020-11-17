@@ -31,8 +31,8 @@ public class Usuario extends Persona implements Serializable {
             Preferencias preferenciasAlimentarias, Restricciones restricciones,
             PlanDeAlimentacion plan, String sexo, String nombre,
             String apellidos, String nombreUsuario, String fechaNacimiento,
-            ImageIcon fotoPerfil) {
-        super(nombre, apellidos, nombreUsuario, fechaNacimiento, fotoPerfil);
+            ImageIcon fotoPerfil, String contrasena) {
+        super(nombre, apellidos, nombreUsuario, fechaNacimiento, fotoPerfil, contrasena);
         this.nacionalidad = nacionalidad;
         this.pesoKg = pesoKg;
         this.alturaCm = alturaCm;
@@ -52,7 +52,7 @@ public class Usuario extends Persona implements Serializable {
 
     public Usuario() {
         super("no ingreso nombre", "no ingreso apellido", "no ingreso usuario",
-              "no ingreso fecha nacimiento", null);
+              "no ingreso fecha nacimiento", null, "no ingreso contraseña");
         this.setFotoPerfil(new javax
                            .swing.ImageIcon(getClass()
                            .getResource

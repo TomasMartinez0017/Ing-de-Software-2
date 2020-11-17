@@ -6,6 +6,7 @@
 package interfaz;
 import dominio.*;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 /**
  *
  * @author Usuario
@@ -71,9 +72,17 @@ public class PanelIdentificacion extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        ventana.remove(this);
-        InterfazBotonesAdministrador vent= new InterfazBotonesAdministrador(sistema,ventana);
-        ventana.pack();
+        String contrasena = JOptionPane.showInputDialog("Ingrese contraseña");
+        if(contrasena != null && contrasena.equals("admin")){
+            ventana.remove(this);
+            InterfazBotonesAdministrador vent= new InterfazBotonesAdministrador(sistema,ventana);
+            ventana.pack();
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Contraseña incorrecta", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

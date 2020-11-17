@@ -3,6 +3,8 @@ package interfaz;
 import dominio.Sistema;
 import dominio.Usuario;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class PanelPerfilUsuario extends javax.swing.JPanel {
@@ -98,10 +100,16 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
 
     private void btnEditarPerfilUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarPerfilUsuarioActionPerformed
         ventana.remove(this);
-        PanelEditarPerfilUsuario nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.pack();
+        PanelEditarPerfilUsuario nuevo;
+        try {
+            nuevo = new PanelEditarPerfilUsuario(sistema, ventana, interfaz);
+            interfaz.setActual(nuevo);
+            ventana.add(nuevo);
+            ventana.pack();
+        } catch (Exception ex) {
+            Logger.getLogger(PanelPerfilUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnEditarPerfilUsuarioActionPerformed
 
 

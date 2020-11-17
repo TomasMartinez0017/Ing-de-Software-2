@@ -3,6 +3,8 @@ package interfaz;
 import dominio.Profesional;
 import dominio.Sistema;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 public class PanelHomeProfesional extends javax.swing.JPanel {
@@ -82,10 +84,16 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
 
     private void btnEdiatrPerfilProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdiatrPerfilProfesionalActionPerformed
         ventana.remove(this);
-        PanelEditarPerfilProfesional nuevo = new PanelEditarPerfilProfesional(sistema, ventana, interfaz);
-        interfaz.setActual(nuevo);
-        ventana.add(nuevo);
-        ventana.pack();
+        PanelEditarPerfilProfesional nuevo;
+        try {
+            nuevo = new PanelEditarPerfilProfesional(sistema, ventana, interfaz);
+            interfaz.setActual(nuevo);
+            ventana.add(nuevo);
+            ventana.pack();
+        } catch (Exception ex) {
+            Logger.getLogger(PanelHomeProfesional.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_btnEdiatrPerfilProfesionalActionPerformed
 
 

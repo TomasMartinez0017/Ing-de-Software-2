@@ -40,6 +40,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(profesional.getFechaGraduacion());
         fechaGraduacion.setDate(date2);
         fotoPerfil.setIcon(profesional.getFotoPerfil());
+        JContra.setText(profesional.getContrasena());
         int pos = 0;
         for(int i = 0; i < listaPaises.length; i++){
             if(listaPaises[i].equals(profesional.getPaisObtuvoTitulo())){
@@ -62,7 +63,6 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         etiquetaFechaGradProf = new javax.swing.JLabel();
         etiquetaFotoPerfilProf = new javax.swing.JLabel();
         cajaNombreProf = new javax.swing.JTextField();
-        cajaApellidosProf = new javax.swing.JTextField();
         cajaNombreTituloProf = new javax.swing.JTextField();
         btnAceptarProf = new javax.swing.JButton();
         etiquetaPaisDeGraduacion = new javax.swing.JLabel();
@@ -74,6 +74,9 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         btnCambiarFoto = new javax.swing.JButton();
         fotoPerfil = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
+        cajaApellidosProf = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        JContra = new javax.swing.JPasswordField();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -110,7 +113,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         etiquetaFechaGradProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaFechaGradProf.setText("Fecha de graduación:");
         panelRegProf.add(etiquetaFechaGradProf);
-        etiquetaFechaGradProf.setBounds(320, 320, 230, 26);
+        etiquetaFechaGradProf.setBounds(320, 320, 230, 30);
 
         etiquetaFotoPerfilProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaFotoPerfilProf.setText("Foto de perfil:");
@@ -125,15 +128,6 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         });
         panelRegProf.add(cajaNombreProf);
         cajaNombreProf.setBounds(560, 120, 160, 37);
-
-        cajaApellidosProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        cajaApellidosProf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaApellidosProfActionPerformed(evt);
-            }
-        });
-        panelRegProf.add(cajaApellidosProf);
-        cajaApellidosProf.setBounds(560, 170, 160, 37);
 
         cajaNombreTituloProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(cajaNombreTituloProf);
@@ -156,7 +150,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         etiquetaPaisDeGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaPaisDeGraduacion.setText("País de graduación:");
         panelRegProf.add(etiquetaPaisDeGraduacion);
-        etiquetaPaisDeGraduacion.setBounds(340, 370, 210, 26);
+        etiquetaPaisDeGraduacion.setBounds(340, 370, 210, 29);
 
         listaPaisDeGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaPaisDeGraduacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -206,11 +200,27 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         panelRegProf.add(btnVolver);
         btnVolver.setBounds(20, 10, 110, 60);
 
+        cajaApellidosProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        cajaApellidosProf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaApellidosProfActionPerformed(evt);
+            }
+        });
+        panelRegProf.add(cajaApellidosProf);
+        cajaApellidosProf.setBounds(560, 170, 160, 37);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Contraseña:");
+        panelRegProf.add(jLabel1);
+        jLabel1.setBounds(400, 440, 140, 29);
+        panelRegProf.add(JContra);
+        JContra.setBounds(560, 430, 160, 40);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1150, Short.MAX_VALUE)
+            .addGap(0, 1147, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -234,7 +244,27 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;
         boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();
         boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;
-        if (nombreValido && apellidoValido && fNacimientoValido && nombreTituloValido && fGraduacionValido) {
+        String contra = new String(JContra.getPassword());
+        char[] contraChar = JContra.getPassword();
+        boolean contraValida;
+        if(contra.length()>=8){
+            int cont = 0;
+            for(int i = 0; i<contraChar.length; i++){
+                if(!Character.isAlphabetic(contraChar[i]) && !Character.isDigit(contraChar[i])){
+                    cont++;
+                }
+            }
+            if(cont>0){
+                contraValida = false;
+            }
+            else{
+                contraValida = true;
+            }
+        }
+        else{
+            contraValida = false;
+        }
+        if (nombreValido && apellidoValido && fNacimientoValido && nombreTituloValido && fGraduacionValido && contraValida) {
             profesional.setNombre(cajaNombreProf.getText());
             profesional.setApellidos(cajaApellidosProf.getText());
             SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -261,7 +291,11 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         } else if(!fGraduacionValido){
             etiquetaMensajeAlAceptar.setText("Error al editar el profesional: ingrese un a fecha de graduación válida");
             etiquetaMensajeAlAceptar.setForeground(Color.red);
+        } else if(!contraValida){
+            etiquetaMensajeAlAceptar.setText("Error al editar el profesional: ingrese una contraseña alfanumérica");
+            etiquetaMensajeAlAceptar.setForeground(Color.red);
         }
+        
     }//GEN-LAST:event_btnAceptarProfActionPerformed
 
     private void btnCambiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarFotoActionPerformed
@@ -277,10 +311,6 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         actualizar();
     }//GEN-LAST:event_btnCambiarFotoActionPerformed
 
-    private void cajaApellidosProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaApellidosProfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaApellidosProfActionPerformed
-
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
         ventana.remove(this);
         PanelHomeProfesional nuevo = new PanelHomeProfesional(sistema, interfaz, ventana);
@@ -292,6 +322,10 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
     private void cajaNombreProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaNombreProfActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaNombreProfActionPerformed
+
+    private void cajaApellidosProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaApellidosProfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaApellidosProfActionPerformed
 
     void actualizar() {
         fotoPerfil.setIcon(profesional.getFotoPerfil());
@@ -305,6 +339,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
         return new ImageIcon(bufferedImage, imageIcon.getDescription());
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField JContra;
     private javax.swing.JButton btnAceptarProf;
     private javax.swing.JButton btnCambiarFoto;
     private javax.swing.JButton btnVolver;
@@ -324,6 +359,7 @@ public class PanelEditarPerfilProfesional extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser fechaGraduacion;
     private com.toedter.calendar.JDateChooser fechaNacimiento;
     private javax.swing.JLabel fotoPerfil;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JComboBox<String> listaPaisDeGraduacion;
     private javax.swing.JPanel panelRegProf;
     // End of variables declaration//GEN-END:variables

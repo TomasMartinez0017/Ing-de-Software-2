@@ -125,7 +125,7 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarUsuario.setText("Cambiar Usuario");
+        btnCambiarUsuario.setText("Inicio");
         btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCambiarUsuario.setContentAreaFilled(false);
         btnCambiarUsuario.setOpaque(true);
@@ -138,7 +138,7 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
         btnCambiarUsuario.setBounds(2, 361, 270, 45);
 
         btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));
-        btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         btnAgregarComida.setForeground(new java.awt.Color(255, 255, 255));
         btnAgregarComida.setText("Agregar Comida a Dieta");
         btnAgregarComida.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -154,12 +154,12 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo2.png"))); // NOI18N
         panelBotonesUsuario.add(fondo);
-        fondo.setBounds(0, 0, 330, 790);
+        fondo.setBounds(0, 0, 250, 790);
         panelBotonesUsuario.add(etiquetaUsuarioActual);
         etiquetaUsuarioActual.setBounds(23, 604, 282, 42);
 
         add(panelBotonesUsuario);
-        panelBotonesUsuario.setBounds(-1, 0, 330, 810);
+        panelBotonesUsuario.setBounds(-1, 0, 270, 810);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
@@ -192,7 +192,8 @@ public class InterfazBotonesUsuario extends javax.swing.JPanel {
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         ventana.remove(actual);
-        actual = new PanelCambioDeUsuario(ventana, sistema, this);
+        ventana.remove(this);
+        actual = new PanelIdentificacion(sistema, ventana);
         ventana.add(actual);
         ventana.pack();
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed

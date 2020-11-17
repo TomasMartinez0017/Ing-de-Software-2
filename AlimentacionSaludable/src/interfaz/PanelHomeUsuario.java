@@ -60,7 +60,7 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
             }
         });
         add(listaDiasDeLaSemana);
-        listaDiasDeLaSemana.setBounds(310, 110, 140, 35);
+        listaDiasDeLaSemana.setBounds(310, 110, 130, 39);
 
         etiquetaComidasDelDia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaComidasDelDia.setText("Comidas del dia:");
@@ -79,7 +79,7 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
             }
         });
         add(btnHistorialDeComidas);
-        btnHistorialDeComidas.setBounds(610, 110, 250, 37);
+        btnHistorialDeComidas.setBounds(610, 110, 250, 45);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged

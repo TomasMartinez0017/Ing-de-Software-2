@@ -6,6 +6,7 @@ import dominio.Usuario;
 import dominio.Sistema;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class PanelCambioDeUsuario extends javax.swing.JPanel {
 
@@ -73,6 +74,8 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         etiquetaTiposDeUsuarios = new javax.swing.JLabel();
         etiquetaTitulo = new javax.swing.JLabel();
         btnPruebaAdministrador = new javax.swing.JButton();
+        JContra = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -81,7 +84,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarUsuario.setText("Cambiar Usuario");
+        btnCambiarUsuario.setText("Ingresar");
         btnCambiarUsuario.setContentAreaFilled(false);
         btnCambiarUsuario.setOpaque(true);
         btnCambiarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -90,13 +93,13 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             }
         });
         add(btnCambiarUsuario);
-        btnCambiarUsuario.setBounds(640, 500, 210, 37);
+        btnCambiarUsuario.setBounds(470, 570, 210, 45);
 
         listaUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jScrollPane1.setViewportView(listaUsuarios);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(500, 120, 290, 340);
+        jScrollPane1.setBounds(430, 150, 290, 340);
 
         listaTiposDeUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaTiposDeUsuarios.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -110,24 +113,24 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             }
         });
         add(listaTiposDeUsuarios);
-        listaTiposDeUsuarios.setBounds(90, 160, 180, 35);
+        listaTiposDeUsuarios.setBounds(90, 160, 180, 39);
 
         etiquetaTiposDeUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaTiposDeUsuarios.setText("Tipo de Usuario");
         add(etiquetaTiposDeUsuarios);
-        etiquetaTiposDeUsuarios.setBounds(60, 120, 180, 29);
+        etiquetaTiposDeUsuarios.setBounds(90, 120, 180, 29);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
-        etiquetaTitulo.setText("Cambio de Usuario");
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaTitulo.setText("Iniciar Sesión");
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(330, 21, 330, 44);
+        etiquetaTitulo.setBounds(0, 21, 1150, 44);
 
         btnPruebaAdministrador.setBackground(new java.awt.Color(255, 0, 102));
         btnPruebaAdministrador.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnPruebaAdministrador.setForeground(new java.awt.Color(255, 255, 255));
         btnPruebaAdministrador.setText("Inicio");
-        btnPruebaAdministrador.setActionCommand("Inicio");
         btnPruebaAdministrador.setContentAreaFilled(false);
         btnPruebaAdministrador.setOpaque(true);
         btnPruebaAdministrador.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +139,22 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             }
         });
         add(btnPruebaAdministrador);
-        btnPruebaAdministrador.setBounds(40, 280, 250, 37);
+        btnPruebaAdministrador.setBounds(870, 710, 260, 45);
+
+        JContra.setToolTipText("");
+        JContra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JContraActionPerformed(evt);
+            }
+        });
+        add(JContra);
+        JContra.setBounds(430, 530, 290, 22);
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Contraseña:");
+        add(jLabel1);
+        jLabel1.setBounds(430, 500, 290, 24);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
@@ -144,15 +162,30 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             this.limpioInterfaces();
             if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.PROFESIONAL) {
                 Profesional profSeleccionado = (Profesional) listaUsuarios.getSelectedValue();
-                ventana.remove(this);
-                InterfazBotonesProfesional nuevaBotonera = new InterfazBotonesProfesional(sistema, ventana, profSeleccionado);
-                ventana.pack();
+                String contra = new String(JContra.getPassword());
+                if(profSeleccionado.getContrasena().equals(contra)){
+                    ventana.remove(this);
+                    InterfazBotonesProfesional nuevaBotonera = new InterfazBotonesProfesional(sistema, ventana, profSeleccionado);
+                    ventana.pack();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Contraseña Incorrecta", "ERROR", JOptionPane.ERROR_MESSAGE);
+
+                }
+                
             }
             if (listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.USUARIO) {
                 Usuario usuarioSeleccionado = (Usuario) listaUsuarios.getSelectedValue();
-                ventana.remove(this);
-                InterfazBotonesUsuario nuevaBotonera = new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);
-                ventana.pack();
+                String contra = new String(JContra.getPassword());
+                if(usuarioSeleccionado.getContrasena().equals(contra)){
+                    ventana.remove(this);
+                    InterfazBotonesUsuario nuevaBotonera = new InterfazBotonesUsuario(sistema, ventana, usuarioSeleccionado);
+                    ventana.pack();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Contraseña Incorrecta", "ERROR", JOptionPane.ERROR_MESSAGE);
+                }
+                
             }
         }
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
@@ -184,6 +217,10 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     private void listaTiposDeUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaTiposDeUsuariosActionPerformed
         actualizarLista();
     }//GEN-LAST:event_listaTiposDeUsuariosActionPerformed
+
+    private void JContraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JContraActionPerformed
+        // TODO add your handling code here
+    }//GEN-LAST:event_JContraActionPerformed
     void actualizarLista() {
         if (sistema.getListaUsuarios().size() < 1 && listaTiposDeUsuarios.getSelectedItem() == Sistema.tipoUsuario.USUARIO) {
             btnCambiarUsuario.setEnabled(false);
@@ -218,10 +255,12 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField JContra;
     private javax.swing.JButton btnCambiarUsuario;
     private javax.swing.JButton btnPruebaAdministrador;
     private javax.swing.JLabel etiquetaTiposDeUsuarios;
     private javax.swing.JLabel etiquetaTitulo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox listaTiposDeUsuarios;
     private javax.swing.JList listaUsuarios;

@@ -29,7 +29,7 @@ public class Profesional extends Persona implements Serializable {
 
     public Profesional() {
         super("no ingreso nombre", "no ingreso apellido", "no ingreso usuario",
-              "no ingreso fecha nacimiento", null);
+              "no ingreso fecha nacimiento", null, "no ingreso contraseña");
         this.setFotoPerfil(new javax.swing
                            .ImageIcon(getClass()
                            .getResource

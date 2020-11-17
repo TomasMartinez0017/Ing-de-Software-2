@@ -87,6 +87,8 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         rBMacrobiotico = new javax.swing.JRadioButton();
         rBOrganico = new javax.swing.JRadioButton();
         btnCambiarFoto = new javax.swing.JButton();
+        JContra = new javax.swing.JPasswordField();
+        jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
 
@@ -184,7 +186,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(btnAceptarUsuario);
-        btnAceptarUsuario.setBounds(820, 630, 170, 40);
+        btnAceptarUsuario.setBounds(820, 700, 170, 40);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
@@ -209,7 +211,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaSexo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaSexo.setText("Sexo:");
         panelRegUsuario.add(etiquetaSexo);
-        etiquetaSexo.setBounds(410, 420, 70, 29);
+        etiquetaSexo.setBounds(410, 490, 70, 29);
 
         rBtnMasculinoUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         rBtnMasculinoUsuario.setText("Masculino");
@@ -220,7 +222,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBtnMasculinoUsuario);
-        rBtnMasculinoUsuario.setBounds(480, 420, 150, 35);
+        rBtnMasculinoUsuario.setBounds(480, 490, 150, 35);
 
         rBtnFemeninoUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         rBtnFemeninoUsuario.setText("Femenino");
@@ -231,12 +233,12 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBtnFemeninoUsuario);
-        rBtnFemeninoUsuario.setBounds(630, 420, 160, 35);
+        rBtnFemeninoUsuario.setBounds(630, 490, 160, 35);
 
         etiquetaRestricciones.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaRestricciones.setText("Restricciones:");
         panelRegUsuario.add(etiquetaRestricciones);
-        etiquetaRestricciones.setBounds(320, 460, 150, 26);
+        etiquetaRestricciones.setBounds(320, 530, 150, 26);
 
         checkBoxCeliaco.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxCeliaco.setText("Celíaco");
@@ -247,7 +249,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(checkBoxCeliaco);
-        checkBoxCeliaco.setBounds(470, 460, 120, 35);
+        checkBoxCeliaco.setBounds(470, 530, 120, 35);
 
         checkBoxIntoleranteLactosa.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxIntoleranteLactosa.setText("Intolerante a la lactosa");
@@ -258,7 +260,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(checkBoxIntoleranteLactosa);
-        checkBoxIntoleranteLactosa.setBounds(590, 460, 274, 33);
+        checkBoxIntoleranteLactosa.setBounds(590, 530, 274, 33);
 
         checkBoxDiabetico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxDiabetico.setText("Diabético");
@@ -269,7 +271,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(checkBoxDiabetico);
-        checkBoxDiabetico.setBounds(880, 460, 140, 35);
+        checkBoxDiabetico.setBounds(880, 530, 140, 35);
 
         checkBoxHipertension.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         checkBoxHipertension.setText("Hipertensión");
@@ -280,7 +282,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(checkBoxHipertension);
-        checkBoxHipertension.setBounds(470, 500, 170, 35);
+        checkBoxHipertension.setBounds(470, 570, 170, 35);
 
         etiquetaErrorAltura.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         etiquetaErrorAltura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -295,7 +297,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaMensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaMensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panelRegUsuario.add(etiquetaMensajeAlAceptar);
-        etiquetaMensajeAlAceptar.setBounds(10, 630, 800, 40);
+        etiquetaMensajeAlAceptar.setBounds(10, 700, 800, 40);
 
         fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaUsuario.jpg"))); // NOI18N
         fotoPerfil.setMaximumSize(new java.awt.Dimension(210, 240));
@@ -313,7 +315,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         etiquetaPreferencias.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaPreferencias.setText("Preferencias:");
         panelRegUsuario.add(etiquetaPreferencias);
-        etiquetaPreferencias.setBounds(320, 540, 150, 26);
+        etiquetaPreferencias.setBounds(320, 610, 150, 26);
 
         rBVegano.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         rBVegano.setText("Vegano");
@@ -324,7 +326,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBVegano);
-        rBVegano.setBounds(470, 540, 120, 37);
+        rBVegano.setBounds(470, 610, 120, 37);
 
         rBVegetariano.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         rBVegetariano.setText("Vegetariano");
@@ -335,7 +337,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBVegetariano);
-        rBVegetariano.setBounds(590, 540, 170, 37);
+        rBVegetariano.setBounds(590, 610, 170, 37);
 
         rBMacrobiotico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         rBMacrobiotico.setText("Macrobiótico");
@@ -346,7 +348,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBMacrobiotico);
-        rBMacrobiotico.setBounds(760, 540, 180, 37);
+        rBMacrobiotico.setBounds(760, 610, 180, 37);
 
         rBOrganico.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         rBOrganico.setText("Orgánico");
@@ -357,7 +359,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             }
         });
         panelRegUsuario.add(rBOrganico);
-        rBOrganico.setBounds(940, 540, 140, 37);
+        rBOrganico.setBounds(940, 610, 140, 37);
 
         btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -372,6 +374,13 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         });
         panelRegUsuario.add(btnCambiarFoto);
         btnCambiarFoto.setBounds(30, 330, 210, 45);
+        panelRegUsuario.add(JContra);
+        JContra.setBounds(480, 430, 160, 40);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel1.setText("Contraseña:");
+        panelRegUsuario.add(jLabel1);
+        jLabel1.setBounds(340, 430, 140, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -405,7 +414,27 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         boolean altura = pidoDatoNumerico(cajaAltura.getText(), 0, 265, etiquetaErrorAltura);
         boolean peso = pidoDatoNumerico(cajaPeso.getText(), 0, 600, etiquetaErrorPeso);
         boolean sexoPred = sexoPredeterminado();
-        if (apellidoValido && nombreUsuarioValido && altura && peso && fNacimientoValido) {
+        String contra = new String(JContra.getPassword());
+        char[] contraChar = JContra.getPassword();
+        boolean contraValida;
+        if(contra.length()>=8){
+            int cont = 0;
+            for(int i = 0; i<contraChar.length; i++){
+                if(!Character.isAlphabetic(contraChar[i]) && !Character.isDigit(contraChar[i])){
+                    cont++;
+                }
+            }
+            if(cont>0){
+                contraValida = false;
+            }
+            else{
+                contraValida = true;
+            }
+        }
+        else{
+            contraValida = false;
+        }
+        if (apellidoValido && nombreUsuarioValido && altura && peso && fNacimientoValido && contraValida) {
             usuario.setNombre(cajaNombre.getText());
             usuario.setApellidos(cajaApellidos.getText());
             usuario.setNombreUsuario(cajaNombUsuario.getText());
@@ -421,6 +450,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
             usuario.setAlturaCm(Integer.parseInt(cajaAltura.getText()));
             usuario.setPesoKg(Integer.parseInt(cajaPeso.getText()));
             usuario.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
+            usuario.setContrasena(contra);
             sistema.getListaUsuarios().add(usuario);
             etiquetaMensajeAlAceptar.setText("Usuario registrado correctamente");   
         }
@@ -447,7 +477,11 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
         else if(!peso){
             etiquetaMensajeAlAceptar.setText("Error al ingresar el usuario: ingrese un peso válido");
             etiquetaMensajeAlAceptar.setForeground(Color.red);
-        }    
+        }
+        else if(!contraValida){
+            etiquetaMensajeAlAceptar.setText("Error al ingresar el usuario: ingrese una contraseña válida (alfanumérica)");
+            etiquetaMensajeAlAceptar.setForeground(Color.red);
+        }
     }//GEN-LAST:event_btnAceptarUsuarioActionPerformed
 
     private void rBtnMasculinoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rBtnMasculinoUsuarioActionPerformed
@@ -542,6 +576,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField JContra;
     private javax.swing.JButton btnAceptarUsuario;
     private javax.swing.JButton btnCambiarFoto;
     private javax.swing.JTextField cajaAltura;
@@ -575,6 +610,7 @@ public class PanelRegistroUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel fotoPerfil;
     private javax.swing.ButtonGroup grupoBotonesPreferencias;
     private javax.swing.ButtonGroup grupoBotonesSexo;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JComboBox listaNacionalidadesUsuario;
     private javax.swing.JPanel panelRegUsuario;
     private javax.swing.JRadioButton rBMacrobiotico;

@@ -12,15 +12,17 @@ public abstract class Persona implements Serializable {
     private String nombreUsuario;
     private String fechaNacimiento;
     private ImageIcon fotoPerfil;
+    private String contrasena;
 
     //Cosntructor
     public Persona(String nombre, String apellidos, String nombreUsuario,
-                   String fechaNacimiento, ImageIcon fotoPerfil) {
+                   String fechaNacimiento, ImageIcon fotoPerfil, String unaContrasena) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nombreUsuario = nombreUsuario;
         this.fechaNacimiento = fechaNacimiento;
         this.fotoPerfil = fotoPerfil;
+        this.contrasena = unaContrasena;
     }
 
     //Metodos de la clase persona
@@ -62,6 +64,14 @@ public abstract class Persona implements Serializable {
 
     public void setFotoPerfil(ImageIcon fotoPerfil) {
         this.fotoPerfil = fotoPerfil;
+    }
+    
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     //Redefino el equals
