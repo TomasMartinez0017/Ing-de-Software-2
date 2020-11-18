@@ -3,6 +3,7 @@ package interfaz;
 import dominio.Profesional;
 import dominio.Sistema;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class InterfazBotonesProfesional extends javax.swing.JPanel {
@@ -107,7 +108,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarUsuario.setText("Inicio");
+        btnCambiarUsuario.setText("Salir");
         btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCambiarUsuario.setContentAreaFilled(false);
         btnCambiarUsuario.setOpaque(true);
@@ -158,11 +159,14 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
     }//GEN-LAST:event_btnRealizarPlanActionPerformed
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
-        ventana.remove(actual);
-        ventana.remove(this);
-        actual = new PanelIdentificacion(sistema, ventana);
-        ventana.add(actual);
-        ventana.pack();
+        int result = JOptionPane.showConfirmDialog(ventana, "¿Desea cerrar sesión?", "Salir", JOptionPane.YES_OPTION, JOptionPane.NO_OPTION);
+        if(result == 0){
+            ventana.remove(actual);
+            ventana.remove(this);
+            actual = new PanelIdentificacion(sistema, ventana);
+            ventana.add(actual);
+            ventana.pack();
+        } 
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
 
 

@@ -63,7 +63,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed
         if (listaUsuarios.getSelectedValue() != null) {
-            Usuario usuarioAModificar = sistema.getListaUsuarios().get(listaUsuarios.getSelectedIndex());
+            Usuario usuarioAModificar = (Usuario)listaUsuarios.getSelectedValue();
             ventana.remove(this);
             PanelRealizarPlanAlimentacion nuevo = new PanelRealizarPlanAlimentacion(sistema, interfaz, ventana, usuarioAModificar);
             interfaz.setActual(nuevo);
