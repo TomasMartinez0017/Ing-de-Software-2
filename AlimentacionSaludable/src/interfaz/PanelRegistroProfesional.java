@@ -268,6 +268,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             profesional.setFechaGraduacion(fGraduacion);
             profesional.setPaisObtuvoTitulo(profesional.getListaEnumPais()[listaPaisDeGraduacion.getSelectedIndex()]);
             profesional.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());
+            profesional.setContrasena(contra);
             sistema.getListaProfesionales().add(profesional);
             etiquetaMensajeAlAceptar.setText("Profesional registrado correctamente");
         } else if (!nombreValido){

@@ -102,12 +102,12 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
             }
         });
         add(btnConsultaDirecta);
-        btnConsultaDirecta.setBounds(0, 230, 258, 43);
+        btnConsultaDirecta.setBounds(0, 220, 258, 43);
 
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnCambiarUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambiarUsuario.setText("Cambiar Usuario");
+        btnCambiarUsuario.setText("Inicio");
         btnCambiarUsuario.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnCambiarUsuario.setContentAreaFilled(false);
         btnCambiarUsuario.setOpaque(true);
@@ -159,7 +159,8 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
 
     private void btnCambiarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarUsuarioActionPerformed
         ventana.remove(actual);
-        actual = new PanelCambioDeUsuario(ventana, sistema, this);
+        ventana.remove(this);
+        actual = new PanelIdentificacion(sistema, ventana);
         ventana.add(actual);
         ventana.pack();
     }//GEN-LAST:event_btnCambiarUsuarioActionPerformed
