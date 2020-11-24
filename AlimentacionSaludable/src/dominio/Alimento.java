@@ -117,7 +117,7 @@ public class Alimento implements Serializable {
             return false;
         }
         Alimento a = (Alimento) obj;
-        return a.nombre.equals(this.nombre);
+        return this.getNombre().equals(a.getNombre());
     }
     
 

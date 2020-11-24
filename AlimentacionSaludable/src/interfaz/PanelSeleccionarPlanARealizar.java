@@ -36,6 +36,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         setLayout(null);
 
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setText("Seleccionar Plan de Alimentacion a Realizar");
         add(etiquetaTitulo);
         etiquetaTitulo.setBounds(190, 20, 710, 40);

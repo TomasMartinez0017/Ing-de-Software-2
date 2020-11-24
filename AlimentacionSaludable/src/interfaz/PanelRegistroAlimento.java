@@ -232,8 +232,14 @@ public class PanelRegistroAlimento extends javax.swing.JPanel {
             etiquetaMensajeAlAceptar.setText("Alimento registrado correctamente");
             sistema.getListaAlimentos().add(alimento);
         } else if(!nombre){
-            etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento: ingrese un nombre válido");
-            etiquetaMensajeAlAceptar.setForeground(Color.red);
+            if(sistema.getListaAlimentos().contains(comparo)){
+                etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento: alimneto ya registrado");
+                etiquetaMensajeAlAceptar.setForeground(Color.red);
+            }
+            else{
+                etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento: ingrese un nombre válido");
+                etiquetaMensajeAlAceptar.setForeground(Color.red);
+            }
         } else if(!principalesNutrientes) {
             etiquetaMensajeAlAceptar.setText("Error al ingresar el alimento: seleccione algun nutriente");
             etiquetaMensajeAlAceptar.setForeground(Color.red);
