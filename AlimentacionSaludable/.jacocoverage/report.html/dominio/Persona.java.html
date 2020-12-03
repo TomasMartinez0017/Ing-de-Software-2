@@ -12,74 +12,84 @@ public abstract class Persona implements Serializable {
     private String nombreUsuario;
     private String fechaNacimiento;
     private ImageIcon fotoPerfil;
+    private String contrasena;
 
     //Cosntructor
     public Persona(String nombre, String apellidos, String nombreUsuario,
-<span class="fc" id="L18">                   String fechaNacimiento, ImageIcon fotoPerfil) {</span>
-<span class="fc" id="L19">        this.nombre = nombre;</span>
-<span class="fc" id="L20">        this.apellidos = apellidos;</span>
-<span class="fc" id="L21">        this.nombreUsuario = nombreUsuario;</span>
-<span class="fc" id="L22">        this.fechaNacimiento = fechaNacimiento;</span>
-<span class="fc" id="L23">        this.fotoPerfil = fotoPerfil;</span>
-<span class="fc" id="L24">    }</span>
+<span class="fc" id="L19">                   String fechaNacimiento, ImageIcon fotoPerfil, String unaContrasena) {</span>
+<span class="fc" id="L20">        this.nombre = nombre;</span>
+<span class="fc" id="L21">        this.apellidos = apellidos;</span>
+<span class="fc" id="L22">        this.nombreUsuario = nombreUsuario;</span>
+<span class="fc" id="L23">        this.fechaNacimiento = fechaNacimiento;</span>
+<span class="fc" id="L24">        this.fotoPerfil = fotoPerfil;</span>
+<span class="fc" id="L25">        this.contrasena = unaContrasena;</span>
+<span class="fc" id="L26">    }</span>
 
     //Metodos de la clase persona
     public String getNombre() {
-<span class="fc" id="L28">        return nombre;</span>
+<span class="fc" id="L30">        return nombre;</span>
     }
 
     public void setNombre(String nombre) {
-<span class="fc" id="L32">        this.nombre = nombre;</span>
-<span class="fc" id="L33">    }</span>
+<span class="fc" id="L34">        this.nombre = nombre;</span>
+<span class="fc" id="L35">    }</span>
 
     public String getApellidos() {
-<span class="fc" id="L36">        return apellidos;</span>
+<span class="fc" id="L38">        return apellidos;</span>
     }
 
     public void setApellidos(String apellidos) {
-<span class="fc" id="L40">        this.apellidos = apellidos;</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L42">        this.apellidos = apellidos;</span>
+<span class="fc" id="L43">    }</span>
 
     public String getNombreUsuario() {
-<span class="fc" id="L44">        return nombreUsuario;</span>
+<span class="fc" id="L46">        return nombreUsuario;</span>
     }
 
     public void setNombreUsuario(String nombreUsuario) {
-<span class="fc" id="L48">        this.nombreUsuario = nombreUsuario;</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L50">        this.nombreUsuario = nombreUsuario;</span>
+<span class="fc" id="L51">    }</span>
 
     public String getFechaNacimiento() {
-<span class="fc" id="L52">        return fechaNacimiento;</span>
+<span class="fc" id="L54">        return fechaNacimiento;</span>
     }
 
     public void setFechaNacimiento(String fechaNacimiento) {
-<span class="fc" id="L56">        this.fechaNacimiento = fechaNacimiento;</span>
-<span class="fc" id="L57">    }</span>
+<span class="fc" id="L58">        this.fechaNacimiento = fechaNacimiento;</span>
+<span class="fc" id="L59">    }</span>
 
     public ImageIcon getFotoPerfil() {
-<span class="nc" id="L60">        return fotoPerfil;</span>
+<span class="fc" id="L62">        return fotoPerfil;</span>
     }
 
     public void setFotoPerfil(ImageIcon fotoPerfil) {
-<span class="fc" id="L64">        this.fotoPerfil = fotoPerfil;</span>
-<span class="fc" id="L65">    }</span>
+<span class="fc" id="L66">        this.fotoPerfil = fotoPerfil;</span>
+<span class="fc" id="L67">    }</span>
+    
+    public String getContrasena() {
+<span class="fc" id="L70">        return contrasena;</span>
+    }
+
+    public void setContrasena(String contrasena) {
+<span class="fc" id="L74">        this.contrasena = contrasena;</span>
+<span class="fc" id="L75">    }</span>
 
     //Redefino el equals
     @Override
     public boolean equals(Object obj) {
-<span class="fc" id="L70">        boolean retorno = true;</span>
-<span class="fc bfc" id="L71" title="All 2 branches covered.">        if (obj == null) {</span>
-<span class="fc" id="L72">            retorno = false;</span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">        if (obj == null) {</span>
+<span class="fc" id="L81">            return false;</span>
         }
-<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (obj.getClass() != this.getClass()) {</span>
-<span class="fc" id="L75">            retorno = false;</span>
+<span class="fc bfc" id="L83" title="All 2 branches covered.">        if (obj.getClass() != this.getClass()) {</span>
+<span class="fc" id="L84">            return false;</span>
         }
-<span class="fc bfc" id="L77" title="All 2 branches covered.">        if(retorno == true){</span>
-<span class="fc" id="L78">            Persona p = (Persona) obj;</span>
-<span class="fc" id="L79">            retorno = this.getNombreUsuario()</span>
-<span class="fc" id="L80">                      .equalsIgnoreCase(p.getNombreUsuario());</span>
-        }
-<span class="fc" id="L82">        return retorno;</span>
+<span class="fc" id="L86">        Persona p = (Persona) obj;</span>
+<span class="fc" id="L87">        return this.getNombreUsuario().equalsIgnoreCase(p.getNombreUsuario());</span>
+    }
+    
+    @Override
+    public int hashCode(){
+<span class="fc" id="L92">        return 1;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span></div></body></html>

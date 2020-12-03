@@ -2,6 +2,7 @@ package interfaz;
 
 import dominio.Profesional;
 import dominio.Sistema;
+import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 
@@ -45,7 +46,7 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
 
         listaProfesionalesAlim.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelPlan.add(listaProfesionalesAlim);
-        listaProfesionalesAlim.setBounds(360, 170, 360, 35);
+        listaProfesionalesAlim.setBounds(360, 170, 360, 39);
 
         btnAceptarPlan.setBackground(new java.awt.Color(255, 0, 102));
         btnAceptarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -59,17 +60,21 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
             }
         });
         panelPlan.add(btnAceptarPlan);
-        btnAceptarPlan.setBounds(740, 170, 150, 37);
+        btnAceptarPlan.setBounds(740, 170, 150, 45);
 
+        etiquetaPlanDeAlimentacion.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaPlanDeAlimentacion.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaPlanDeAlimentacion.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaPlanDeAlimentacion.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaPlanDeAlimentacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaPlanDeAlimentacion.setText("Plan de Alimentación");
+        etiquetaPlanDeAlimentacion.setOpaque(true);
         panelPlan.add(etiquetaPlanDeAlimentacion);
-        etiquetaPlanDeAlimentacion.setBounds(390, 30, 350, 50);
+        etiquetaPlanDeAlimentacion.setBounds(0, 0, 1150, 70);
 
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        mensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panelPlan.add(mensajeAlAceptar);
-        mensajeAlAceptar.setBounds(730, 220, 410, 80);
+        mensajeAlAceptar.setBounds(360, 230, 530, 50);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -87,7 +92,14 @@ public class PanelPlanAlimentacionUsuario extends javax.swing.JPanel {
         Profesional profesionalActivo = (Profesional) listaProfesionalesAlim.getSelectedItem();
         interfaz.getUsuarioActual().setProfesionalAsignado(profesionalActivo);
         interfaz.getUsuarioActual().setNecesitoPlan(true);
-        mensajeAlAceptar.setText("Se ha pedido el plan de alimentación");
+        if(profesionalActivo == null){
+            mensajeAlAceptar.setText("No se ha seleccionado ningun profesional");
+            mensajeAlAceptar.setForeground(Color.red);
+        }
+        else{
+           mensajeAlAceptar.setText("Se ha pedido el plan de alimentación"); 
+        }
+        
     }//GEN-LAST:event_btnAceptarPlanActionPerformed
 
 

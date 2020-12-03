@@ -96,6 +96,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         btnCambiarUsuario.setBounds(470, 570, 210, 45);
 
         listaUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        listaUsuarios.setSelectionBackground(new java.awt.Color(255, 153, 194));
         jScrollPane1.setViewportView(listaUsuarios);
 
         add(jScrollPane1);
@@ -120,17 +121,19 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
         add(etiquetaTiposDeUsuarios);
         etiquetaTiposDeUsuarios.setBounds(90, 120, 180, 29);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Iniciar Sesión");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(0, 21, 1150, 44);
+        etiquetaTitulo.setBounds(0, -5, 1150, 70);
 
         btnPruebaAdministrador.setBackground(new java.awt.Color(255, 0, 102));
         btnPruebaAdministrador.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnPruebaAdministrador.setForeground(new java.awt.Color(255, 255, 255));
-        btnPruebaAdministrador.setText("Inicio");
+        btnPruebaAdministrador.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/baseline_home_white_18dp.png"))); // NOI18N
         btnPruebaAdministrador.setContentAreaFilled(false);
         btnPruebaAdministrador.setOpaque(true);
         btnPruebaAdministrador.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +142,7 @@ public class PanelCambioDeUsuario extends javax.swing.JPanel {
             }
         });
         add(btnPruebaAdministrador);
-        btnPruebaAdministrador.setBounds(870, 710, 260, 45);
+        btnPruebaAdministrador.setBounds(1060, 695, 70, 60);
 
         JContra.setToolTipText("");
         JContra.addActionListener(new java.awt.event.ActionListener() {

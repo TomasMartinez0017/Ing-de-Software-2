@@ -53,12 +53,12 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(btnVolverConsultas);
-        btnVolverConsultas.setBounds(20, 20, 100, 50);
+        btnVolverConsultas.setBounds(990, 700, 100, 50);
 
         etiquetaDestinatarioConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaDestinatarioConsulta.setText("Destinatarios:");
         add(etiquetaDestinatarioConsulta);
-        etiquetaDestinatarioConsulta.setBounds(60, 110, 150, 29);
+        etiquetaDestinatarioConsulta.setBounds(180, 100, 150, 29);
 
         listaProfConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaProfConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -68,7 +68,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(listaProfConsulta);
-        listaProfConsulta.setBounds(230, 110, 190, 39);
+        listaProfConsulta.setBounds(350, 100, 190, 39);
 
         textoConsultaAEnviar.setColumns(20);
         textoConsultaAEnviar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -76,7 +76,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         jScrollPane1.setViewportView(textoConsultaAEnviar);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(230, 220, 530, 340);
+        jScrollPane1.setBounds(350, 210, 530, 340);
 
         btnEnviarConsulta.setBackground(new java.awt.Color(255, 0, 102));
         btnEnviarConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -90,7 +90,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(btnEnviarConsulta);
-        btnEnviarConsulta.setBounds(730, 580, 140, 45);
+        btnEnviarConsulta.setBounds(740, 570, 140, 45);
 
         cajaAsunto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         cajaAsunto.addActionListener(new java.awt.event.ActionListener() {
@@ -99,23 +99,26 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
             }
         });
         add(cajaAsunto);
-        cajaAsunto.setBounds(230, 170, 530, 37);
+        cajaAsunto.setBounds(350, 160, 530, 37);
 
         etiquetaAsunto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaAsunto.setText("Asunto:");
         add(etiquetaAsunto);
-        etiquetaAsunto.setBounds(130, 170, 100, 26);
+        etiquetaAsunto.setBounds(250, 160, 100, 26);
 
         etiquetaMensaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaMensaje.setText("Mensaje:");
         add(etiquetaMensaje);
-        etiquetaMensaje.setBounds(110, 220, 110, 26);
+        etiquetaMensaje.setBounds(230, 210, 110, 26);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Redactar Consulta");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(360, 10, 320, 30);
+        etiquetaTitulo.setBounds(0, 0, 1110, 60);
 
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         mensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

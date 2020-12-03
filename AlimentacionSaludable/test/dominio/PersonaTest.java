@@ -50,7 +50,7 @@ public class PersonaTest {
         assertEquals(expResult, result);
     }
     
-    @Test(expected = NullPointerException.class)
+    @Test(expected = AssertionError.class)//NA.class)
     public void testEqualsNull() {
         System.out.println("equalsNull");
         Persona obj = null;
@@ -80,6 +80,30 @@ public class PersonaTest {
         instance.setApellidos("Sacchi");
         
         assertEquals(instance.getApellidos(), "Sacchi");
+    }
+    
+    @Test
+    public void testSetContrasena() {
+        Persona instance = new Usuario();
+        instance.setContrasena("12345678");
+        String contra = instance.getContrasena();
+        
+        assertEquals(contra, "12345678");
+    }
+    
+    @Test
+    public void testHashCode() {
+        Persona instance = new Usuario();
+        assertEquals(instance.hashCode(), 1);
+    }
+    
+    @Test
+    public void testGetFotoPerfil() {
+        Persona instance = new Usuario();
+        ImageIcon a = new ImageIcon();
+        instance.setFotoPerfil(a);
+        
+        assertEquals(instance.getFotoPerfil(), a);
     }
 
     public class PersonaImpl extends Persona {

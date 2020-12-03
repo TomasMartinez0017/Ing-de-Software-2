@@ -56,7 +56,6 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         jLabelProf = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 0, 102));
-        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         setPreferredSize(new java.awt.Dimension(250, 784));
         setLayout(null);
 
@@ -134,7 +133,7 @@ public class InterfazBotonesProfesional extends javax.swing.JPanel {
         jLabelProf.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelProf.setText("Prueba 2");
         add(jLabelProf);
-        jLabelProf.setBounds(70, 4, 190, 70);
+        jLabelProf.setBounds(70, 4, 160, 70);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed

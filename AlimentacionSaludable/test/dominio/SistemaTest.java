@@ -57,6 +57,17 @@ public class SistemaTest {
     }
     
     @Test
+    public void testPidoDatoNumericoInvalido3() {
+        System.out.println("pidoDatoNumericoInvalido");
+        int dato = -1;
+        int min = -2;
+        int max = 2;
+        Sistema instance = new Sistema();
+        boolean result = instance.pidoDatoNumerico(dato, min, max);
+        assertTrue(result);
+    }
+    
+    @Test
     public void testPidoDatoNumericoInvalido2() {
         System.out.println("pidoDatoNumericoInvalido2");
         int dato = 3;
@@ -239,6 +250,28 @@ public class SistemaTest {
         listaAlimentos.add(a);
         instance.setListaAlimentos(listaAlimentos);
         assertEquals(instance.getListaAlimentos(), listaAlimentos);
+    }
+    
+    @Test
+    public void testGetUsuarioActivo(){
+        Sistema instance = new Sistema();
+        instance.setUsuarioActivo(Sistema.tipoUsuario.USUARIO);
+        assertEquals(instance.getUsuarioActivo(), Sistema.tipoUsuario.USUARIO);
+    }
+    @Test
+    public void testCargarSistema(){
+        Sistema instance = new Sistema();
+        instance.cargarSistema();
+        boolean result = true;
+        assertTrue(result);
+    }
+    
+    @Test
+    public void testGuardarSistema(){
+        Sistema instance = new Sistema();
+        instance.guardarSistema();
+        boolean result = true;
+        assertTrue(result);
     }
     
 }

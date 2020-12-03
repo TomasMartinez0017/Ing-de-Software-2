@@ -114,15 +114,21 @@ public class PanelDietaDiariaUsuario extends javax.swing.JPanel {
 <span class="nc" id="L114">            interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().remove(alimentoABorrar);</span>
 <span class="nc" id="L115">            listaComidasDiarias.setListData(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas().toArray());</span>
         }
-<span class="nc" id="L117">    }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">        for(int i = 0; i &lt; interfaz.getUsuarioActual().getHistorialComidas().size(); i++){</span>
+<span class="nc" id="L118">                ComidaPorDia aux = interfaz.getUsuarioActual().getHistorialComidas().get(i);</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">                if (aux.getComidasIngeridas().isEmpty()){</span>
+<span class="nc" id="L120">                    interfaz.getUsuarioActual().getHistorialComidas().remove(i);</span>
+                }
+            }
+<span class="nc" id="L123">    }//GEN-LAST:event_etiquetaBtnQuitarComidaActionPerformed</span>
 
     private void etiquetaBtnAgregarComidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etiquetaBtnAgregarComidasActionPerformed
-<span class="nc" id="L120">        ventana.remove(this);</span>
-<span class="nc" id="L121">        PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, interfaz);</span>
-<span class="nc" id="L122">        interfaz.setActual(nuevo);</span>
-<span class="nc" id="L123">        ventana.add(nuevo);</span>
-<span class="nc" id="L124">        ventana.pack();</span>
-<span class="nc" id="L125">    }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed</span>
+<span class="nc" id="L126">        ventana.remove(this);</span>
+<span class="nc" id="L127">        PanelAgregarComidasADietaDiariaUsuario nuevo = new PanelAgregarComidasADietaDiariaUsuario(sistema, ventana, interfaz);</span>
+<span class="nc" id="L128">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L129">        ventana.add(nuevo);</span>
+<span class="nc" id="L130">        ventana.pack();</span>
+<span class="nc" id="L131">    }//GEN-LAST:event_etiquetaBtnAgregarComidasActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

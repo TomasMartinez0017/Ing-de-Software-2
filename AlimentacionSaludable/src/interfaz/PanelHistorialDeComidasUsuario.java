@@ -40,7 +40,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(listaHistorialDeComidas);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(220, 100, 650, 400);
+        jScrollPane1.setBounds(240, 100, 650, 400);
 
         btnVerHistorial.setBackground(new java.awt.Color(255, 0, 102));
         btnVerHistorial.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -54,13 +54,16 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVerHistorial);
-        btnVerHistorial.setBounds(700, 520, 170, 37);
+        btnVerHistorial.setBounds(720, 520, 170, 45);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Historial de Comidas");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(380, 10, 330, 40);
+        etiquetaTitulo.setBounds(0, 0, 1150, 70);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -71,7 +74,7 @@ public class PanelHistorialDeComidasUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 0, 100, 60);
+        btnVolver.setBounds(1020, 710, 100, 60);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVerHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerHistorialActionPerformed

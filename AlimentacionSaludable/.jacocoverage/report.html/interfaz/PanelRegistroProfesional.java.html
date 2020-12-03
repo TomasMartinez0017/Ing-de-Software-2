@@ -4,6 +4,7 @@ import dominio.Persona;
 import dominio.Sistema;
 import dominio.Profesional;
 import dominio.Usuario;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.text.SimpleDateFormat;
@@ -21,377 +22,307 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private JFrame ventana;
     
     //Constructor
-<span class="nc" id="L24">    public PanelRegistroProfesional(Sistema unSistema, JFrame unaVentana) {</span>
-<span class="nc" id="L25">        initComponents();</span>
-<span class="nc" id="L26">        sistema = unSistema;</span>
-<span class="nc" id="L27">        ventana = unaVentana;</span>
-<span class="nc" id="L28">        prof = new Profesional();</span>
-<span class="nc" id="L29">        Profesional.Pais[] listaPaises = prof.inicializoListaEnumPaises();</span>
-<span class="nc" id="L30">        listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));</span>
-<span class="nc" id="L31">        listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.Uruguay.ordinal());</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L25">    public PanelRegistroProfesional(Sistema unSistema, JFrame unaVentana) {</span>
+<span class="nc" id="L26">        initComponents();</span>
+<span class="nc" id="L27">        sistema = unSistema;</span>
+<span class="nc" id="L28">        ventana = unaVentana;</span>
+<span class="nc" id="L29">        prof = new Profesional();</span>
+<span class="nc" id="L30">        Profesional.Pais[] listaPaises = {</span>
+            Profesional.Pais.ALEMANIA, Profesional.Pais.ARGENTINA, Profesional.Pais.AUSTRALIA,
+            Profesional.Pais.AUSTRIA, Profesional.Pais.BRASIL, Profesional.Pais.CANADA,
+            Profesional.Pais.CHILE, Profesional.Pais.CHINA, Profesional.Pais.COLOMBIA,
+            Profesional.Pais.COREA_DEL_SUR, Profesional.Pais.CUBA, Profesional.Pais.ECUADOR,
+            Profesional.Pais.EGIPTO, Profesional.Pais.ESPANA, Profesional.Pais.ESTADOS_UNIDOS,
+            Profesional.Pais.FRANCIA, Profesional.Pais.GRECIA, Profesional.Pais.HOLANDA,
+            Profesional.Pais.INDIA, Profesional.Pais.INGLATERRA, Profesional.Pais.ISRAEL,
+            Profesional.Pais.ITALIA, Profesional.Pais.JAPON, Profesional.Pais.MEXICO, Profesional.Pais.PARAGUAY,
+            Profesional.Pais.PERU, Profesional.Pais.PORTUGAL, Profesional.Pais.RUSIA, Profesional.Pais.SUDAFRICA,
+            Profesional.Pais.URUGUAY, Profesional.Pais.VENEZUELA
+            };
+<span class="nc" id="L42">        listaPaisDeGraduacion.setModel(new DefaultComboBoxModel(listaPaises));</span>
+<span class="nc" id="L43">        listaPaisDeGraduacion.setSelectedIndex(Profesional.Pais.URUGUAY.ordinal());</span>
+<span class="nc" id="L44">    }</span>
     
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L38">        panelRegProf = new javax.swing.JPanel();</span>
-<span class="nc" id="L39">        etiquetaTituloProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L40">        etiquetaNombreProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L41">        etiquetaApellidosProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L42">        etiquetaUsuarioProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L43">        etiquetaFechaNacProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L44">        etiquetaNombTituloProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L45">        etiquetaFechaGradProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L46">        etiquetaFotoPerfilProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L47">        cajaNombreProf = new javax.swing.JTextField();</span>
-<span class="nc" id="L48">        cajaApellidosProf = new javax.swing.JTextField();</span>
-<span class="nc" id="L49">        cajaUsuarioProf = new javax.swing.JTextField();</span>
-<span class="nc" id="L50">        cajaNombreTituloProf = new javax.swing.JTextField();</span>
-<span class="nc" id="L51">        btnAceptarProf = new javax.swing.JButton();</span>
-<span class="nc" id="L52">        etiquetaPaisDeGraduacion = new javax.swing.JLabel();</span>
-<span class="nc" id="L53">        listaPaisDeGraduacion = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L54">        etiquetaErrorNombreProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L55">        etiquetaErrorApellidoProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L56">        etiquetaErrorNombreUsuarioProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L57">        etiquetaErrorNombreTituloProf = new javax.swing.JLabel();</span>
-<span class="nc" id="L58">        etiquetaMensajeAlAceptar = new javax.swing.JLabel();</span>
-<span class="nc" id="L59">        fechaNacimiento = new com.toedter.calendar.JDateChooser();</span>
-<span class="nc" id="L60">        etiquetaErrorFechaNacimiento = new javax.swing.JLabel();</span>
-<span class="nc" id="L61">        fechaGraduacion = new com.toedter.calendar.JDateChooser();</span>
-<span class="nc" id="L62">        etiquetaErrorFechaGraduacion = new javax.swing.JLabel();</span>
-<span class="nc" id="L63">        btnCambiarFoto = new javax.swing.JButton();</span>
-<span class="nc" id="L64">        fotoPerfil = new javax.swing.JLabel();</span>
+<span class="nc" id="L50">        panelRegProf = new javax.swing.JPanel();</span>
+<span class="nc" id="L51">        etiquetaTituloProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L52">        etiquetaNombreProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L53">        etiquetaApellidosProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L54">        etiquetaUsuarioProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L55">        etiquetaFechaNacProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L56">        etiquetaNombTituloProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L57">        etiquetaFechaGradProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L58">        etiquetaFotoPerfilProf = new javax.swing.JLabel();</span>
+<span class="nc" id="L59">        cajaNombreProf = new javax.swing.JTextField();</span>
+<span class="nc" id="L60">        cajaApellidosProf = new javax.swing.JTextField();</span>
+<span class="nc" id="L61">        cajaUsuarioProf = new javax.swing.JTextField();</span>
+<span class="nc" id="L62">        cajaNombreTituloProf = new javax.swing.JTextField();</span>
+<span class="nc" id="L63">        btnAceptarProf = new javax.swing.JButton();</span>
+<span class="nc" id="L64">        etiquetaPaisDeGraduacion = new javax.swing.JLabel();</span>
+<span class="nc" id="L65">        listaPaisDeGraduacion = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L66">        etiquetaMensajeAlAceptar = new javax.swing.JLabel();</span>
+<span class="nc" id="L67">        fechaNacimiento = new com.toedter.calendar.JDateChooser();</span>
+<span class="nc" id="L68">        fechaGraduacion = new com.toedter.calendar.JDateChooser();</span>
+<span class="nc" id="L69">        btnCambiarFoto = new javax.swing.JButton();</span>
+<span class="nc" id="L70">        fotoPerfil = new javax.swing.JLabel();</span>
+<span class="nc" id="L71">        JContra = new javax.swing.JPasswordField();</span>
+<span class="nc" id="L72">        jLabel1 = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L66">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+<span class="nc" id="L74">        setPreferredSize(new java.awt.Dimension(1147, 784));</span>
 
-<span class="nc" id="L68">        panelRegProf.setBackground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L69">        panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));</span>
-<span class="nc" id="L70">        panelRegProf.setLayout(null);</span>
+<span class="nc" id="L76">        panelRegProf.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L77">        panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));</span>
+<span class="nc" id="L78">        panelRegProf.setLayout(null);</span>
 
-<span class="nc" id="L72">        etiquetaTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
-<span class="nc" id="L73">        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));</span>
-<span class="nc" id="L74">        etiquetaTituloProf.setText(&quot;Registro Profesionales&quot;);</span>
-<span class="nc" id="L75">        panelRegProf.add(etiquetaTituloProf);</span>
-<span class="nc" id="L76">        etiquetaTituloProf.setBounds(350, 10, 360, 50);</span>
+<span class="nc" id="L80">        etiquetaTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
+<span class="nc" id="L81">        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L82">        etiquetaTituloProf.setText(&quot;Registro Profesionales&quot;);</span>
+<span class="nc" id="L83">        panelRegProf.add(etiquetaTituloProf);</span>
+<span class="nc" id="L84">        etiquetaTituloProf.setBounds(350, 10, 360, 50);</span>
 
-<span class="nc" id="L78">        etiquetaNombreProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L79">        etiquetaNombreProf.setText(&quot;Nombre:&quot;);</span>
-<span class="nc" id="L80">        panelRegProf.add(etiquetaNombreProf);</span>
-<span class="nc" id="L81">        etiquetaNombreProf.setBounds(450, 120, 92, 29);</span>
+<span class="nc" id="L86">        etiquetaNombreProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L87">        etiquetaNombreProf.setText(&quot;Nombre:&quot;);</span>
+<span class="nc" id="L88">        panelRegProf.add(etiquetaNombreProf);</span>
+<span class="nc" id="L89">        etiquetaNombreProf.setBounds(450, 120, 92, 29);</span>
 
-<span class="nc" id="L83">        etiquetaApellidosProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L84">        etiquetaApellidosProf.setText(&quot;Apellidos:&quot;);</span>
-<span class="nc" id="L85">        panelRegProf.add(etiquetaApellidosProf);</span>
-<span class="nc" id="L86">        etiquetaApellidosProf.setBounds(440, 170, 110, 30);</span>
+<span class="nc" id="L91">        etiquetaApellidosProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L92">        etiquetaApellidosProf.setText(&quot;Apellidos:&quot;);</span>
+<span class="nc" id="L93">        panelRegProf.add(etiquetaApellidosProf);</span>
+<span class="nc" id="L94">        etiquetaApellidosProf.setBounds(440, 170, 110, 30);</span>
 
-<span class="nc" id="L88">        etiquetaUsuarioProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L89">        etiquetaUsuarioProf.setText(&quot;Nombre de Usuario:&quot;);</span>
-<span class="nc" id="L90">        panelRegProf.add(etiquetaUsuarioProf);</span>
-<span class="nc" id="L91">        etiquetaUsuarioProf.setBounds(330, 220, 220, 26);</span>
+<span class="nc" id="L96">        etiquetaUsuarioProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L97">        etiquetaUsuarioProf.setText(&quot;Nombre de Usuario:&quot;);</span>
+<span class="nc" id="L98">        panelRegProf.add(etiquetaUsuarioProf);</span>
+<span class="nc" id="L99">        etiquetaUsuarioProf.setBounds(330, 220, 220, 26);</span>
 
-<span class="nc" id="L93">        etiquetaFechaNacProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L94">        etiquetaFechaNacProf.setText(&quot;Fecha de nacimiento:&quot;);</span>
-<span class="nc" id="L95">        panelRegProf.add(etiquetaFechaNacProf);</span>
-<span class="nc" id="L96">        etiquetaFechaNacProf.setBounds(320, 270, 230, 26);</span>
+<span class="nc" id="L101">        etiquetaFechaNacProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L102">        etiquetaFechaNacProf.setText(&quot;Fecha de nacimiento:&quot;);</span>
+<span class="nc" id="L103">        panelRegProf.add(etiquetaFechaNacProf);</span>
+<span class="nc" id="L104">        etiquetaFechaNacProf.setBounds(310, 270, 230, 26);</span>
 
-<span class="nc" id="L98">        etiquetaNombTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L99">        etiquetaNombTituloProf.setText(&quot;Nombre de título profesional:&quot;);</span>
-<span class="nc" id="L100">        panelRegProf.add(etiquetaNombTituloProf);</span>
-<span class="nc" id="L101">        etiquetaNombTituloProf.setBounds(240, 320, 310, 29);</span>
+<span class="nc" id="L106">        etiquetaNombTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L107">        etiquetaNombTituloProf.setText(&quot;Nombre de título profesional:&quot;);</span>
+<span class="nc" id="L108">        panelRegProf.add(etiquetaNombTituloProf);</span>
+<span class="nc" id="L109">        etiquetaNombTituloProf.setBounds(230, 320, 310, 29);</span>
 
-<span class="nc" id="L103">        etiquetaFechaGradProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L104">        etiquetaFechaGradProf.setText(&quot;Fecha de graduación:&quot;);</span>
-<span class="nc" id="L105">        panelRegProf.add(etiquetaFechaGradProf);</span>
-<span class="nc" id="L106">        etiquetaFechaGradProf.setBounds(320, 370, 230, 26);</span>
+<span class="nc" id="L111">        etiquetaFechaGradProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L112">        etiquetaFechaGradProf.setText(&quot;Fecha de graduación:&quot;);</span>
+<span class="nc" id="L113">        panelRegProf.add(etiquetaFechaGradProf);</span>
+<span class="nc" id="L114">        etiquetaFechaGradProf.setBounds(310, 360, 230, 40);</span>
 
-<span class="nc" id="L108">        etiquetaFotoPerfilProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L109">        etiquetaFotoPerfilProf.setText(&quot;Foto de perfil:&quot;);</span>
-<span class="nc" id="L110">        panelRegProf.add(etiquetaFotoPerfilProf);</span>
-<span class="nc" id="L111">        etiquetaFotoPerfilProf.setBounds(38, 82, 160, 40);</span>
+<span class="nc" id="L116">        etiquetaFotoPerfilProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L117">        etiquetaFotoPerfilProf.setText(&quot;Foto de perfil:&quot;);</span>
+<span class="nc" id="L118">        panelRegProf.add(etiquetaFotoPerfilProf);</span>
+<span class="nc" id="L119">        etiquetaFotoPerfilProf.setBounds(38, 82, 160, 40);</span>
 
-<span class="nc" id="L113">        cajaNombreProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L114">        cajaNombreProf.addFocusListener(new java.awt.event.FocusAdapter() {</span>
-            public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L116">                cajaNombreProfFocusLost(evt);</span>
-<span class="nc" id="L117">            }</span>
-        });
-<span class="nc" id="L119">        panelRegProf.add(cajaNombreProf);</span>
-<span class="nc" id="L120">        cajaNombreProf.setBounds(560, 120, 160, 35);</span>
+<span class="nc" id="L121">        cajaNombreProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L122">        panelRegProf.add(cajaNombreProf);</span>
+<span class="nc" id="L123">        cajaNombreProf.setBounds(560, 120, 160, 37);</span>
 
-<span class="nc" id="L122">        cajaApellidosProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L123">        cajaApellidosProf.addFocusListener(new java.awt.event.FocusAdapter() {</span>
-            public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L125">                cajaApellidosProfFocusLost(evt);</span>
-<span class="nc" id="L126">            }</span>
-        });
-<span class="nc" id="L128">        cajaApellidosProf.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L125">        cajaApellidosProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L126">        cajaApellidosProf.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L130">                cajaApellidosProfActionPerformed(evt);</span>
-<span class="nc" id="L131">            }</span>
+<span class="nc" id="L128">                cajaApellidosProfActionPerformed(evt);</span>
+<span class="nc" id="L129">            }</span>
         });
-<span class="nc" id="L133">        panelRegProf.add(cajaApellidosProf);</span>
-<span class="nc" id="L134">        cajaApellidosProf.setBounds(560, 170, 160, 35);</span>
+<span class="nc" id="L131">        panelRegProf.add(cajaApellidosProf);</span>
+<span class="nc" id="L132">        cajaApellidosProf.setBounds(560, 170, 160, 37);</span>
 
-<span class="nc" id="L136">        cajaUsuarioProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L137">        cajaUsuarioProf.addFocusListener(new java.awt.event.FocusAdapter() {</span>
-            public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L139">                cajaUsuarioProfFocusLost(evt);</span>
-<span class="nc" id="L140">            }</span>
-        });
-<span class="nc" id="L142">        panelRegProf.add(cajaUsuarioProf);</span>
-<span class="nc" id="L143">        cajaUsuarioProf.setBounds(560, 220, 160, 35);</span>
+<span class="nc" id="L134">        cajaUsuarioProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L135">        panelRegProf.add(cajaUsuarioProf);</span>
+<span class="nc" id="L136">        cajaUsuarioProf.setBounds(560, 220, 160, 37);</span>
 
-<span class="nc" id="L145">        cajaNombreTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L146">        cajaNombreTituloProf.addFocusListener(new java.awt.event.FocusAdapter() {</span>
-            public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L148">                cajaNombreTituloProfFocusLost(evt);</span>
-<span class="nc" id="L149">            }</span>
-        });
-<span class="nc" id="L151">        panelRegProf.add(cajaNombreTituloProf);</span>
-<span class="nc" id="L152">        cajaNombreTituloProf.setBounds(560, 320, 160, 35);</span>
+<span class="nc" id="L138">        cajaNombreTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L139">        panelRegProf.add(cajaNombreTituloProf);</span>
+<span class="nc" id="L140">        cajaNombreTituloProf.setBounds(560, 320, 160, 37);</span>
 
-<span class="nc" id="L154">        btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));</span>
-<span class="nc" id="L155">        btnAceptarProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L156">        btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L157">        btnAceptarProf.setText(&quot;Aceptar&quot;);</span>
-<span class="nc" id="L158">        btnAceptarProf.setContentAreaFilled(false);</span>
-<span class="nc" id="L159">        btnAceptarProf.setOpaque(true);</span>
-<span class="nc" id="L160">        btnAceptarProf.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L142">        btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L143">        btnAceptarProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L144">        btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L145">        btnAceptarProf.setText(&quot;Aceptar&quot;);</span>
+<span class="nc" id="L146">        btnAceptarProf.setContentAreaFilled(false);</span>
+<span class="nc" id="L147">        btnAceptarProf.setOpaque(true);</span>
+<span class="nc" id="L148">        btnAceptarProf.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L162">                btnAceptarProfActionPerformed(evt);</span>
-<span class="nc" id="L163">            }</span>
+<span class="nc" id="L150">                btnAceptarProfActionPerformed(evt);</span>
+<span class="nc" id="L151">            }</span>
         });
-<span class="nc" id="L165">        panelRegProf.add(btnAceptarProf);</span>
-<span class="nc" id="L166">        btnAceptarProf.setBounds(850, 610, 150, 37);</span>
+<span class="nc" id="L153">        panelRegProf.add(btnAceptarProf);</span>
+<span class="nc" id="L154">        btnAceptarProf.setBounds(850, 610, 150, 45);</span>
 
-<span class="nc" id="L168">        etiquetaPaisDeGraduacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L169">        etiquetaPaisDeGraduacion.setText(&quot;País de graduación:&quot;);</span>
-<span class="nc" id="L170">        panelRegProf.add(etiquetaPaisDeGraduacion);</span>
-<span class="nc" id="L171">        etiquetaPaisDeGraduacion.setBounds(340, 420, 210, 26);</span>
+<span class="nc" id="L156">        etiquetaPaisDeGraduacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L157">        etiquetaPaisDeGraduacion.setText(&quot;País de graduación:&quot;);</span>
+<span class="nc" id="L158">        panelRegProf.add(etiquetaPaisDeGraduacion);</span>
+<span class="nc" id="L159">        etiquetaPaisDeGraduacion.setBounds(330, 410, 210, 40);</span>
 
-<span class="nc" id="L173">        listaPaisDeGraduacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L174">        listaPaisDeGraduacion.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
-<span class="nc" id="L175">        panelRegProf.add(listaPaisDeGraduacion);</span>
-<span class="nc" id="L176">        listaPaisDeGraduacion.setBounds(560, 420, 160, 35);</span>
+<span class="nc" id="L161">        listaPaisDeGraduacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L162">        listaPaisDeGraduacion.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Item 1&quot;, &quot;Item 2&quot;, &quot;Item 3&quot;, &quot;Item 4&quot; }));</span>
+<span class="nc" id="L163">        panelRegProf.add(listaPaisDeGraduacion);</span>
+<span class="nc" id="L164">        listaPaisDeGraduacion.setBounds(560, 420, 160, 39);</span>
 
-<span class="nc" id="L178">        etiquetaErrorNombreProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L179">        panelRegProf.add(etiquetaErrorNombreProf);</span>
-<span class="nc" id="L180">        etiquetaErrorNombreProf.setBounds(740, 120, 400, 26);</span>
+<span class="nc" id="L166">        etiquetaMensajeAlAceptar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L167">        etiquetaMensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);</span>
+<span class="nc" id="L168">        panelRegProf.add(etiquetaMensajeAlAceptar);</span>
+<span class="nc" id="L169">        etiquetaMensajeAlAceptar.setBounds(10, 610, 830, 40);</span>
+<span class="nc" id="L170">        panelRegProf.add(fechaNacimiento);</span>
+<span class="nc" id="L171">        fechaNacimiento.setBounds(560, 270, 160, 29);</span>
+<span class="nc" id="L172">        panelRegProf.add(fechaGraduacion);</span>
+<span class="nc" id="L173">        fechaGraduacion.setBounds(560, 370, 160, 29);</span>
 
-<span class="nc" id="L182">        etiquetaErrorApellidoProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L183">        panelRegProf.add(etiquetaErrorApellidoProf);</span>
-<span class="nc" id="L184">        etiquetaErrorApellidoProf.setBounds(720, 170, 400, 26);</span>
-
-<span class="nc" id="L186">        etiquetaErrorNombreUsuarioProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L187">        panelRegProf.add(etiquetaErrorNombreUsuarioProf);</span>
-<span class="nc" id="L188">        etiquetaErrorNombreUsuarioProf.setBounds(720, 220, 400, 26);</span>
-
-<span class="nc" id="L190">        etiquetaErrorNombreTituloProf.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L191">        panelRegProf.add(etiquetaErrorNombreTituloProf);</span>
-<span class="nc" id="L192">        etiquetaErrorNombreTituloProf.setBounds(740, 320, 410, 26);</span>
-
-<span class="nc" id="L194">        etiquetaMensajeAlAceptar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L195">        panelRegProf.add(etiquetaMensajeAlAceptar);</span>
-<span class="nc" id="L196">        etiquetaMensajeAlAceptar.setBounds(650, 540, 470, 40);</span>
-
-<span class="nc" id="L198">        fechaNacimiento.addFocusListener(new java.awt.event.FocusAdapter() {</span>
-            public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L200">                fechaNacimientoFocusLost(evt);</span>
-<span class="nc" id="L201">            }</span>
-        });
-<span class="nc" id="L203">        panelRegProf.add(fechaNacimiento);</span>
-<span class="nc" id="L204">        fechaNacimiento.setBounds(560, 270, 160, 32);</span>
-
-<span class="nc" id="L206">        etiquetaErrorFechaNacimiento.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L207">        panelRegProf.add(etiquetaErrorFechaNacimiento);</span>
-<span class="nc" id="L208">        etiquetaErrorFechaNacimiento.setBounds(740, 270, 390, 26);</span>
-
-<span class="nc" id="L210">        fechaGraduacion.addFocusListener(new java.awt.event.FocusAdapter() {</span>
-            public void focusLost(java.awt.event.FocusEvent evt) {
-<span class="nc" id="L212">                fechaGraduacionFocusLost(evt);</span>
-<span class="nc" id="L213">            }</span>
-        });
-<span class="nc" id="L215">        panelRegProf.add(fechaGraduacion);</span>
-<span class="nc" id="L216">        fechaGraduacion.setBounds(560, 370, 160, 32);</span>
-
-<span class="nc" id="L218">        etiquetaErrorFechaGraduacion.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L219">        panelRegProf.add(etiquetaErrorFechaGraduacion);</span>
-<span class="nc" id="L220">        etiquetaErrorFechaGraduacion.setBounds(740, 370, 310, 26);</span>
-
-<span class="nc" id="L222">        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));</span>
-<span class="nc" id="L223">        btnCambiarFoto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L224">        btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));</span>
-<span class="nc" id="L225">        btnCambiarFoto.setText(&quot;Cambiar Foto&quot;);</span>
-<span class="nc" id="L226">        btnCambiarFoto.setContentAreaFilled(false);</span>
-<span class="nc" id="L227">        btnCambiarFoto.setOpaque(true);</span>
-<span class="nc" id="L228">        btnCambiarFoto.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L175">        btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));</span>
+<span class="nc" id="L176">        btnCambiarFoto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L177">        btnCambiarFoto.setForeground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L178">        btnCambiarFoto.setText(&quot;Cambiar Foto&quot;);</span>
+<span class="nc" id="L179">        btnCambiarFoto.setContentAreaFilled(false);</span>
+<span class="nc" id="L180">        btnCambiarFoto.setOpaque(true);</span>
+<span class="nc" id="L181">        btnCambiarFoto.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L230">                btnCambiarFotoActionPerformed(evt);</span>
-<span class="nc" id="L231">            }</span>
+<span class="nc" id="L183">                btnCambiarFotoActionPerformed(evt);</span>
+<span class="nc" id="L184">            }</span>
         });
-<span class="nc" id="L233">        panelRegProf.add(btnCambiarFoto);</span>
-<span class="nc" id="L234">        btnCambiarFoto.setBounds(40, 390, 190, 40);</span>
+<span class="nc" id="L186">        panelRegProf.add(btnCambiarFoto);</span>
+<span class="nc" id="L187">        btnCambiarFoto.setBounds(40, 390, 190, 40);</span>
 
-<span class="nc" id="L236">        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/predeterminadaProfesional.png&quot;))); // NOI18N</span>
-<span class="nc" id="L237">        fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 270));</span>
-<span class="nc" id="L238">        panelRegProf.add(fotoPerfil);</span>
-<span class="nc" id="L239">        fotoPerfil.setBounds(30, 120, 210, 270);</span>
+<span class="nc" id="L189">        fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource(&quot;/imagenes/predeterminadaProfesional.png&quot;))); // NOI18N</span>
+<span class="nc" id="L190">        fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 270));</span>
+<span class="nc" id="L191">        panelRegProf.add(fotoPerfil);</span>
+<span class="nc" id="L192">        fotoPerfil.setBounds(30, 120, 210, 270);</span>
+<span class="nc" id="L193">        panelRegProf.add(JContra);</span>
+<span class="nc" id="L194">        JContra.setBounds(560, 480, 160, 40);</span>
 
-<span class="nc" id="L241">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L242">        this.setLayout(layout);</span>
-<span class="nc" id="L243">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L244">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L245">            .addGap(0, 1150, Short.MAX_VALUE)</span>
-<span class="nc" id="L246">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L247">                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L248">                    .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L249">                    .addComponent(panelRegProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L250">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+<span class="nc" id="L196">        jLabel1.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L197">        jLabel1.setText(&quot;Contraseña:&quot;);</span>
+<span class="nc" id="L198">        panelRegProf.add(jLabel1);</span>
+<span class="nc" id="L199">        jLabel1.setBounds(410, 480, 150, 40);</span>
+
+<span class="nc" id="L201">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L202">        this.setLayout(layout);</span>
+<span class="nc" id="L203">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L204">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L205">            .addGap(0, 1150, Short.MAX_VALUE)</span>
+<span class="nc" id="L206">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L207">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L208">                    .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L209">                    .addComponent(panelRegProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L210">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
         );
-<span class="nc" id="L252">        layout.setVerticalGroup(</span>
-<span class="nc" id="L253">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L254">            .addGap(0, 784, Short.MAX_VALUE)</span>
-<span class="nc" id="L255">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L256">                .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L257">                    .addGap(0, 0, Short.MAX_VALUE)</span>
-<span class="nc" id="L258">                    .addComponent(panelRegProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L259">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
+<span class="nc" id="L212">        layout.setVerticalGroup(</span>
+<span class="nc" id="L213">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L214">            .addGap(0, 784, Short.MAX_VALUE)</span>
+<span class="nc" id="L215">            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L216">                .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L217">                    .addGap(0, 0, Short.MAX_VALUE)</span>
+<span class="nc" id="L218">                    .addComponent(panelRegProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L219">                    .addGap(0, 0, Short.MAX_VALUE)))</span>
         );
-<span class="nc" id="L261">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
-
-    private void cajaNombreProfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombreProfFocusLost
-<span class="nc" id="L264">        String nombre = cajaNombreProf.getText();</span>
-<span class="nc bnc" id="L265" title="All 2 branches missed.">        if (nombre.trim().isEmpty()) {</span>
-<span class="nc" id="L266">            etiquetaErrorNombreProf.setText(&quot;El nombre no puede ser vacío&quot;);</span>
-        }
-<span class="nc" id="L268">    }//GEN-LAST:event_cajaNombreProfFocusLost</span>
-
-    private void cajaApellidosProfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaApellidosProfFocusLost
-<span class="nc" id="L271">        String apellido = cajaApellidosProf.getText();</span>
- 
-<span class="nc" id="L273">    }//GEN-LAST:event_cajaApellidosProfFocusLost</span>
-
-    private void cajaUsuarioProfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaUsuarioProfFocusLost
-<span class="nc" id="L276">        String nombreUsuario = cajaUsuarioProf.getText();</span>
-<span class="nc" id="L277">        Profesional comparoProf = new Profesional();</span>
-<span class="nc" id="L278">        comparoProf.setNombreUsuario(nombreUsuario);</span>
-<span class="nc" id="L279">        Usuario comparoUsuario = new Usuario();</span>
-<span class="nc" id="L280">        comparoUsuario.setNombreUsuario(nombreUsuario);</span>
-<span class="nc bnc" id="L281" title="All 2 branches missed.">        if (nombreUsuario.trim().isEmpty()) {</span>
-<span class="nc" id="L282">            etiquetaErrorNombreUsuarioProf.setText(&quot;El nombre de usuario no puede estar vacío&quot;);</span>
-        } else {
-<span class="nc bnc" id="L284" title="All 2 branches missed.">            if (sistema.getListaUsuarios().contains(comparoUsuario)</span>
-<span class="nc bnc" id="L285" title="All 2 branches missed.">                    &amp;&amp; sistema.getListaProfesionales().contains(comparoProf)) {</span>
-<span class="nc" id="L286">                etiquetaErrorNombreUsuarioProf.setText(&quot;El nombre de usuario ya está en uso&quot;);</span>
-            } else {
-<span class="nc" id="L288">                etiquetaErrorNombreUsuarioProf.setText(&quot; &quot;);</span>
-            }
-        }
-<span class="nc" id="L291">    }//GEN-LAST:event_cajaUsuarioProfFocusLost</span>
-
-    private void cajaNombreTituloProfFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cajaNombreTituloProfFocusLost
-<span class="nc" id="L294">        String nombreTitulo = cajaNombreTituloProf.getText();</span>
-<span class="nc bnc" id="L295" title="All 2 branches missed.">        if (nombreTitulo.trim().isEmpty()) {</span>
-<span class="nc" id="L296">            etiquetaErrorNombreTituloProf.setText(&quot;El nombre del título no puede estar vacío&quot;);</span>
-        }
-<span class="nc" id="L298">    }//GEN-LAST:event_cajaNombreTituloProfFocusLost</span>
+<span class="nc" id="L221">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnAceptarProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarProfActionPerformed
-<span class="nc" id="L301">        Profesional profesional = new Profesional();</span>
-<span class="nc bnc" id="L302" title="All 2 branches missed.">        boolean nombreValido = !cajaNombreProf.getText().trim().isEmpty();</span>
-        
-<span class="nc" id="L304">        Usuario comparoUsr = new Usuario();</span>
-<span class="nc" id="L305">        comparoUsr.setNombreUsuario(cajaUsuarioProf.getText());</span>
-<span class="nc" id="L306">        Profesional comparoProf = new Profesional();</span>
-<span class="nc" id="L307">        comparoProf.setNombreUsuario(cajaUsuarioProf.getText());</span>
-<span class="nc bnc" id="L308" title="All 2 branches missed.">        boolean nombreUsuarioValido = !cajaUsuarioProf.getText().trim().isEmpty()</span>
-<span class="nc bnc" id="L309" title="All 2 branches missed.">                &amp;&amp; !sistema.getListaUsuarios().contains(comparoUsr)</span>
-<span class="nc bnc" id="L310" title="All 2 branches missed.">                &amp;&amp; !sistema.getListaProfesionales().contains(comparoProf);</span>
-<span class="nc bnc" id="L311" title="All 2 branches missed.">        boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;</span>
-<span class="nc bnc" id="L312" title="All 2 branches missed.">        boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();</span>
-<span class="nc bnc" id="L313" title="All 2 branches missed.">        boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;</span>
-<span class="nc bnc" id="L314" title="All 10 branches missed.">        if (nombreValido &amp;&amp; nombreUsuarioValido</span>
-                &amp;&amp; fNacimientoValido &amp;&amp; nombreTituloValido &amp;&amp; fGraduacionValido) {
-<span class="nc" id="L316">            profesional.setNombre(cajaNombreProf.getText());</span>
-<span class="nc" id="L317">            profesional.setApellidos(cajaApellidosProf.getText());</span>
-<span class="nc" id="L318">            profesional.setNombreUsuario(cajaUsuarioProf.getText());</span>
-<span class="nc" id="L319">            SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L320">            String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());</span>
-<span class="nc" id="L321">            profesional.setFechaNacimiento(fNacimiento);</span>
-<span class="nc" id="L322">            profesional.setNombreTituloProf(cajaNombreTituloProf.getText());</span>
-<span class="nc" id="L323">            SimpleDateFormat formatter2 = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
-<span class="nc" id="L324">            String fGraduacion = formatter2.format(fechaGraduacion.getCalendar().getTime());</span>
-<span class="nc" id="L325">            profesional.setFechaGraduacion(fGraduacion);</span>
-<span class="nc" id="L326">            profesional.setPaisObtuvoTitulo(profesional.getListaEnumPais()[listaPaisDeGraduacion.getSelectedIndex()]);</span>
-<span class="nc" id="L327">            profesional.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());</span>
-<span class="nc" id="L328">            sistema.getListaProfesionales().add(profesional);</span>
-<span class="nc" id="L329">            etiquetaMensajeAlAceptar.setText(&quot;Profesional registrado correctamente&quot;);</span>
-<span class="nc" id="L330">        } else {</span>
-<span class="nc" id="L331">            etiquetaMensajeAlAceptar.setText(&quot;Error al ingresar el profesional&quot;);</span>
-<span class="nc bnc" id="L332" title="All 2 branches missed.">            if (nombreValido == false) {</span>
-<span class="nc" id="L333">                etiquetaErrorNombreProf.setText(&quot;El nombre no puede ser vacío&quot;);</span>
+<span class="nc" id="L224">        Profesional profesional = new Profesional();</span>
+<span class="nc bnc" id="L225" title="All 2 branches missed.">        boolean nombreValido = !cajaNombreProf.getText().trim().isEmpty();</span>
+<span class="nc bnc" id="L226" title="All 2 branches missed.">        boolean apellidoValido = !cajaApellidosProf.getText().trim().isEmpty();</span>
+<span class="nc" id="L227">        Usuario comparoUsr = new Usuario();</span>
+<span class="nc" id="L228">        comparoUsr.setNombreUsuario(cajaUsuarioProf.getText());</span>
+<span class="nc" id="L229">        Profesional comparoProf = new Profesional();</span>
+<span class="nc" id="L230">        comparoProf.setNombreUsuario(cajaUsuarioProf.getText());</span>
+<span class="nc bnc" id="L231" title="All 2 branches missed.">        boolean nombreUsuarioValido = !cajaUsuarioProf.getText().trim().isEmpty()</span>
+<span class="nc bnc" id="L232" title="All 2 branches missed.">                &amp;&amp; !sistema.getListaUsuarios().contains(comparoUsr)</span>
+<span class="nc bnc" id="L233" title="All 2 branches missed.">                &amp;&amp; !sistema.getListaProfesionales().contains(comparoProf);</span>
+<span class="nc bnc" id="L234" title="All 2 branches missed.">        boolean fNacimientoValido = fechaNacimiento.getCalendar() != null;</span>
+<span class="nc bnc" id="L235" title="All 2 branches missed.">        boolean nombreTituloValido = !cajaNombreTituloProf.getText().trim().isEmpty();</span>
+<span class="nc bnc" id="L236" title="All 2 branches missed.">        boolean fGraduacionValido = fechaGraduacion.getCalendar() != null;</span>
+<span class="nc" id="L237">        String contra = new String(JContra.getPassword());</span>
+<span class="nc" id="L238">        char[] contraChar = JContra.getPassword();</span>
+        boolean contraValida;
+<span class="nc bnc" id="L240" title="All 2 branches missed.">        if(contra.length()&gt;=8){</span>
+<span class="nc" id="L241">            int cont = 0;</span>
+<span class="nc bnc" id="L242" title="All 2 branches missed.">            for(int i = 0; i&lt;contraChar.length; i++){</span>
+<span class="nc bnc" id="L243" title="All 4 branches missed.">                if(!Character.isAlphabetic(contraChar[i]) &amp;&amp; !Character.isDigit(contraChar[i])){</span>
+<span class="nc" id="L244">                    cont++;</span>
+                }
             }
-            
-<span class="nc bnc" id="L336" title="All 2 branches missed.">            if (nombreUsuarioValido == false) {</span>
-<span class="nc" id="L337">                etiquetaErrorNombreUsuarioProf.setText(&quot;Nombre de usuario no válido&quot;);</span>
+<span class="nc bnc" id="L247" title="All 2 branches missed.">            if(cont&gt;0){</span>
+<span class="nc" id="L248">                contraValida = false;</span>
             }
-<span class="nc bnc" id="L339" title="All 2 branches missed.">            if (fNacimientoValido == false) {</span>
-<span class="nc" id="L340">                etiquetaErrorFechaNacimiento.setText(&quot;Fecha de nacimiento no válida&quot;);</span>
+            else{
+<span class="nc" id="L251">                contraValida = true;</span>
             }
-<span class="nc bnc" id="L342" title="All 2 branches missed.">            if (nombreTituloValido == false) {</span>
-<span class="nc" id="L343">                etiquetaErrorNombreTituloProf.setText(&quot;El nombre no puede ser válida&quot;);</span>
-            }
-<span class="nc bnc" id="L345" title="All 2 branches missed.">            if (fGraduacionValido == false) {</span>
-<span class="nc" id="L346">                etiquetaErrorFechaGraduacion.setText(&quot;Fecha de graduación no válida&quot;);</span>
-            }
+<span class="nc" id="L253">        }</span>
+        else{
+<span class="nc" id="L255">            contraValida = false;</span>
         }
-<span class="nc" id="L349">    }//GEN-LAST:event_btnAceptarProfActionPerformed</span>
-
-    private void fechaNacimientoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaNacimientoFocusLost
-        //Metodo para validar que se seleccione la fecha de nacimiento 
-<span class="nc bnc" id="L353" title="All 2 branches missed.">        if (fechaNacimiento.getCalendar() == null) {</span>
-<span class="nc" id="L354">            etiquetaErrorFechaNacimiento.setText(&quot;Debe ingresar una fecha&quot;);</span>
+<span class="nc bnc" id="L257" title="All 12 branches missed.">        if (nombreValido &amp;&amp; nombreUsuarioValido</span>
+                &amp;&amp; fNacimientoValido &amp;&amp; nombreTituloValido &amp;&amp; fGraduacionValido &amp;&amp; contraValida) {
+<span class="nc" id="L259">            profesional.setNombre(cajaNombreProf.getText());</span>
+<span class="nc" id="L260">            profesional.setApellidos(cajaApellidosProf.getText());</span>
+<span class="nc" id="L261">            profesional.setNombreUsuario(cajaUsuarioProf.getText());</span>
+<span class="nc" id="L262">            SimpleDateFormat formatter = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L263">            String fNacimiento = formatter.format(fechaNacimiento.getCalendar().getTime());</span>
+<span class="nc" id="L264">            profesional.setFechaNacimiento(fNacimiento);</span>
+<span class="nc" id="L265">            profesional.setNombreTituloProf(cajaNombreTituloProf.getText());</span>
+<span class="nc" id="L266">            SimpleDateFormat formatter2 = new SimpleDateFormat(&quot;dd/MM/yyyy&quot;);</span>
+<span class="nc" id="L267">            String fGraduacion = formatter2.format(fechaGraduacion.getCalendar().getTime());</span>
+<span class="nc" id="L268">            profesional.setFechaGraduacion(fGraduacion);</span>
+<span class="nc" id="L269">            profesional.setPaisObtuvoTitulo(profesional.getListaEnumPais()[listaPaisDeGraduacion.getSelectedIndex()]);</span>
+<span class="nc" id="L270">            profesional.setFotoPerfil((ImageIcon) fotoPerfil.getIcon());</span>
+<span class="nc" id="L271">            profesional.setContrasena(contra);</span>
+<span class="nc" id="L272">            sistema.getListaProfesionales().add(profesional);</span>
+<span class="nc" id="L273">            etiquetaMensajeAlAceptar.setText(&quot;Profesional registrado correctamente&quot;);</span>
+<span class="nc bnc" id="L274" title="All 2 branches missed.">        } else if (!nombreValido){</span>
+<span class="nc" id="L275">            etiquetaMensajeAlAceptar.setText(&quot;Error al registrar el profesional: ingrese un nombre válido&quot;);</span>
+<span class="nc" id="L276">            etiquetaMensajeAlAceptar.setForeground(Color.red);</span>
+<span class="nc bnc" id="L277" title="All 2 branches missed.">        } else if(!apellidoValido){</span>
+<span class="nc" id="L278">            etiquetaMensajeAlAceptar.setText(&quot;Error al registrar el profesional: ingrese un apellido válido&quot;);</span>
+<span class="nc" id="L279">            etiquetaMensajeAlAceptar.setForeground(Color.red);</span>
+<span class="nc bnc" id="L280" title="All 2 branches missed.">        } else if(!fNacimientoValido){</span>
+<span class="nc" id="L281">            etiquetaMensajeAlAceptar.setText(&quot;Error al registrar el profesional: ingrese una fecha de nacimiento válido&quot;);</span>
+<span class="nc" id="L282">            etiquetaMensajeAlAceptar.setForeground(Color.red);</span>
+<span class="nc bnc" id="L283" title="All 2 branches missed.">        } else if(!nombreTituloValido){</span>
+<span class="nc" id="L284">            etiquetaMensajeAlAceptar.setText(&quot;Error al registrar el profesional: ingrese un título válido&quot;);</span>
+<span class="nc" id="L285">            etiquetaMensajeAlAceptar.setForeground(Color.red);</span>
+<span class="nc bnc" id="L286" title="All 2 branches missed.">        } else if(!fGraduacionValido){</span>
+<span class="nc" id="L287">            etiquetaMensajeAlAceptar.setText(&quot;Error al registrar el profesional: ingrese un a fecha de graduación válida&quot;);</span>
+<span class="nc" id="L288">            etiquetaMensajeAlAceptar.setForeground(Color.red);</span>
+<span class="nc bnc" id="L289" title="All 2 branches missed.">        } else if(!contraValida){</span>
+<span class="nc" id="L290">            etiquetaMensajeAlAceptar.setText(&quot;Error al registrar el profesional: ingrese un a contraseña alfanumérica&quot;);</span>
+<span class="nc" id="L291">            etiquetaMensajeAlAceptar.setForeground(Color.red);</span>
         }
-<span class="nc" id="L356">    }//GEN-LAST:event_fechaNacimientoFocusLost</span>
-
-    private void fechaGraduacionFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_fechaGraduacionFocusLost
-        //Metodo para validar que se seleccione la fecha de graduacion 
-<span class="nc bnc" id="L360" title="All 2 branches missed.">        if (fechaGraduacion.getCalendar() == null) {</span>
-<span class="nc" id="L361">            etiquetaErrorFechaGraduacion.setText(&quot;Debe ingresar una fecha&quot;);</span>
-        }
-<span class="nc" id="L363">    }//GEN-LAST:event_fechaGraduacionFocusLost</span>
+<span class="nc" id="L293">    }//GEN-LAST:event_btnAceptarProfActionPerformed</span>
 
     private void btnCambiarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambiarFotoActionPerformed
-<span class="nc" id="L366">        JFileChooser fileChooser = new JFileChooser();</span>
-<span class="nc" id="L367">        FileNameExtensionFilter file = new FileNameExtensionFilter(&quot;Archivo imagen&quot;, &quot;jpg&quot;);</span>
-<span class="nc" id="L368">        fileChooser.setFileFilter(file);</span>
-<span class="nc" id="L369">        int imagen = fileChooser.showOpenDialog(this);</span>
-<span class="nc bnc" id="L370" title="All 2 branches missed.">        if (imagen == JFileChooser.APPROVE_OPTION) {</span>
-<span class="nc" id="L371">            ImageIcon fotoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());</span>
-<span class="nc" id="L372">            ImageIcon fotoArreglada = resizeImageIcon(fotoPerfil, 210, 240);</span>
-<span class="nc" id="L373">            prof.setFotoPerfil(fotoArreglada);</span>
+<span class="nc" id="L296">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L297">        FileNameExtensionFilter file = new FileNameExtensionFilter(&quot;Archivo imagen&quot;, &quot;jpg&quot;);</span>
+<span class="nc" id="L298">        fileChooser.setFileFilter(file);</span>
+<span class="nc" id="L299">        int imagen = fileChooser.showOpenDialog(this);</span>
+<span class="nc bnc" id="L300" title="All 2 branches missed.">        if (imagen == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L301">            ImageIcon fotoPerfil = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());</span>
+<span class="nc" id="L302">            ImageIcon fotoArreglada = resizeImageIcon(fotoPerfil, 210, 240);</span>
+<span class="nc" id="L303">            prof.setFotoPerfil(fotoArreglada);</span>
         }
-<span class="nc" id="L375">        actualizar();</span>
-<span class="nc" id="L376">    }//GEN-LAST:event_btnCambiarFotoActionPerformed</span>
+<span class="nc" id="L305">        actualizar();</span>
+<span class="nc" id="L306">    }//GEN-LAST:event_btnCambiarFotoActionPerformed</span>
 
     private void cajaApellidosProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaApellidosProfActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L380">    }//GEN-LAST:event_cajaApellidosProfActionPerformed</span>
+<span class="nc" id="L310">    }//GEN-LAST:event_cajaApellidosProfActionPerformed</span>
     
     void actualizar() {
-<span class="nc" id="L383">        fotoPerfil.setIcon(prof.getFotoPerfil());</span>
-<span class="nc" id="L384">    }</span>
+<span class="nc" id="L313">        fotoPerfil.setIcon(prof.getFotoPerfil());</span>
+<span class="nc" id="L314">    }</span>
     
     ImageIcon resizeImageIcon(ImageIcon imageIcon, Integer width, Integer height) {
-<span class="nc" id="L387">        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);</span>
-<span class="nc" id="L388">        Graphics2D graphics2D = bufferedImage.createGraphics();</span>
-<span class="nc" id="L389">        graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);</span>
-<span class="nc" id="L390">        graphics2D.dispose();</span>
+<span class="nc" id="L317">        BufferedImage bufferedImage = new BufferedImage(width, height, BufferedImage.TRANSLUCENT);</span>
+<span class="nc" id="L318">        Graphics2D graphics2D = bufferedImage.createGraphics();</span>
+<span class="nc" id="L319">        graphics2D.drawImage(imageIcon.getImage(), 0, 0, width, height, null);</span>
+<span class="nc" id="L320">        graphics2D.dispose();</span>
         
-<span class="nc" id="L392">        return new ImageIcon(bufferedImage, imageIcon.getDescription());</span>
+<span class="nc" id="L322">        return new ImageIcon(bufferedImage, imageIcon.getDescription());</span>
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPasswordField JContra;
     private javax.swing.JButton btnAceptarProf;
     private javax.swing.JButton btnCambiarFoto;
     private javax.swing.JTextField cajaApellidosProf;
@@ -399,12 +330,6 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private javax.swing.JTextField cajaNombreTituloProf;
     private javax.swing.JTextField cajaUsuarioProf;
     private javax.swing.JLabel etiquetaApellidosProf;
-    private javax.swing.JLabel etiquetaErrorApellidoProf;
-    private javax.swing.JLabel etiquetaErrorFechaGraduacion;
-    private javax.swing.JLabel etiquetaErrorFechaNacimiento;
-    private javax.swing.JLabel etiquetaErrorNombreProf;
-    private javax.swing.JLabel etiquetaErrorNombreTituloProf;
-    private javax.swing.JLabel etiquetaErrorNombreUsuarioProf;
     private javax.swing.JLabel etiquetaFechaGradProf;
     private javax.swing.JLabel etiquetaFechaNacProf;
     private javax.swing.JLabel etiquetaFotoPerfilProf;
@@ -417,6 +342,7 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
     private com.toedter.calendar.JDateChooser fechaGraduacion;
     private com.toedter.calendar.JDateChooser fechaNacimiento;
     private javax.swing.JLabel fotoPerfil;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JComboBox&lt;String&gt; listaPaisDeGraduacion;
     private javax.swing.JPanel panelRegProf;
     // End of variables declaration//GEN-END:variables

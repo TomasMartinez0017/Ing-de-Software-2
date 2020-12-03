@@ -68,7 +68,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
 <span class="nc" id="L68">            }</span>
         });
 <span class="nc" id="L70">        add(listaProfConsulta);</span>
-<span class="nc" id="L71">        listaProfConsulta.setBounds(230, 110, 190, 35);</span>
+<span class="nc" id="L71">        listaProfConsulta.setBounds(230, 110, 190, 39);</span>
 
 <span class="nc" id="L73">        textoConsultaAEnviar.setColumns(20);</span>
 <span class="nc" id="L74">        textoConsultaAEnviar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
@@ -90,7 +90,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
 <span class="nc" id="L90">            }</span>
         });
 <span class="nc" id="L92">        add(btnEnviarConsulta);</span>
-<span class="nc" id="L93">        btnEnviarConsulta.setBounds(730, 580, 140, 37);</span>
+<span class="nc" id="L93">        btnEnviarConsulta.setBounds(730, 580, 140, 45);</span>
 
 <span class="nc" id="L95">        cajaAsunto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
 <span class="nc" id="L96">        cajaAsunto.addActionListener(new java.awt.event.ActionListener() {</span>
@@ -99,7 +99,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
 <span class="nc" id="L99">            }</span>
         });
 <span class="nc" id="L101">        add(cajaAsunto);</span>
-<span class="nc" id="L102">        cajaAsunto.setBounds(230, 170, 530, 35);</span>
+<span class="nc" id="L102">        cajaAsunto.setBounds(230, 170, 530, 37);</span>
 
 <span class="nc" id="L104">        etiquetaAsunto.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
 <span class="nc" id="L105">        etiquetaAsunto.setText(&quot;Asunto:&quot;);</span>
@@ -118,36 +118,43 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
 <span class="nc" id="L118">        etiquetaTitulo.setBounds(360, 10, 320, 30);</span>
 
 <span class="nc" id="L120">        mensajeAlAceptar.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L121">        add(mensajeAlAceptar);</span>
-<span class="nc" id="L122">        mensajeAlAceptar.setBounds(710, 640, 370, 50);</span>
-<span class="nc" id="L123">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L121">        mensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);</span>
+<span class="nc" id="L122">        add(mensajeAlAceptar);</span>
+<span class="nc" id="L123">        mensajeAlAceptar.setBounds(190, 580, 530, 40);</span>
+<span class="nc" id="L124">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void listaProfConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaProfConsultaActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L127">    }//GEN-LAST:event_listaProfConsultaActionPerformed</span>
+<span class="nc" id="L128">    }//GEN-LAST:event_listaProfConsultaActionPerformed</span>
 
     private void btnEnviarConsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarConsultaActionPerformed
-<span class="nc" id="L130">        Mensaje mensajeAEnviar = new Mensaje();</span>
-<span class="nc" id="L131">        Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();</span>
-<span class="nc" id="L132">        mensajeAEnviar.setOrigen(interfazUsuario.getUsuarioActual());</span>
-<span class="nc" id="L133">        mensajeAEnviar.setDestino(destino);</span>
-<span class="nc" id="L134">        mensajeAEnviar.setAsunto(cajaAsunto.getText());</span>
-<span class="nc" id="L135">        mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());</span>
-<span class="nc" id="L136">        destino.getCasillaDeEntrada().add(mensajeAEnviar);</span>
-<span class="nc" id="L137">        mensajeAlAceptar.setText(&quot;Se ha enviado la consulta&quot;);</span>
-<span class="nc" id="L138">    }//GEN-LAST:event_btnEnviarConsultaActionPerformed</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">        if(!textoConsultaAEnviar.getText().isEmpty()){</span>
+<span class="nc" id="L132">            Mensaje mensajeAEnviar = new Mensaje();</span>
+<span class="nc" id="L133">            Profesional destino = (Profesional) listaProfConsulta.getSelectedItem();</span>
+<span class="nc" id="L134">            mensajeAEnviar.setOrigen(interfazUsuario.getUsuarioActual());</span>
+<span class="nc" id="L135">            mensajeAEnviar.setDestino(destino);</span>
+<span class="nc" id="L136">            mensajeAEnviar.setAsunto(cajaAsunto.getText());</span>
+<span class="nc" id="L137">            mensajeAEnviar.setMensaje(textoConsultaAEnviar.getText());</span>
+<span class="nc" id="L138">            destino.getCasillaDeEntrada().add(mensajeAEnviar);</span>
+<span class="nc" id="L139">            mensajeAlAceptar.setText(&quot;Se ha enviado la consulta&quot;);</span>
+<span class="nc" id="L140">        }</span>
+        else{
+<span class="nc" id="L142">            mensajeAlAceptar.setText(&quot;Error: el mensaje no puede ser vacío&quot;);</span>
+        }
+        
+<span class="nc" id="L145">    }//GEN-LAST:event_btnEnviarConsultaActionPerformed</span>
 
     private void btnVolverConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverConsultasActionPerformed
-<span class="nc" id="L141">        ventana.remove(this);</span>
-<span class="nc" id="L142">        PanelConsultaProfesional nuevo = new PanelConsultaProfesional(sistema, interfazUsuario, ventana);</span>
-<span class="nc" id="L143">        interfazUsuario.setActual(nuevo);</span>
-<span class="nc" id="L144">        ventana.add(nuevo);</span>
-<span class="nc" id="L145">        ventana.pack();</span>
-<span class="nc" id="L146">    }//GEN-LAST:event_btnVolverConsultasActionPerformed</span>
+<span class="nc" id="L148">        ventana.remove(this);</span>
+<span class="nc" id="L149">        PanelConsultaProfesional nuevo = new PanelConsultaProfesional(sistema, interfazUsuario, ventana);</span>
+<span class="nc" id="L150">        interfazUsuario.setActual(nuevo);</span>
+<span class="nc" id="L151">        ventana.add(nuevo);</span>
+<span class="nc" id="L152">        ventana.pack();</span>
+<span class="nc" id="L153">    }//GEN-LAST:event_btnVolverConsultasActionPerformed</span>
 
     private void cajaAsuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaAsuntoActionPerformed
         // TODO add your handling code here:
-<span class="nc" id="L150">    }//GEN-LAST:event_cajaAsuntoActionPerformed</span>
+<span class="nc" id="L157">    }//GEN-LAST:event_cajaAsuntoActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

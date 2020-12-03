@@ -4,6 +4,7 @@ import dominio.Alimento;
 import dominio.PlanDeAlimentacion;
 import dominio.Sistema;
 import dominio.Usuario;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 
@@ -72,18 +73,21 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(listaDiasDeLaSemana);
-        listaDiasDeLaSemana.setBounds(380, 130, 160, 35);
+        listaDiasDeLaSemana.setBounds(600, 130, 160, 39);
 
         etiquetaDiasDeLaSemana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaDiasDeLaSemana.setText("Dia de la semana:");
         add(etiquetaDiasDeLaSemana);
-        etiquetaDiasDeLaSemana.setBounds(170, 130, 200, 30);
+        etiquetaDiasDeLaSemana.setBounds(360, 130, 200, 30);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Realizar Plan de Alimentación");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(300, 20, 480, 50);
+        etiquetaTitulo.setBounds(0, -10, 1150, 80);
 
         listaComidasDiarias.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jScrollPane1.setViewportView(listaComidasDiarias);
@@ -103,7 +107,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(600, 570, 210, 37);
+        btnAgregarComida.setBounds(560, 560, 210, 45);
 
         btnQuitarComida.setBackground(new java.awt.Color(255, 0, 102));
         btnQuitarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -117,7 +121,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(btnQuitarComida);
-        btnQuitarComida.setBounds(300, 570, 190, 37);
+        btnQuitarComida.setBounds(360, 560, 190, 45);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setToolTipText("");
@@ -129,7 +133,7 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 20, 100, 50);
+        btnVolver.setBounds(1020, 720, 100, 50);
 
         btnEnviarPlan.setBackground(new java.awt.Color(255, 0, 102));
         btnEnviarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -143,11 +147,11 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
             }
         });
         add(btnEnviarPlan);
-        btnEnviarPlan.setBounds(890, 100, 160, 37);
+        btnEnviarPlan.setBounds(790, 180, 160, 45);
 
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         add(mensajeAlAceptar);
-        mensajeAlAceptar.setBounds(790, 160, 350, 50);
+        mensajeAlAceptar.setBounds(780, 240, 350, 50);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnQuitarComidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQuitarComidaActionPerformed
@@ -178,8 +182,17 @@ public class PanelRealizarPlanAlimentacion extends javax.swing.JPanel {
     }//GEN-LAST:event_listaDiasDeLaSemanaItemStateChanged
 
     private void btnEnviarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarPlanActionPerformed
-        usuarioAModificar.setPlan(nuevoPlan);
-        mensajeAlAceptar.setText("Se ha enviado correctamente");
+        if(nuevoPlan.getListaLunes().isEmpty() && nuevoPlan.getListaMartes().isEmpty() && nuevoPlan.getListaMiercoles().isEmpty()
+            && nuevoPlan.getListaJueves().isEmpty() && nuevoPlan.getListaViernes().isEmpty() && nuevoPlan.getListaSabado().isEmpty()
+            && nuevoPlan.getListaDomingo().isEmpty()){
+            
+            mensajeAlAceptar.setText("Error: Seleccione alimentos");
+            mensajeAlAceptar.setForeground(Color.red);
+        }
+        else{
+            usuarioAModificar.setPlan(nuevoPlan);
+            mensajeAlAceptar.setText("Se ha enviado correctamente");
+        }        
     }//GEN-LAST:event_btnEnviarPlanActionPerformed
 
     void actualizarLista() {

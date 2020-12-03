@@ -51,13 +51,16 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
             }
         });
         add(btnEdiatrPerfilProfesional);
-        btnEdiatrPerfilProfesional.setBounds(50, 60, 110, 70);
+        btnEdiatrPerfilProfesional.setBounds(80, 100, 110, 70);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Datos del Profesional");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(400, 20, 360, 40);
+        etiquetaTitulo.setBounds(0, 0, 1150, 70);
 
         jListDatosDelProfesional.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jListDatosDelProfesional.setModel(new javax.swing.AbstractListModel() {
@@ -71,15 +74,16 @@ public class PanelHomeProfesional extends javax.swing.JPanel {
         jScrollPane2.setBounds(310, 100, 590, 600);
 
         etiquetaEditar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaEditar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaEditar.setText("Editar ");
         add(etiquetaEditar);
-        etiquetaEditar.setBounds(60, 140, 80, 30);
+        etiquetaEditar.setBounds(80, 190, 100, 30);
 
         etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));
         add(etiquetaFoto);
-        etiquetaFoto.setBounds(70, 240, 210, 290);
+        etiquetaFoto.setBounds(30, 240, 210, 290);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEdiatrPerfilProfesionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEdiatrPerfilProfesionalActionPerformed

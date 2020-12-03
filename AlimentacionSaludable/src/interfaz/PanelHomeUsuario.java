@@ -34,17 +34,21 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
+        jLabel1.setBackground(new java.awt.Color(255, 0, 102));
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 0, 102));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Panel Home");
+        jLabel1.setOpaque(true);
         add(jLabel1);
-        jLabel1.setBounds(430, 10, 220, 40);
+        jLabel1.setBounds(0, -10, 1150, 80);
 
         listaComidasPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        listaComidasPlan.setSelectionBackground(new java.awt.Color(255, 0, 102));
         jScrollPane1.setViewportView(listaComidasPlan);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(350, 170, 400, 390);
+        jScrollPane1.setBounds(380, 180, 400, 390);
 
         listaDiasDeLaSemana.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaDiasDeLaSemana.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo" }));
@@ -59,12 +63,12 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
             }
         });
         add(listaDiasDeLaSemana);
-        listaDiasDeLaSemana.setBounds(310, 110, 140, 35);
+        listaDiasDeLaSemana.setBounds(630, 130, 150, 40);
 
         etiquetaComidasDelDia.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaComidasDelDia.setText("Comidas del dia:");
         add(etiquetaComidasDelDia);
-        etiquetaComidasDelDia.setBounds(120, 110, 180, 29);
+        etiquetaComidasDelDia.setBounds(380, 130, 180, 40);
 
         btnHistorialDeComidas.setBackground(new java.awt.Color(255, 0, 102));
         btnHistorialDeComidas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -78,7 +82,7 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
             }
         });
         add(btnHistorialDeComidas);
-        btnHistorialDeComidas.setBounds(610, 110, 250, 37);
+        btnHistorialDeComidas.setBounds(460, 590, 250, 45);
     }// </editor-fold>//GEN-END:initComponents
 
     private void listaDiasDeLaSemanaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_listaDiasDeLaSemanaItemStateChanged

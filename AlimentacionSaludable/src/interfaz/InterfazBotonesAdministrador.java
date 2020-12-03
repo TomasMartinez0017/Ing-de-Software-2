@@ -39,6 +39,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
         btnRegistrarProfesional = new javax.swing.JButton();
         btnRegistrarAlimento = new javax.swing.JButton();
         btnCambiarUsuario = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(250, 784));
@@ -63,7 +64,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
             }
         });
         panelBotonesAdministrador.add(btnRegistrarUsuario);
-        btnRegistrarUsuario.setBounds(0, 30, 260, 50);
+        btnRegistrarUsuario.setBounds(0, 80, 260, 50);
 
         btnRegistrarProfesional.setBackground(new java.awt.Color(255, 0, 102));
         btnRegistrarProfesional.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -79,7 +80,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
             }
         });
         panelBotonesAdministrador.add(btnRegistrarProfesional);
-        btnRegistrarProfesional.setBounds(0, 110, 260, 50);
+        btnRegistrarProfesional.setBounds(0, 150, 260, 50);
 
         btnRegistrarAlimento.setBackground(new java.awt.Color(255, 0, 102));
         btnRegistrarAlimento.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -95,7 +96,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
             }
         });
         panelBotonesAdministrador.add(btnRegistrarAlimento);
-        btnRegistrarAlimento.setBounds(0, 190, 260, 50);
+        btnRegistrarAlimento.setBounds(0, 220, 260, 50);
 
         btnCambiarUsuario.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -111,10 +112,21 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
             }
         });
         panelBotonesAdministrador.add(btnCambiarUsuario);
-        btnCambiarUsuario.setBounds(0, 270, 260, 50);
+        btnCambiarUsuario.setBounds(0, 300, 260, 50);
 
+        jLabel3.setBackground(new java.awt.Color(255, 0, 102));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/baseline_account_box_white_48dp.png"))); // NOI18N
+        jLabel3.setText("Administrador");
+        jLabel3.setOpaque(true);
+        panelBotonesAdministrador.add(jLabel3);
+        jLabel3.setBounds(0, 0, 250, 60);
+
+        fondo.setBackground(new java.awt.Color(255, 0, 102));
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo2.png"))); // NOI18N
-        fondo.setText("jLabel1");
+        fondo.setText("fghfghfghfghfghfghHola");
+        fondo.setOpaque(true);
         panelBotonesAdministrador.add(fondo);
         fondo.setBounds(0, 0, 250, 780);
 
@@ -158,6 +170,7 @@ public class InterfazBotonesAdministrador extends javax.swing.JPanel {
     private javax.swing.JButton btnRegistrarProfesional;
     private javax.swing.JButton btnRegistrarUsuario;
     private javax.swing.JLabel fondo;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel panelBotonesAdministrador;
     // End of variables declaration//GEN-END:variables
 }

@@ -42,6 +42,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         etiquetaBandejaDeEntrada = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
+        setLayout(new java.awt.BorderLayout());
 
         panelConsultaProf.setBackground(new java.awt.Color(255, 255, 255));
         panelConsultaProf.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -59,7 +60,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
             }
         });
         panelConsultaProf.add(btnRedactar);
-        btnRedactar.setBounds(670, 530, 140, 45);
+        btnRedactar.setBounds(720, 540, 140, 45);
 
         textoLeerMensaje.setColumns(20);
         textoLeerMensaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -67,7 +68,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         jScrollPane1.setViewportView(textoLeerMensaje);
 
         panelConsultaProf.add(jScrollPane1);
-        jScrollPane1.setBounds(50, 160, 547, 347);
+        jScrollPane1.setBounds(100, 170, 547, 347);
 
         listaMensajes.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaMensajes.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
@@ -78,7 +79,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
         jScrollPane2.setViewportView(listaMensajes);
 
         panelConsultaProf.add(jScrollPane2);
-        jScrollPane2.setBounds(670, 160, 300, 350);
+        jScrollPane2.setBounds(720, 170, 300, 350);
 
         btnBorrarCons.setBackground(new java.awt.Color(255, 0, 102));
         btnBorrarCons.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -92,32 +93,23 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
             }
         });
         panelConsultaProf.add(btnBorrarCons);
-        btnBorrarCons.setBounds(830, 530, 150, 45);
+        btnBorrarCons.setBounds(880, 540, 150, 45);
 
+        etiquetaTituloConsultas.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 255, 255));
         etiquetaTituloConsultas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTituloConsultas.setText("Consulta Directa");
+        etiquetaTituloConsultas.setOpaque(true);
         panelConsultaProf.add(etiquetaTituloConsultas);
-        etiquetaTituloConsultas.setBounds(0, 20, 1150, 44);
+        etiquetaTituloConsultas.setBounds(0, -6, 1150, 80);
 
         etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
         panelConsultaProf.add(etiquetaBandejaDeEntrada);
-        etiquetaBandejaDeEntrada.setBounds(710, 110, 220, 30);
+        etiquetaBandejaDeEntrada.setBounds(760, 120, 220, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(panelConsultaProf, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRedactarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedactarActionPerformed

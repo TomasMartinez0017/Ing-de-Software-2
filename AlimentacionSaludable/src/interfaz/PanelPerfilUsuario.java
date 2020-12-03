@@ -43,11 +43,14 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         panelHome.setBackground(new java.awt.Color(255, 255, 255));
         panelHome.setLayout(null);
 
+        etiquetaInfoUsuario.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaInfoUsuario.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaInfoUsuario.setForeground(new java.awt.Color(255, 0, 102));
-        etiquetaInfoUsuario.setText("Info del Usuario");
+        etiquetaInfoUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaInfoUsuario.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        etiquetaInfoUsuario.setText("Información del Usuario");
+        etiquetaInfoUsuario.setOpaque(true);
         panelHome.add(etiquetaInfoUsuario);
-        etiquetaInfoUsuario.setBounds(420, 20, 300, 50);
+        etiquetaInfoUsuario.setBounds(0, 0, 1150, 70);
 
         btnEditarPerfilUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/btnEditar.png"))); // NOI18N
         btnEditarPerfilUsuario.setBorderPainted(false);
@@ -58,13 +61,13 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
             }
         });
         panelHome.add(btnEditarPerfilUsuario);
-        btnEditarPerfilUsuario.setBounds(70, 40, 90, 70);
+        btnEditarPerfilUsuario.setBounds(140, 120, 90, 70);
 
         etiquetaFoto.setMaximumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setMinimumSize(new java.awt.Dimension(210, 240));
         etiquetaFoto.setPreferredSize(new java.awt.Dimension(210, 240));
         panelHome.add(etiquetaFoto);
-        etiquetaFoto.setBounds(120, 180, 220, 260);
+        etiquetaFoto.setBounds(80, 250, 220, 260);
 
         datosDelUsuario.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         datosDelUsuario.setModel(new javax.swing.AbstractListModel() {
@@ -75,12 +78,13 @@ public class PanelPerfilUsuario extends javax.swing.JPanel {
         jScrollPane1.setViewportView(datosDelUsuario);
 
         panelHome.add(jScrollPane1);
-        jScrollPane1.setBounds(390, 100, 440, 470);
+        jScrollPane1.setBounds(390, 120, 440, 470);
 
         etiquetaEditar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        etiquetaEditar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaEditar.setText("Editar");
         panelHome.add(etiquetaEditar);
-        etiquetaEditar.setBounds(80, 120, 70, 30);
+        etiquetaEditar.setBounds(140, 200, 90, 30);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

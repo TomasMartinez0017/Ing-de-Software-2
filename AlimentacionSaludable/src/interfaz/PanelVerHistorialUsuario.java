@@ -56,23 +56,26 @@ public class PanelVerHistorialUsuario extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(20, 10, 130, 60);
+        btnVolver.setBounds(1000, 710, 130, 60);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Historial de Comidas");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(400, 20, 360, 40);
+        etiquetaTitulo.setBounds(0, 0, 1140, 70);
 
         etiquetaFecha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaFecha.setText("Fecha de Ingesta:");
         add(etiquetaFecha);
-        etiquetaFecha.setBounds(220, 100, 200, 40);
+        etiquetaFecha.setBounds(250, 110, 200, 40);
 
         fecha.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         fecha.setText("-");
         add(fecha);
-        fecha.setBounds(430, 110, 160, 29);
+        fecha.setBounds(460, 110, 160, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed

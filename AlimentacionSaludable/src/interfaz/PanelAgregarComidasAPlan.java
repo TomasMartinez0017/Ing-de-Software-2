@@ -50,17 +50,20 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Agregar Comidas");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(380, 20, 290, 50);
+        etiquetaTitulo.setBounds(0, 0, 1150, 70);
 
         listaComidas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jScrollPane1.setViewportView(listaComidas);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(350, 110, 370, 410);
+        jScrollPane1.setBounds(390, 110, 370, 410);
 
         btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -79,7 +82,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
             }
         });
         add(btnAgregarComida);
-        btnAgregarComida.setBounds(640, 530, 210, 37);
+        btnAgregarComida.setBounds(470, 540, 210, 45);
 
         btnVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/volver.png"))); // NOI18N
         btnVolver.setBorderPainted(false);
@@ -90,7 +93,7 @@ public class PanelAgregarComidasAPlan extends javax.swing.JPanel {
             }
         });
         add(btnVolver);
-        btnVolver.setBounds(10, 10, 100, 60);
+        btnVolver.setBounds(1030, 710, 100, 60);
 
         jLabelComidaAgregada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelComidaAgregada.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);

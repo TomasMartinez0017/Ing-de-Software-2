@@ -35,17 +35,20 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1147, 784));
         setLayout(null);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Seleccionar Plan de Alimentacion a Realizar");
+        etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(190, 20, 710, 40);
+        etiquetaTitulo.setBounds(0, 0, 1160, 70);
 
         listaUsuarios.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jScrollPane1.setViewportView(listaUsuarios);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(340, 120, 410, 410);
+        jScrollPane1.setBounds(380, 120, 410, 410);
 
         btnRealizarPlan.setBackground(new java.awt.Color(255, 0, 102));
         btnRealizarPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -59,7 +62,7 @@ public class PanelSeleccionarPlanARealizar extends javax.swing.JPanel {
             }
         });
         add(btnRealizarPlan);
-        btnRealizarPlan.setBounds(610, 540, 180, 40);
+        btnRealizarPlan.setBounds(490, 540, 180, 40);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRealizarPlanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRealizarPlanActionPerformed

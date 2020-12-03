@@ -59,7 +59,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
 <span class="nc" id="L59">            }</span>
         });
 <span class="nc" id="L61">        panelConsultaProf.add(btnRedactar);</span>
-<span class="nc" id="L62">        btnRedactar.setBounds(670, 530, 140, 37);</span>
+<span class="nc" id="L62">        btnRedactar.setBounds(670, 530, 140, 45);</span>
 
 <span class="nc" id="L64">        textoLeerMensaje.setColumns(20);</span>
 <span class="nc" id="L65">        textoLeerMensaje.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
@@ -78,7 +78,7 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
 <span class="nc" id="L78">        jScrollPane2.setViewportView(listaMensajes);</span>
 
 <span class="nc" id="L80">        panelConsultaProf.add(jScrollPane2);</span>
-<span class="nc" id="L81">        jScrollPane2.setBounds(670, 160, 258, 350);</span>
+<span class="nc" id="L81">        jScrollPane2.setBounds(670, 160, 300, 350);</span>
 
 <span class="nc" id="L83">        btnBorrarCons.setBackground(new java.awt.Color(255, 0, 102));</span>
 <span class="nc" id="L84">        btnBorrarCons.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
@@ -92,57 +92,58 @@ public class PanelConsultaProfesionalDesdeProfesional extends javax.swing.JPanel
 <span class="nc" id="L92">            }</span>
         });
 <span class="nc" id="L94">        panelConsultaProf.add(btnBorrarCons);</span>
-<span class="nc" id="L95">        btnBorrarCons.setBounds(830, 530, 100, 37);</span>
+<span class="nc" id="L95">        btnBorrarCons.setBounds(830, 530, 150, 45);</span>
 
 <span class="nc" id="L97">        etiquetaTituloConsultas.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 36)); // NOI18N</span>
 <span class="nc" id="L98">        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));</span>
-<span class="nc" id="L99">        etiquetaTituloConsultas.setText(&quot;Consultas a Profesionales&quot;);</span>
-<span class="nc" id="L100">        panelConsultaProf.add(etiquetaTituloConsultas);</span>
-<span class="nc" id="L101">        etiquetaTituloConsultas.setBounds(330, 10, 420, 44);</span>
+<span class="nc" id="L99">        etiquetaTituloConsultas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);</span>
+<span class="nc" id="L100">        etiquetaTituloConsultas.setText(&quot;Consulta Directa&quot;);</span>
+<span class="nc" id="L101">        panelConsultaProf.add(etiquetaTituloConsultas);</span>
+<span class="nc" id="L102">        etiquetaTituloConsultas.setBounds(0, 20, 1150, 44);</span>
 
-<span class="nc" id="L103">        etiquetaBandejaDeEntrada.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
-<span class="nc" id="L104">        etiquetaBandejaDeEntrada.setText(&quot;Bandeja de entrada&quot;);</span>
-<span class="nc" id="L105">        panelConsultaProf.add(etiquetaBandejaDeEntrada);</span>
-<span class="nc" id="L106">        etiquetaBandejaDeEntrada.setBounds(680, 110, 220, 30);</span>
+<span class="nc" id="L104">        etiquetaBandejaDeEntrada.setFont(new java.awt.Font(&quot;Tahoma&quot;, 0, 24)); // NOI18N</span>
+<span class="nc" id="L105">        etiquetaBandejaDeEntrada.setText(&quot;Bandeja de entrada&quot;);</span>
+<span class="nc" id="L106">        panelConsultaProf.add(etiquetaBandejaDeEntrada);</span>
+<span class="nc" id="L107">        etiquetaBandejaDeEntrada.setBounds(710, 110, 220, 30);</span>
 
-<span class="nc" id="L108">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
-<span class="nc" id="L109">        this.setLayout(layout);</span>
-<span class="nc" id="L110">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L111">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L112">            .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L109">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);</span>
+<span class="nc" id="L110">        this.setLayout(layout);</span>
+<span class="nc" id="L111">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L112">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L113">            .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
         );
-<span class="nc" id="L114">        layout.setVerticalGroup(</span>
-<span class="nc" id="L115">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L116">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L117">                .addGap(4, 4, 4)</span>
-<span class="nc" id="L118">                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L115">        layout.setVerticalGroup(</span>
+<span class="nc" id="L116">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L117">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L118">                .addGap(4, 4, 4)</span>
+<span class="nc" id="L119">                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
         );
-<span class="nc" id="L120">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L121">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void btnRedactarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedactarActionPerformed
-<span class="nc" id="L123">        ventana.remove(this);</span>
-<span class="nc" id="L124">        PanelRedactarConsultaDesdeProfesional nuevo = new PanelRedactarConsultaDesdeProfesional(sistema, interfaz, ventana);</span>
-<span class="nc" id="L125">        interfaz.setActual(nuevo);</span>
-<span class="nc" id="L126">        ventana.add(nuevo);</span>
-<span class="nc" id="L127">        ventana.pack();</span>
-<span class="nc" id="L128">    }//GEN-LAST:event_btnRedactarActionPerformed</span>
+<span class="nc" id="L124">        ventana.remove(this);</span>
+<span class="nc" id="L125">        PanelRedactarConsultaDesdeProfesional nuevo = new PanelRedactarConsultaDesdeProfesional(sistema, interfaz, ventana);</span>
+<span class="nc" id="L126">        interfaz.setActual(nuevo);</span>
+<span class="nc" id="L127">        ventana.add(nuevo);</span>
+<span class="nc" id="L128">        ventana.pack();</span>
+<span class="nc" id="L129">    }//GEN-LAST:event_btnRedactarActionPerformed</span>
 
     private void listaMensajesValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_listaMensajesValueChanged
-<span class="nc" id="L131">        mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();</span>
-<span class="nc bnc" id="L132" title="All 2 branches missed.">        if (mensajeSeleccionado != null) {</span>
-<span class="nc" id="L133">            textoLeerMensaje.setText(mensajeSeleccionado.getMensaje());</span>
+<span class="nc" id="L132">        mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">        if (mensajeSeleccionado != null) {</span>
+<span class="nc" id="L134">            textoLeerMensaje.setText(mensajeSeleccionado.getMensaje());</span>
         }
-<span class="nc" id="L135">    }//GEN-LAST:event_listaMensajesValueChanged</span>
+<span class="nc" id="L136">    }//GEN-LAST:event_listaMensajesValueChanged</span>
 
     private void btnBorrarConsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarConsActionPerformed
-<span class="nc bnc" id="L138" title="All 2 branches missed.">        if (mensajeSeleccionado != null) {</span>
-<span class="nc" id="L139">            mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();</span>
-<span class="nc" id="L140">            textoLeerMensaje.setText(&quot;&quot;);</span>
-<span class="nc" id="L141">            interfaz.getUsuarioActivo().getCasillaDeEntrada().remove(mensajeSeleccionado);</span>
-<span class="nc" id="L142">            mensajeSeleccionado = null;</span>
-<span class="nc" id="L143">            listaMensajes.setListData(interfaz.getUsuarioActivo().getCasillaDeEntrada().toArray());</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">        if (mensajeSeleccionado != null) {</span>
+<span class="nc" id="L140">            mensajeSeleccionado = (Mensaje) listaMensajes.getSelectedValue();</span>
+<span class="nc" id="L141">            textoLeerMensaje.setText(&quot;&quot;);</span>
+<span class="nc" id="L142">            interfaz.getUsuarioActivo().getCasillaDeEntrada().remove(mensajeSeleccionado);</span>
+<span class="nc" id="L143">            mensajeSeleccionado = null;</span>
+<span class="nc" id="L144">            listaMensajes.setListData(interfaz.getUsuarioActivo().getCasillaDeEntrada().toArray());</span>
         }
-<span class="nc" id="L145">    }//GEN-LAST:event_btnBorrarConsActionPerformed</span>
+<span class="nc" id="L146">    }//GEN-LAST:event_btnBorrarConsActionPerformed</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

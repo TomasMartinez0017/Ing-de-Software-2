@@ -94,9 +94,26 @@ public class AlimentoTest {
     public void testHashCode(){
         Alimento a = new Alimento();
         int result = a.hashCode();
-        int expValue = 7;
+        int expValue = 1;
         
         assertEquals(result, expValue);
+    }
+    
+    @Test
+    public void testEquals(){
+        Alimento a = new Alimento();
+        boolean result = a.equals(null);
+        
+        assertEquals(result, false);
+    }
+    
+    @Test
+    public void testEquals2(){
+        Alimento a = new Alimento();
+        Usuario u = new Usuario();
+        boolean result = a.equals(u);
+        
+        assertEquals(result, false);
     }
     
     

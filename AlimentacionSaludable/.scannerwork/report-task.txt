@@ -2,5 +2,5 @@ projectKey=my:AlimentacionSaludable
 serverUrl=http://localhost:9000
 serverVersion=8.4.2.36762
 dashboardUrl=http://localhost:9000/dashboard?id=my%3AAlimentacionSaludable
-ceTaskId=AXWuBan1S61Jd5PcQOFc
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXWuBan1S61Jd5PcQOFc
+ceTaskId=AXYp7sV8hfNLRxGc9PbS
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXYp7sV8hfNLRxGc9PbS

@@ -45,6 +45,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
         etiquetaBandejaDeEntrada = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1147, 784));
+        setLayout(new java.awt.BorderLayout());
 
         panelConsultaProf.setBackground(new java.awt.Color(255, 255, 255));
         panelConsultaProf.setPreferredSize(new java.awt.Dimension(1147, 784));
@@ -62,7 +63,7 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             }
         });
         panelConsultaProf.add(btnRedactar);
-        btnRedactar.setBounds(710, 530, 130, 37);
+        btnRedactar.setBounds(710, 530, 130, 45);
 
         textoLeerMensaje.setColumns(20);
         textoLeerMensaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -100,31 +101,23 @@ public class PanelConsultaProfesional extends javax.swing.JPanel {
             }
         });
         panelConsultaProf.add(btnBorrarCons);
-        btnBorrarCons.setBounds(870, 530, 140, 37);
+        btnBorrarCons.setBounds(870, 530, 140, 45);
 
+        etiquetaTituloConsultas.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTituloConsultas.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloConsultas.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTituloConsultas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTituloConsultas.setText("Consultas a Profesionales");
+        etiquetaTituloConsultas.setOpaque(true);
         panelConsultaProf.add(etiquetaTituloConsultas);
-        etiquetaTituloConsultas.setBounds(340, 10, 420, 40);
+        etiquetaTituloConsultas.setBounds(0, 0, 1150, 70);
 
         etiquetaBandejaDeEntrada.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaBandejaDeEntrada.setText("Bandeja de entrada");
         panelConsultaProf.add(etiquetaBandejaDeEntrada);
         etiquetaBandejaDeEntrada.setBounds(760, 120, 210, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addComponent(panelConsultaProf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        add(panelConsultaProf, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRedactarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRedactarActionPerformed

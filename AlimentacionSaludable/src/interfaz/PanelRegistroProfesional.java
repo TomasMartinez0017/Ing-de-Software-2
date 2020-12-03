@@ -77,50 +77,59 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
         panelRegProf.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRegProf.setLayout(null);
 
+        etiquetaTituloProf.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTituloProf.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTituloProf.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTituloProf.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTituloProf.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTituloProf.setText("Registro Profesionales");
+        etiquetaTituloProf.setOpaque(true);
         panelRegProf.add(etiquetaTituloProf);
-        etiquetaTituloProf.setBounds(350, 10, 360, 50);
+        etiquetaTituloProf.setBounds(0, 0, 1150, 60);
 
         etiquetaNombreProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaNombreProf.setText("Nombre:");
+        etiquetaNombreProf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaNombreProf.setText("Nombre: ");
         panelRegProf.add(etiquetaNombreProf);
-        etiquetaNombreProf.setBounds(450, 120, 92, 29);
+        etiquetaNombreProf.setBounds(260, 170, 340, 40);
 
         etiquetaApellidosProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaApellidosProf.setText("Apellidos:");
+        etiquetaApellidosProf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaApellidosProf.setText("Apellidos: ");
         panelRegProf.add(etiquetaApellidosProf);
-        etiquetaApellidosProf.setBounds(440, 170, 110, 30);
+        etiquetaApellidosProf.setBounds(260, 220, 340, 40);
 
         etiquetaUsuarioProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaUsuarioProf.setText("Nombre de Usuario:");
+        etiquetaUsuarioProf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaUsuarioProf.setText("Nombre de Usuario: ");
         panelRegProf.add(etiquetaUsuarioProf);
-        etiquetaUsuarioProf.setBounds(330, 220, 220, 26);
+        etiquetaUsuarioProf.setBounds(260, 270, 340, 40);
 
         etiquetaFechaNacProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaFechaNacProf.setText("Fecha de nacimiento:");
+        etiquetaFechaNacProf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaFechaNacProf.setText("Fecha de nacimiento: ");
         panelRegProf.add(etiquetaFechaNacProf);
-        etiquetaFechaNacProf.setBounds(310, 270, 230, 26);
+        etiquetaFechaNacProf.setBounds(260, 320, 340, 40);
 
         etiquetaNombTituloProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaNombTituloProf.setText("Nombre de título profesional:");
+        etiquetaNombTituloProf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaNombTituloProf.setText("Nombre de título profesional: ");
         panelRegProf.add(etiquetaNombTituloProf);
-        etiquetaNombTituloProf.setBounds(230, 320, 310, 29);
+        etiquetaNombTituloProf.setBounds(260, 370, 340, 40);
 
         etiquetaFechaGradProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaFechaGradProf.setText("Fecha de graduación:");
+        etiquetaFechaGradProf.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaFechaGradProf.setText("Fecha de graduación: ");
         panelRegProf.add(etiquetaFechaGradProf);
-        etiquetaFechaGradProf.setBounds(310, 360, 230, 40);
+        etiquetaFechaGradProf.setBounds(260, 420, 340, 40);
 
         etiquetaFotoPerfilProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaFotoPerfilProf.setText("Foto de perfil:");
         panelRegProf.add(etiquetaFotoPerfilProf);
-        etiquetaFotoPerfilProf.setBounds(38, 82, 160, 40);
+        etiquetaFotoPerfilProf.setBounds(50, 100, 160, 40);
 
         cajaNombreProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(cajaNombreProf);
-        cajaNombreProf.setBounds(560, 120, 160, 37);
+        cajaNombreProf.setBounds(600, 170, 280, 37);
 
         cajaApellidosProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         cajaApellidosProf.addActionListener(new java.awt.event.ActionListener() {
@@ -129,48 +138,52 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(cajaApellidosProf);
-        cajaApellidosProf.setBounds(560, 170, 160, 37);
+        cajaApellidosProf.setBounds(600, 220, 280, 37);
 
         cajaUsuarioProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(cajaUsuarioProf);
-        cajaUsuarioProf.setBounds(560, 220, 160, 37);
+        cajaUsuarioProf.setBounds(600, 270, 280, 37);
 
         cajaNombreTituloProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         panelRegProf.add(cajaNombreTituloProf);
-        cajaNombreTituloProf.setBounds(560, 320, 160, 37);
+        cajaNombreTituloProf.setBounds(600, 370, 280, 37);
 
         btnAceptarProf.setBackground(new java.awt.Color(255, 0, 102));
         btnAceptarProf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         btnAceptarProf.setForeground(new java.awt.Color(255, 255, 255));
-        btnAceptarProf.setText("Aceptar");
+        btnAceptarProf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/baseline_done_outline_white_18dp.png"))); // NOI18N
         btnAceptarProf.setContentAreaFilled(false);
+        btnAceptarProf.setMaximumSize(new java.awt.Dimension(60, 60));
+        btnAceptarProf.setMinimumSize(new java.awt.Dimension(60, 60));
         btnAceptarProf.setOpaque(true);
+        btnAceptarProf.setPreferredSize(new java.awt.Dimension(60, 60));
         btnAceptarProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAceptarProfActionPerformed(evt);
             }
         });
         panelRegProf.add(btnAceptarProf);
-        btnAceptarProf.setBounds(850, 610, 150, 45);
+        btnAceptarProf.setBounds(1060, 710, 60, 60);
 
         etiquetaPaisDeGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaPaisDeGraduacion.setText("País de graduación:");
+        etiquetaPaisDeGraduacion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaPaisDeGraduacion.setText("País de graduación: ");
         panelRegProf.add(etiquetaPaisDeGraduacion);
-        etiquetaPaisDeGraduacion.setBounds(330, 410, 210, 40);
+        etiquetaPaisDeGraduacion.setBounds(260, 470, 340, 40);
 
         listaPaisDeGraduacion.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaPaisDeGraduacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         panelRegProf.add(listaPaisDeGraduacion);
-        listaPaisDeGraduacion.setBounds(560, 420, 160, 39);
+        listaPaisDeGraduacion.setBounds(600, 470, 280, 39);
 
         etiquetaMensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         etiquetaMensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panelRegProf.add(etiquetaMensajeAlAceptar);
-        etiquetaMensajeAlAceptar.setBounds(10, 610, 830, 40);
+        etiquetaMensajeAlAceptar.setBounds(220, 720, 830, 40);
         panelRegProf.add(fechaNacimiento);
-        fechaNacimiento.setBounds(560, 270, 160, 29);
+        fechaNacimiento.setBounds(600, 320, 280, 40);
         panelRegProf.add(fechaGraduacion);
-        fechaGraduacion.setBounds(560, 370, 160, 29);
+        fechaGraduacion.setBounds(600, 420, 280, 40);
 
         btnCambiarFoto.setBackground(new java.awt.Color(255, 0, 102));
         btnCambiarFoto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -184,25 +197,26 @@ public class PanelRegistroProfesional extends javax.swing.JPanel {
             }
         });
         panelRegProf.add(btnCambiarFoto);
-        btnCambiarFoto.setBounds(40, 390, 190, 40);
+        btnCambiarFoto.setBounds(40, 430, 190, 40);
 
         fotoPerfil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/predeterminadaProfesional.png"))); // NOI18N
         fotoPerfil.setPreferredSize(new java.awt.Dimension(210, 270));
         panelRegProf.add(fotoPerfil);
-        fotoPerfil.setBounds(30, 120, 210, 270);
+        fotoPerfil.setBounds(30, 150, 210, 270);
         panelRegProf.add(JContra);
-        JContra.setBounds(560, 480, 160, 40);
+        JContra.setBounds(600, 520, 280, 40);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        jLabel1.setText("Contraseña:");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Contraseña: ");
         panelRegProf.add(jLabel1);
-        jLabel1.setBounds(410, 480, 150, 40);
+        jLabel1.setBounds(260, 520, 340, 40);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1150, Short.MAX_VALUE)
+            .addGap(0, 1147, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)

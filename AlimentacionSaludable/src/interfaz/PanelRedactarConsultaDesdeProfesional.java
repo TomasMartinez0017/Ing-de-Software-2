@@ -42,6 +42,8 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         etiquetaTitulo = new javax.swing.JLabel();
         jLabelMensajeEnviado = new javax.swing.JLabel();
 
+        setLayout(new java.awt.BorderLayout());
+
         panelRedactarConsulta.setBackground(new java.awt.Color(255, 255, 255));
         panelRedactarConsulta.setPreferredSize(new java.awt.Dimension(1147, 784));
         panelRedactarConsulta.setLayout(null);
@@ -55,7 +57,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
             }
         });
         panelRedactarConsulta.add(btnVolverConsultas);
-        btnVolverConsultas.setBounds(20, 10, 110, 50);
+        btnVolverConsultas.setBounds(1030, 720, 110, 50);
 
         listaUsrConsultas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         listaUsrConsultas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -63,7 +65,8 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         listaUsrConsultas.setBounds(330, 90, 590, 39);
 
         etiquetaDestinatarioConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaDestinatarioConsulta.setText("Destinatario:");
+        etiquetaDestinatarioConsulta.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaDestinatarioConsulta.setText("Destinatario: ");
         panelRedactarConsulta.add(etiquetaDestinatarioConsulta);
         etiquetaDestinatarioConsulta.setBounds(180, 90, 150, 30);
 
@@ -73,7 +76,7 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         jScrollPane3.setViewportView(textoConsultaAEnviar);
 
         panelRedactarConsulta.add(jScrollPane3);
-        jScrollPane3.setBounds(330, 190, 600, 393);
+        jScrollPane3.setBounds(330, 190, 590, 393);
 
         btnEnviarConsulta.setBackground(new java.awt.Color(255, 0, 102));
         btnEnviarConsulta.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -87,15 +90,17 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
             }
         });
         panelRedactarConsulta.add(btnEnviarConsulta);
-        btnEnviarConsulta.setBounds(830, 600, 100, 35);
+        btnEnviarConsulta.setBounds(820, 600, 100, 35);
 
         etiquetaMensaje.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaMensaje.setText("Mensaje:");
+        etiquetaMensaje.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaMensaje.setText("Mensaje: ");
         panelRedactarConsulta.add(etiquetaMensaje);
         etiquetaMensaje.setBounds(220, 190, 110, 26);
 
         etiquetaAsunto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        etiquetaAsunto.setText("Asunto:");
+        etiquetaAsunto.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        etiquetaAsunto.setText("Asunto: ");
         panelRedactarConsulta.add(etiquetaAsunto);
         etiquetaAsunto.setBounds(230, 140, 100, 26);
 
@@ -103,33 +108,21 @@ public class PanelRedactarConsultaDesdeProfesional extends javax.swing.JPanel {
         panelRedactarConsulta.add(cajaAsunto);
         cajaAsunto.setBounds(330, 140, 590, 32);
 
+        etiquetaTitulo.setBackground(new java.awt.Color(255, 0, 102));
         etiquetaTitulo.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        etiquetaTitulo.setForeground(new java.awt.Color(255, 0, 102));
+        etiquetaTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        etiquetaTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         etiquetaTitulo.setText("Redactar Consulta ");
+        etiquetaTitulo.setOpaque(true);
         panelRedactarConsulta.add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(410, 10, 310, 44);
+        etiquetaTitulo.setBounds(0, -6, 1160, 80);
 
         jLabelMensajeEnviado.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabelMensajeEnviado.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         panelRedactarConsulta.add(jLabelMensajeEnviado);
         jLabelMensajeEnviado.setBounds(370, 610, 430, 20);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelRedactarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelRedactarConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(panelRedactarConsulta, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverConsultasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverConsultasActionPerformed
