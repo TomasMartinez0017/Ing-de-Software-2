@@ -44,7 +44,7 @@ public class PanelHomeUsuario extends javax.swing.JPanel {
         jLabel1.setBounds(0, -10, 1150, 80);
 
         listaComidasPlan.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        listaComidasPlan.setSelectionBackground(new java.awt.Color(255, 0, 102));
+        listaComidasPlan.setSelectionBackground(new java.awt.Color(255, 168, 202));
         jScrollPane1.setViewportView(listaComidasPlan);
 
         add(jScrollPane1);

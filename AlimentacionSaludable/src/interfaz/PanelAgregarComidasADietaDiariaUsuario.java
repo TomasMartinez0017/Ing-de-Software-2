@@ -52,7 +52,7 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
         etiquetaTitulo.setText("Agregar Comida");
         etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(0, 0, 1140, 60);
+        etiquetaTitulo.setBounds(0, 0, 1160, 70);
 
         btnAgregarComida.setBackground(new java.awt.Color(255, 0, 102));
         btnAgregarComida.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -98,19 +98,23 @@ public class PanelAgregarComidasADietaDiariaUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAgregarComidaActionPerformed
 
     private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
-        LocalDate diaActual = LocalDate.now();
-        ComidaPorDia comida = new ComidaPorDia(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas(), diaActual.toString());
-        if(interfaz.getUsuarioActual().getHistorialComidas().isEmpty()){
-            interfaz.getUsuarioActual().getHistorialComidas().add(comida);
-        }
-        else{
-            for(int i = 0; i < interfaz.getUsuarioActual().getHistorialComidas().size(); i++){
-                ComidaPorDia aux = interfaz.getUsuarioActual().getHistorialComidas().get(i);
-                if (!aux.getFecha().equals(diaActual.toString())){
-                    interfaz.getUsuarioActual().getHistorialComidas().add(comida);
-                }
+        Alimento comidaSeleccionada = (Alimento) listaComidasDiarias.getSelectedValue();
+        if(comidaSeleccionada != null){
+            LocalDate diaActual = LocalDate.now();
+            ComidaPorDia comida = new ComidaPorDia(interfaz.getUsuarioActual().getHistorialDelDia().getComidasIngeridas(), diaActual.toString());
+            if(interfaz.getUsuarioActual().getHistorialComidas().isEmpty()){
+                interfaz.getUsuarioActual().getHistorialComidas().add(comida);
             }
+            else{
+                for(int i = 0; i < interfaz.getUsuarioActual().getHistorialComidas().size(); i++){
+                    ComidaPorDia aux = interfaz.getUsuarioActual().getHistorialComidas().get(i);
+                    if (!aux.getFecha().equals(diaActual.toString())){
+                        interfaz.getUsuarioActual().getHistorialComidas().add(comida);
+                    }
+                }
+            }    
         }
+        
         
         ventana.remove(this);
         PanelDietaDiariaUsuario nuevo = new PanelDietaDiariaUsuario(sistema, ventana, interfaz);

@@ -118,7 +118,7 @@ public class PanelRedactarConsulta extends javax.swing.JPanel {
         etiquetaTitulo.setText("Redactar Consulta");
         etiquetaTitulo.setOpaque(true);
         add(etiquetaTitulo);
-        etiquetaTitulo.setBounds(0, 0, 1110, 60);
+        etiquetaTitulo.setBounds(0, 0, 1160, 70);
 
         mensajeAlAceptar.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         mensajeAlAceptar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
